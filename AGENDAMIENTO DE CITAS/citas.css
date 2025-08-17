@@ -1,0 +1,169 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+        height: 100%;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+       
+    }
+
+    .fondo-cita{
+       background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+              url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+    }
+
+
+  /*   PARTE DE ENCABEZADO AGENDAMIENTO DE CITAS */
+    .encabezado {
+      width: 100%;
+    background: linear-gradient(to bottom, #eee, #ccc);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: absolute;
+    top: 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .nom_emp {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+    .logo img {
+      height: 75px;
+    }
+
+    .volver {
+        font-weight: bold;
+        color: black;
+        font-size: large;
+        text-decoration: none;
+        border: 1px solid #aaa;
+        padding: 6px 14px;
+        border-radius: 8px;
+        background-color: #fff;
+    }
+
+    .volver:hover{
+        color: red;
+    }
+
+
+    /* PARTE DEL BODY FORMULARIO DE CITAS */
+
+    .fondo-cita {
+      min-height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    .formulario-cita {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(60px);
+      padding: 50px;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+
+    .formulario-cita h2 {
+      color: white;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 3px black;
+    }
+
+    .formulario-cita label {
+      display: block;
+      margin-bottom: 8px;
+      
+      color: #ffffff;
+    }
+
+    .formulario-cita input,
+    .formulario-cita select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      background: transparent;
+      border: 1px solid #ccc;
+      color: white;
+      border-radius: 6px;
+      outline: none;
+    }
+
+    .formulario-cita input::placeholder {
+      color: #ccc;
+    }
+
+    .formulario-cita button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      background: linear-gradient(to bottom, #eee, #ccc);
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+
+    /* PARTE DE PIE DE PAGINA AGENDAMIENTO DE CITAS */
+
+    footer {
+  position: absolute;
+  padding: 10px ;
+  bottom: 10px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 12px;
+}
+
+footer img {
+  height: 54px;
+}
+
+    /* PARTE DE VISUALIZACIÒN DE DISPOSITIVOS MOVILES */
+
+    @media (max-width: 768px) {
+      .formulario-cita {
+        padding: 30px 20px;
+        width: 90%;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+      }
+    }

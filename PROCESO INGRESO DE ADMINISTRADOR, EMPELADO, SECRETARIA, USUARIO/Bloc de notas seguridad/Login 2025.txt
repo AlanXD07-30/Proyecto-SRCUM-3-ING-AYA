@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Iniciar Sesión - Ing Aya</title>
+  <style>
+    body {
+      background-image: url(mansion.jpg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .formulario {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .formulario h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .formulario input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .formulario button {
+      width: 100%;
+      padding: 10px;
+      background-color: #0890eb;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .formulario button:hover {
+      background-color: #0073c2;
+    }
+
+    .formulario .registro {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .formulario .registro a {
+      color: #797979;
+      text-decoration: none;
+    }
+
+    .formulario .registro a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="formulario">
+    <h2>Iniciar Sesión</h2>
+    <input type="text" id="usuario" placeholder="Usuario" required>
+    <input type="password" id="contraseña" placeholder="Contraseña" required>
+    <button onclick="iniciarSesion()">Ingresar</button>
+    <div class="registro">
+      <p>¿No tienes cuenta? <a href="registro.html">Regístrate</a></p>
+    </div>
+  </div>
+
+  <script>
+    function iniciarSesion() {
+      const usuario = document.getElementById("usuario").value.trim().toLowerCase();
+      const contraseña = document.getElementById("contraseña").value;
+
+      // Accesos simulados
+      const usuarios = {
+        'admin': { pass: '12345', rol: 'panel administrador.html' },
+        'empleado': { pass: '1234', rol: 'empleado.html' },
+        'secretaria': { pass: '123', rol: 'secretaria.html' }
+      };
+
+      if (usuarios[usuario] && usuarios[usuario].pass === contraseña) {
+        window.open(usuarios[usuario].rol, '_blank'); // Abre en nueva pestaña
+      } else {
+        alert("Credenciales incorrectas. Intenta nuevamente.");
+      }
+    }
+  </script>
+
+</body>
+</html>

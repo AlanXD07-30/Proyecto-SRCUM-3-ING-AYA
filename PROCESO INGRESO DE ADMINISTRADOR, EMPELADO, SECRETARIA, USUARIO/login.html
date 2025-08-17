@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iniciar Sesión - Ing Aya</title>
+  <link rel="stylesheet" href="login.css">
+ 
+</head>
+<body>
+   <header class="header-login">
+    <a href="#" class="logo-head">
+      <img src="../logo_INGAYA_gris-sin fondo.png" alt="Logo ING AYA">
+      <h2 class="nom_emp">ING AYA</h2>
+    </a>
+    <a href="../PAGINA PRINCIPAL INMUEBLES ING AYA/Index.html" class="volver-inicio">VOLVER A INICIO</a>
+  </header>
+
+ <main class="login-container">
+    <form class="form-login">
+      <h2>INICIO DE SESIÓN</h2>
+      <input type="text" id="usuario" placeholder="Nombre de usuario" required />
+      <input type="password" id="contraseña" placeholder="Contraseña" required />
+      <button onclick="iniciarSesion()">INICIAR SESIÓN</button>
+      <div class="registro">
+        <br>
+      <p>¿No tienes cuenta? <a href="../REGISTRO USUARIO/registro.html">Regístrate</a></p>
+      <p>¿Has Olvidado tu contraseña? <a href="../RECUPERAR CONTRASEÑA/Rec.html">Recuperala</a></p>
+      </div>
+    </form>
+  </main>
+
+
+
+  
+ <footer class="footer-login">
+    <img src="../logo_INGAYA_gris-sin fondo.png " alt="Logo pequeño">
+    <p>Todos los derechos reservados</p>
+  </footer>
+
+  
+
+</body>
+
+<script>
+    function iniciarSesion() {
+      const usuario = document.getElementById("usuario").value.trim().toLowerCase();
+      const contraseña = document.getElementById("contraseña").value;
+
+      // Accesos simulados
+      const usuarios = {
+        'admin': { pass: '12345', rol: 'panel administrador.html' },
+        'empleado': { pass: '1234', rol: 'panel empleado.html' },
+        'secretaria': { pass: '123', rol: 'panel secretaria.html'},
+        'usuario':{ pass: '123456',rol: '../INTERFAZ DE PERFIL DE USUARIO/perfil_usuario_sidebar_integrado.html'}
+      };
+
+      if (usuarios[usuario] && usuarios[usuario].pass === contraseña) {
+        window.open(usuarios[usuario].rol, '_blank'); // Abre en nueva pestaña
+      } else {
+        alert("Credenciales incorrectas. Intenta nuevamente.");
+      }
+    }
+  </script>
+</html>

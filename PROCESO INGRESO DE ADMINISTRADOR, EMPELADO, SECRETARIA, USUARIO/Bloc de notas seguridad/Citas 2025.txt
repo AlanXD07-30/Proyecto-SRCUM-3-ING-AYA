@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agendar Cita</title>
+  <link rel="stylesheet" href="ingaya.css" />
+  <style>
+    body {
+      background-image: url(mansion.jpg);
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: var(--primary-color, #a8a3a3);
+      padding: 20px;
+      text-align: center;
+      color: var(--text-primary, #000000);
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .formulario-cita {
+      background-color: rgba(255, 255, 255, 0.92); /* blanco con transparencia */
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 500px;
+      backdrop-filter: blur(4px); /* efecto moderno */
+    }
+
+    .formulario-cita h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: var(--text-secondary, #000000);
+    }
+
+    .formulario-cita label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    .formulario-cita input,
+    .formulario-cita select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .formulario-cita button,
+    .volver-btn {
+      width: 100%;
+      background-color: var(--primary-color, #a8a3a3);
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .formulario-cita button:hover,
+    .volver-btn:hover {
+      background-color: var(--secondary-color, #808080);
+    }
+
+    .mensaje-exito {
+      display: none;
+      margin-top: 15px;
+      padding: 12px;
+      background-color: #d4edda;
+      color: #2d5731;
+      border: 1px solid #c3e6cb;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .volver-btn {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>Agendar Cita</header>
+  <main>
+    <div class="formulario-cita">
+      <h2>Formulario de Citas</h2>
+      <form id="citaForm">
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required />
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora" required />
+
+        <label for="empleado">Empleado que lo atenderá:</label>
+        <select id="empleado" name="empleado" required>
+          <option value="">-- Seleccione un empleado --</option>
+          <option value="Carolina">Carolina</option>
+          <option value="Esteban">Esteban</option>
+          <option value="Laura">Laura</option>
+        </select>
+
+        <button type="submit">Agendar Cita</button>
+
+        <div id="mensajeExito" class="mensaje-exito">
+          ✅ ¡Su cita ha sido agendada exitosamente!
+        </div>
+
+        <a href="Pagina ing aya 2025.html" class="volver-btn" id="volverBtn">← Volver al inicio</a>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById("citaForm");
+    const mensaje = document.getElementById("mensajeExito");
+    const volverBtn = document.getElementById("volverBtn");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      mensaje.style.display = "block";
+      volverBtn.style.display = "inline-block";
+      form.reset();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Citas - Ing Aya</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 40px;
+      color: #00204a;
+    }
+
+    h1 {
+      color: #005792;
+      margin-bottom: 20px;
+    }
+
+    .nuevo {
+      margin-bottom: 20px;
+    }
+
+    .nuevo button {
+      background-color: #005792;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .nuevo button:hover {
+      background-color: #003c66;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #005792;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    .acciones button {
+      background-color: #008891;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      margin: 2px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .acciones button:hover {
+      background-color: #006d6d;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📅 Gestión de Citas</h1>
+
+  <div class="nuevo">
+    <button onclick="alert('Formulario para registrar nueva cita')">➕ Nueva Cita</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Cliente</th>
+        <th>Inmueble</th>
+        <th>Fecha</th>
+        <th>Hora</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>C001</td>
+        <td>María Rojas</td>
+        <td>Casa Kennedy</td>
+        <td>2025-06-21</td>
+        <td>10:00 AM</td>
+        <td>Agendada</td>
+        <td class="acciones">
+          <button>✏️ Editar</button>
+          <button>🗑️ Cancelar</button>
+        </td>
+      </tr>
+      <tr>
+        <td>C002</td>
+        <td>Pedro López</td>
+        <td>Apto Suba</td>
+        <td>2025-06-22</td>
+        <td>2:30 PM</td>
+        <td>Confirmada</td>
+        <td class="acciones">
+          <button>✏️ Editar</button>
+          <button>🗑️ Cancelar</button>
+        </td>
+      </tr>
+      <tr>
+        <td>C003</td>
+        <td>Luisa Méndez</td>
+        <td>Casa Zona Norte</td>
+        <td>2025-06-23</td>
+        <td>9:00 AM</td>
+        <td>Cancelada</td>
+        <td class="acciones">
+          <button>✏️ Editar</button>
+          <button>🗑️ Cancelar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

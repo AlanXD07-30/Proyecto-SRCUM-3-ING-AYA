@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+        background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+                url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg') no-repeat center center / cover;
+
+    position: relative;
+}
+
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.15);
+    z-index: -1;
+}
+
+/* PARTE DE ENCABEZADO DEL LOGIN  */
+
+.header-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: linear-gradient(to bottom, #eee, #ccc);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.logo-head {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.logo-head img {
+    height: 70px;
+    margin-right: 10px;
+}
+
+.nom_emp {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.volver-inicio {
+    font-weight: bold;
+    color: black;
+    font-size: large;
+    text-decoration: none;
+    border: 1px solid #aaa;
+    padding: 6px 14px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+ 
+header a:hover{
+    color: red;
+}
+
+/* PARTE PRINCIPAL DEL LOGIN FORMULARIO */
+
+.login-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.form-login {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(60px);
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    text-align: center;
+    color: white;
+    max-width: 500px;
+    width: 100%;
+}
+
+.form-login h2 {
+    margin-bottom: 20px;
+}
+
+.form-login input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+}
+
+.form-login input::placeholder {
+    color: #ccc;
+}
+
+.form-login button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    font-weight: bold;
+    background: linear-gradient(to right, #fff, #ccc);
+    color: black;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+    transition: background 0.3s;
+}
+
+.form-login button:hover {
+   color: red;
+}
+
+.login-container a{
+    text-decoration: none;
+    color:black;
+}
+
+/* PARTE INFERIOR PIE DE PAGINA LOGIN */
+.footer-login {
+    text-align: left;
+    padding: 10px 30px;
+    color: white;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-login img {
+    height: 54px;
+}
+
+/* RESPONSIVE DISPOSITIVOS MOVILES */
+@media screen and (max-width: 768px) {
+    .form-login {
+        padding: 30px 20px;
+        border-radius: 12px;
+    }
+
+    .header-login {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .volver-inicio {
+        align-self: flex-end;
+    }
+
+    .footer-login {
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+    }
+}

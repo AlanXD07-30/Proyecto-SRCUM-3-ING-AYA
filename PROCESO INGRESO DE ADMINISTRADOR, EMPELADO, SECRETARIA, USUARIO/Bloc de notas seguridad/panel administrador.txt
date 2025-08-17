@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de Administrador - Ing Aya</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 40px;
+      color: #00204a;
+    }
+
+    h1 {
+      color: #005792;
+      margin-bottom: 20px;
+    }
+
+    .rol {
+      background-color: #dbeeff;
+      padding: 20px;
+      border-left: 6px solid #005792;
+      border-radius: 6px;
+      margin-bottom: 30px;
+    }
+
+    .botones {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .boton {
+      background-color: #005792;
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .boton:hover {
+      background-color: #003c66;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bienvenido, Administrador</h1>
+  <div class="rol">
+    <p>Tienes acceso total para gestionar todo el sistema.</p>
+  </div>
+
+  <div class="botones">
+    <a href="gestion usuarios.html" class="boton">👤 Gestión de Usuarios</a>
+    <a href="gestion inmuebles.html" class="boton">🏠 Gestión de Inmuebles</a>
+    <a href="gestion citas.html" class="boton">📅 Gestión de Citas</a>
+    <a href="gestion reportes.html" class="boton">📊 Ver Reportes</a>
+    <a href="configuracion.html" class="boton">⚙️ Configuración</a>
+  </div>
+</body>
+</html>

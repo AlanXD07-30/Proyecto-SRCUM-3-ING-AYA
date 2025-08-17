@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inmuebles - ING AYA</title>
+  <link rel="stylesheet" href="inmuebles.css">
+</head>
+<body>
+
+  <header class="encabezado">
+    <a href="#" class="logo">
+      <img src="../logo_INGAYA_gris-sin fondo.png" alt="Logo ING AYA">
+      <h2 class="nom_emp">ING AYA</h2>
+    </a>
+    <nav>
+      
+      <a href="../REGISTRO USUARIO/" class="boton-1">REGISTRARSE</a>
+      <a href="../INICIO DE SESIÓN/login.html" class="boton-2">INGRESAR</a>
+      <a href="../PAGINA PRINCIPAL INMUEBLES ING AYA/Index.html" class="volver">VOLVER A INICIO</a>
+
+    </nav>
+  </header>
+
+  <section class="contenedor-inmuebles">
+    <h2>INMUEBLES</h2>
+
+    <div class="filtros">
+
+      <select>
+        <option>Ubicación</option>
+        <option>Bogotá</option>
+        <option>Medellín</option>
+        <option>Cali</option>
+      </select>
+
+      <select>
+        <option>Tipo</option>
+        <option>Apartamento</option>
+        <option>Casa</option>
+        <option>Finca</option>
+      </select>
+    </div>
+
+    <div class="grid-inmuebles">
+      <!-- Inmueble 1 -->
+      <div class="card-inmueble">
+        <img src="https://img.freepik.com/foto-gratis/casa-aislada-campo_1303-23773.jpg?semt=ais_items_boosted&w=740" alt="Inmueble Kennedy">
+        <div class="estrella" onclick="agregarFavorito(this)"></div>
+        <h3>🏠 Inmueble en venta – Kennedy, Bogotá</h3>
+        <p>
+          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
+        </p>
+        <span class="precio">Precio: $280.000.000 COP</span>
+      </div>
+
+      <!-- Inmueble 2 -->
+      <div class="card-inmueble">
+        <img src="https://plus.unsplash.com/premium_photo-1661915661139-5b6a4e4a6fcc?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2FzYSUyMG1vZGVybmF8ZW58MHx8MHx8fDA%3D" alt="Inmueble Suba">
+        <div class="estrella" onclick="agregarFavorito(this)"></div>
+        <h3>🏠 Inmueble en venta – Suba, Bogotá</h3>
+        <p>
+          Casa de 3 pisos con 5 alcobas, 3 baños, cocina integral, parqueadero y jardín. Perfecta para familias numerosas o inversión en arriendo.
+        </p>
+        <span class="precio">Precio: $320.000.000 COP</span>
+      </div>
+
+      <!-- Inmueble 3 -->
+      <div class="card-inmueble">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNQrCl--jzaN2LW0IFypUo7-qeiKMHmK_kRA&s" alt="Inmueble Engativá">
+        <div class="estrella" onclick="agregarFavorito(this)"></div>
+        <h3>🏠 Inmueble en venta – Engativá, Bogotá</h3>
+        <p>
+          Apartamento de 2 alcobas, 1 baño, sala-comedor, balcón y cocina americana. Ideal para parejas jóvenes. 60 metros cuadrados.
+        </p>
+        <span class="precio">Precio: $180.000.000 COP</span>
+      </div>
+    </div>
+
+    <div class="mensaje-info" id="mensaje-favorito">
+      Se necesita iniciar sesión para poder agregar inmuebles a favoritos en el historial de lista de deseos del usuario.
+    </div>
+  </section>
+
+<script>
+  // Simula si el usuario está logueado o no
+  const usuarioLogueado = false;
+
+  function agregarFavorito(elem) {
+    if (!usuarioLogueado) {
+      const mensaje = document.getElementById('mensaje-favorito');
+      mensaje.style.display = 'block';
+      setTimeout(() => mensaje.style.display = 'none', 4000);
+    } else {
+      elem.classList.toggle('activo');
+    }
+  }
+</script>
+
+</body>
+</html>

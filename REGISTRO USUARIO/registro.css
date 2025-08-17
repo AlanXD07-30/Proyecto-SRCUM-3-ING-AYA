@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.fondo {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+              url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.encabezado {
+    width: 100%;
+    background: linear-gradient(to bottom, #eee, #ccc);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: absolute;
+    top: 0;
+}
+
+header a:hover{
+    color: red;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.logo img {
+  height: 70px;
+  margin-right: 10px;
+}
+
+.nom_emp {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.volver {
+    font-weight: bold;
+    color: black;
+    font-size: large;
+    text-decoration: none;
+    border: 1px solid #aaa;
+    padding: 6px 14px;
+    border-radius: 8px;
+    background-color: #fff;
+ 
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(60px);
+  padding: 50px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.form-container h2 {
+  color: white;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 3px black;
+}
+
+form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background: transparent;
+  border: 1px solid #ccc;
+  color: white;
+  border-radius: 6px;
+  outline: none;
+}
+
+form input::placeholder {
+  color: #ccc;
+}
+
+form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: linear-gradient(to bottom, #eee, #ccc);
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+form button:hover{
+    color: red;
+}
+
+footer {
+  position: absolute;
+  padding: 10px ;
+  bottom: 10px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 12px;
+}
+
+footer img {
+  height: 54px;
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    width: 90%;
+  }
+
+  .encabezado {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .volver {
+    margin-top: 10px;
+  }
+
+  footer {
+    left: 10px;
+    bottom: 5px;
+    font-size: 10px;
+  }
+}

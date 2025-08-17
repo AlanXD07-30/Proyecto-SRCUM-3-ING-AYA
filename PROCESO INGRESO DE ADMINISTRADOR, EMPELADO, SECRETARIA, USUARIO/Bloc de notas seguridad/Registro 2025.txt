@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro - Ing Aya</title>
+  <link rel="stylesheet" href="ingaya.css" />
+  <style>
+    body {
+      background-image: url(mansion.jpg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .formulario {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .formulario h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .formulario input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .formulario button {
+      width: 100%;
+      padding: 10px;
+      background-color: #797979;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .formulario button:hover {
+      background-color: #5e5e5e;
+    }
+
+    .formulario .registro {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .formulario .registro a {
+      color: #797979;
+      text-decoration: none;
+    }
+
+    .formulario .registro a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="formulario">
+    <h2>Crear Cuenta</h2>
+    <form onsubmit="redirigirAlInicio(event)">
+      <input type="text" placeholder="Nombre completo" required />
+      <input type="email" placeholder="Correo electrónico" required />
+      <input type="text" placeholder="Nombre de usuario" required />
+      <input type="password" placeholder="Contraseña" required />
+      <input type="password" placeholder="Confirmar contraseña" required />
+      <a href="Pagina%20ing%20aya%202025.html" class="boton">Registrarse</a>
+
+    </form>
+    <div class="registro">
+      <p>¿Ya tienes cuenta? <a href="login.html">Iniciar sesión</a></p>
+    </div>
+  </div>
+
+  <script>
+    function redirigirAlInicio(e) {
+      e.preventDefault(); // Detiene el envío real del formulario
+      window.location.href = ""; // Cambia por el nombre real de tu archivo principal si no es index
+    }
+  </script>
+</body>
+</html>

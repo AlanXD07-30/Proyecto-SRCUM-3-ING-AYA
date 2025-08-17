@@ -1,0 +1,86 @@
+/* Fondo general */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-image: url('fondo gris pro.png'); /* revisa si el nombre del archivo tiene espacios reales */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #000000; /* Todo el texto en negro */
+}
+
+/* Encabezado */
+header {
+  background-color: #a8a3a3;
+  color: black;
+  padding: 30px;
+  text-align: center;
+}
+
+header .logo {
+  height: 150px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+header .lema {
+  font-style: italic;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+nav a {
+  color: black;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Secciones principales */
+main {
+  padding: 40px 20px;
+}
+
+section {
+  background-color: rgba(225, 225, 225, 0.85);
+  border: 1px solid #615e5e;
+  padding: 30px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  color: #000000; /* Color negro para todo el texto dentro de section */
+}
+
+/* Tarjetas de inmuebles */
+.tarjeta-inmueble {
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid #000000;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  color: #000000; /* Asegura texto negro */
+}
+
+/* Botón */
+button {
+  background-color: #0890eb;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #000000;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #a8a3a3;
+  color: #000000;
+  margin-top: 40px;
+}

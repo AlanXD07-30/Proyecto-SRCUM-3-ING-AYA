@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de Empleado - Ing Aya</title>
+  <style>
+    body {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      background-color: #000000;
+      padding: 40px;
+      color: #000000;
+      margin: 0;
+    }
+
+    h1 {
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .rol {
+      background-color: #454545;
+      padding: 20px;
+      border-left: 6px solid #7a7a7a;
+      border-radius: 6px;
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    .botones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .boton {
+      background-color: #454545;
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      flex: 1 1 200px;
+      transition: background-color 0.3s ease;
+    }
+
+    .boton:hover {
+      background-color: rgb(170, 48, 48);
+    }
+  </style>
+</head>
+<body>
+  <h1>Bienvenido, Empleado</h1>
+  <div class="rol">
+    <p>Puedes consultar, registrar y modificar información relevante del sistema.</p>
+  </div>
+
+  <div class="botones">
+    <a href="gestion usuarios.html" class="boton">👥 Consultar Clientes</a>
+    <a href="gestion inmuebles.html" class="boton">🏗️ Registrar Inmueble</a>
+    <a href="configuracion.html" class="boton">✏️ Modificar Información</a>
+  </div>
+</body>
+</html>

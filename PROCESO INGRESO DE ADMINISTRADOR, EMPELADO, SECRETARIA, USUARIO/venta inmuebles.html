@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inmuebles Ing Aya</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    header {
+      background-color: #002fff;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-bottom: 2px solid black;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+      border: 2px solid black;
+      background-color: #ffffff;
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+
+    section h2 {
+      color: #002fff;
+      font-size: 2.2em;
+      margin-bottom: 15px;
+    }
+
+    .inmuebles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .inmueble {
+      background: #f9f9f9;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    .inmueble:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .inmueble img {
+      width: 100%;
+      max-width: 240px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .inmueble h3 {
+      margin: 10px 0;
+      color: #002fff;
+    }
+
+    .inmueble p {
+      font-size: 1em;
+      margin-bottom: 10px;
+    }
+
+    .inmueble a {
+      display: inline-block;
+      background-color: #002fff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .inmueble a:hover {
+      background-color: #001bc4;
+    }
+
+    footer {
+      background-color: #002fff;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.95em;
+      border-top: 2px solid black;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Inmuebles Ing Aya</h1>
+    <p>Tu hogar ideal, con confianza y respaldo</p>
+  </header>
+
+  <section id="inmuebles">
+    <h2>Inmuebles Destacados</h2>
+    <div class="inmuebles-grid">
+
+      <div class="inmueble">
+        <img src="inmueble 1.jpg" alt="Casa en Kennedy">
+        <h3>Kennedy, Bogotá</h3>
+        <p>Casa de 3 pisos, 135 m², 4 alcobas, 2 baños, patio y cocina independiente.</p>
+        <p><strong>$280.000.000 COP</strong></p>
+        <a href="citas.html">Agendar cita</a>
+      </div>
+
+      <div class="inmueble">
+        <img src="inmueble 2.jpg" alt="Casa en Suba">
+        <h3>Suba, Bogotá</h3>
+        <p>Casa de 3 pisos, 150 m², 5 alcobas, balcón y parqueadero privado.</p>
+        <p><strong>$320.000.000 COP</strong></p>
+        <a href="citas.html">Agendar cita</a>
+      </div>
+
+      <div class="inmueble">
+        <img src="inmueble 3.jpg" alt="Casa en Suba">
+        <h3>Suba, Bogotá</h3>
+        <p>Casa de 3 pisos, 150 m², 5 alcobas, balcón y parqueadero privado.</p>
+        <p><strong>$320.000.000 COP</strong></p>
+        <a href="citas.html">Agendar cita</a>
+      </div>
+
+      <div class="inmueble">
+        <img src="inmueble 4.jpg" alt="Casa en Zona Norte">
+        <h3>Zona Norte, Bogotá</h3>
+        <p>Casa de lujo, 180 m², 3 alcobas, 4 baños y terraza privada.</p>
+        <p><strong>$950.000.000 COP</strong></p>
+        <a href="citas.html">Agendar cita</a>
+      </div>
+
+      <div class="inmueble">
+        <img src="inmueble 5.jpg" alt="Casa en Zona Norte">
+        <h3>Zona Norte, Bogotá</h3>
+        <p>Casa de lujo, 180 m², 3 alcobas, 4 baños y terraza privada.</p>
+        <p><strong>$950.000.000 COP</strong></p>
+        <a href="citas.html">Agendar cita</a>
+      </div>
+
+      <div class="inmueble">
+        <img src="inmueble 6.jpg" alt="Casa en Zona Norte">
+        <h3>Zona Norte, Bogotá</h3>
+        <p>Casa de lujo, 180 m², 3 alcobas, 4 baños y terraza privada.</p>
+        <p><strong>$950.000.000 COP</strong></p>
+        <a href="citas.html">Agendar cita</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Ing Aya - Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>

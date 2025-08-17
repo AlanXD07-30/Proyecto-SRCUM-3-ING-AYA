@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de Empleado - Ing Aya</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      padding: 40px;
+      color: #00204a;
+      margin: 0;
+    }
+
+    h1 {
+      color: #008891;
+      margin-bottom: 20px;
+    }
+
+    .rol {
+      background-color: #e3f9f3;
+      padding: 20px;
+      border-left: 6px solid #008891;
+      border-radius: 6px;
+      margin-bottom: 30px;
+    }
+
+    .botones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .boton {
+      background-color: #008891;
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      flex: 1 1 200px;
+      transition: background-color 0.3s ease;
+    }
+
+    .boton:hover {
+      background-color: #006d6d;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bienvenido, Empleado</h1>
+  <div class="rol">
+    <p>Puedes consultar, registrar y modificar información relevante del sistema.</p>
+  </div>
+
+  <div class="botones">
+    <a href="clientes.html" class="boton">👥 Consultar Clientes</a>
+    <a href="nuevainmueble.html" class="boton">🏗️ Registrar Inmueble</a>
+    <a href="editar.html" class="boton">✏️ Modificar Información</a>
+    <a href="citas.html" class="boton">📅 Ver Citas</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reportes - Ing Aya</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 40px;
+      color: #00204a;
+    }
+
+    h1 {
+      color: #005792;
+      margin-bottom: 20px;
+    }
+
+    .reporte {
+      margin-bottom: 40px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    canvas {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📊 Reportes Generales</h1>
+
+  <!-- Gráfico de barras - Inmuebles por zona -->
+  <div class="reporte">
+    <h2>Inmuebles por Zona</h2>
+    <canvas id="inmueblesZona"></canvas>
+  </div>
+
+  <!-- Gráfico de pastel - Estado de las Citas -->
+  <div class="reporte">
+    <h2>Estado de Citas</h2>
+    <canvas id="estadoCitas"></canvas>
+  </div>
+
+  <!-- Gráfico de líneas - Ventas Mensuales -->
+  <div class="reporte">
+    <h2>Ventas por Mes</h2>
+    <canvas id="ventasMensuales"></canvas>
+  </div>
+
+  <script>
+    // Gráfico de Inmuebles por Zona
+    new Chart(document.getElementById('inmueblesZona'), {
+      type: 'bar',
+      data: {
+        labels: ['Kennedy', 'Suba', 'Zona Norte', 'Chapinero', 'Usaquén'],
+        datasets: [{
+          label: 'Cantidad de Inmuebles',
+          data: [12, 9, 5, 7, 3],
+          backgroundColor: '#005792'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+
+    // Gráfico de Estado de Citas
+    new Chart(document.getElementById('estadoCitas'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Agendadas', 'Confirmadas', 'Canceladas'],
+        datasets: [{
+          label: 'Citas',
+          data: [8, 5, 2],
+          backgroundColor: ['#f8cb2e', '#00c897', '#e74c3c']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+
+    // Gráfico de Ventas por Mes
+    new Chart(document.getElementById('ventasMensuales'), {
+      type: 'line',
+      data: {
+        labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Ventas (millones)',
+          data: [25, 32, 40, 28, 50, 60],
+          fill: false,
+          borderColor: '#008891',
+          tension: 0.4
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Configuración - Ing Aya</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 40px;
+      color: #00204a;
+    }
+
+    h1 {
+      color: #005792;
+      margin-bottom: 20px;
+    }
+
+    .config-box {
+      background: white;
+      padding: 25px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .config-box h2 {
+      color: #008891;
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 5px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    button {
+      margin-top: 20px;
+      background-color: #005792;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #004372;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>⚙️ Configuración del Sistema</h1>
+
+  <!-- Cambiar contraseña -->
+  <div class="config-box">
+    <h2>🔒 Cambiar Contraseña</h2>
+    <label for="actual">Contraseña actual:</label>
+    <input type="password" id="actual" placeholder="•••••••">
+
+    <label for="nueva">Nueva contraseña:</label>
+    <input type="password" id="nueva" placeholder="•••••••">
+
+    <label for="confirmar">Confirmar nueva contraseña:</label>
+    <input type="password" id="confirmar" placeholder="•••••••">
+
+    <button onclick="alert('Contraseña actualizada exitosamente.')">Guardar cambios</button>
+  </div>
+
+  <!-- Datos del usuario -->
+  <div class="config-box">
+    <h2>👤 Datos del Usuario</h2>
+    <label for="nombre">Nombre completo:</label>
+    <input type="text" id="nombre" value="Juan Pérez">
+
+    <label for="correo">Correo electrónico:</label>
+    <input type="email" id="correo" value="juan@ingaya.com">
+
+    <label for="telefono">Teléfono:</label>
+    <input type="tel" id="telefono" value="3101234567">
+
+    <button onclick="alert('Datos actualizados correctamente.')">Actualizar perfil</button>
+  </div>
+
+  <!-- Parámetros del sistema -->
+  <div class="config-box">
+    <h2>⚙️ Parámetros del Sistema</h2>
+    <label for="zona-horaria">Zona horaria:</label>
+    <select id="zona-horaria">
+      <option value="america-bogota">América/Bogotá</option>
+      <option value="america-caracas">América/Caracas</option>
+      <option value="america-mexico_city">América/México</option>
+    </select>
+
+    <label for="modo">Modo del sistema:</label>
+    <select id="modo">
+      <option value="normal">Normal</option>
+      <option value="mantenimiento">Mantenimiento</option>
+    </select>
+
+    <button onclick="alert('Configuración guardada.')">Guardar configuración</button>
+  </div>
+
+</body>
+</html>

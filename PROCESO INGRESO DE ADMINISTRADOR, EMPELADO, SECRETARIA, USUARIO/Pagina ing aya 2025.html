@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ing Aya | Inmobiliaria</title>
+  <link rel="stylesheet" href="ingaya.css">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    .container {
+      display: flex;
+    }
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: black;
+      color: white;
+      border: none;
+      font-size: 24px;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .sidebar {
+      width: 250px;
+      border-right: 2px solid black;
+    }
+    .main-content {
+      margin-left: 250px;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header.hero {
+      margin: 0;
+      padding: 30px;
+      background-color: #002fff;
+      color: white;
+      text-align: center;
+      border: 2px solid black;
+      box-sizing: border-box;
+    }
+    section {
+      background-color: #ffffff;
+      border: 2px solid black;
+      padding: 30px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    section#servicios h2,
+    section#nosotros h2,
+    section#contacto h2 {
+      color: #002fff;
+    }
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      background-color: #002fff;
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Botón de colapsar sidebar -->
+  <button id="toggleBtn" class="toggle-btn" aria-label="Expandir/Contraer menú">☰</button>
+
+  <div class="container">
+    <!-- Sidebar fijo -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2 class="logo">Ing Aya</h2>
+      </div>
+      <nav class="menu">
+        <a href="#inicio" class="menu-item"><span class="icon">🏠</span><span class="text">Inicio</span></a>
+        <a href="#servicios" class="menu-item"><span class="icon">📌</span><span class="text">Servicios</span></a>
+        <a href="venta inmuebles.html" class="menu-item"><span class="icon">🏙️</span><span class="text">Inmuebles</span></a>
+        <a href="#nosotros" class="menu-item"><span class="icon">👬</span><span class="text">Nosotros</span></a>
+        <a href="#contacto" class="menu-item"><span class="icon">📞</span><span class="text">Contacto</span></a>
+        <a href="gestion reportes.html" class="menu-item"><span class="icon">📊</span><span class="text">Reportes</span></a>
+        <a href="login.html" class="menu-item"><span class="icon">🔐</span><span class="text">Ingresar</span></a>
+      </nav>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+      <header class="hero" id="inicio">
+        <img src="logo_INGAYA_gris-sin fondo.png" alt="Logo Ing Aya" class="logo">
+        <h1>Bienvenido a Ing Aya</h1>
+        <p class="lema">Inmuebles y finca raíz para un buen futuro</p>
+      </header>
+
+      <section id="servicios">
+        <h2>Servicios</h2>
+        <div class="servicios-grid">
+          <div class="servicio">
+            <h3>Venta de Inmuebles</h3>
+            <p>Ofrecemos propiedades en Bogotá y alrededores con excelentes precios y ubicación.</p>
+          </div>
+          <div class="servicio">
+            <h3>Agendamiento de Citas</h3>
+            <p>Agenda una visita a tu próximo hogar con un clic y sin complicaciones.</p>
+          </div>
+          <div class="servicio">
+            <h3>Asesoría Personalizada</h3>
+            <p>Contamos con personal capacitado para ayudarte en cada etapa del proceso.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="inmuebles">
+        <h2>Inmuebles Destacados</h2>
+        <div class="inmuebles-grid">
+          <div class="tarjeta-inmueble">
+            <h3>🏠 Kennedy, Bogotá</h3>
+            <p>Casa de 135 m², 4 alcobas, 2 baños. Precio: $280.000.000</p>
+            <a href="inmueble1.html" class="btn">Ver más</a>
+          </div>
+          <div class="tarjeta-inmueble">
+            <h3>🏠 Suba, Bogotá</h3>
+            <p>Casa de 150 m², 5 alcobas, 3 baños. Precio: $320.000.000</p>
+            <a href="inmueble2.html" class="btn">Ver más</a>
+          </div>
+          <div class="tarjeta-inmueble">
+            <h3>🏠 Zona Norte</h3>
+            <p>Casa de lujo, 180 m², 3 alcobas, 4 baños. Precio: $950.000.000</p>
+            <a href="inmueble3.html" class="btn">Ver más</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="nosotros">
+        <h2>Nosotros</h2>
+        <p>Somos una empresa inmobiliaria comprometida con hacer realidad los sueños de nuestros clientes. Trabajamos con transparencia, confianza y atención personalizada.</p>
+      </section>
+
+      <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Correo: contacto@ingaya.com | Teléfono: (1) 234 5678</p>
+        <a href="citas.html" class="btn">Agendar Cita</a>
+      </section>
+
+      <footer>
+        <p>&copy; 2025 Ing Aya - Todos los derechos reservados</p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Script funcional del botón de colapso -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.getElementById('toggleBtn');
+      const sidebar = document.getElementById('sidebar');
+      toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('collapsed');
+      });
+    });
+  </script>
+</body>
+</html>

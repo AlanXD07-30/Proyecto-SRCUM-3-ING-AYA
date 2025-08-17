@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perfil de Usuario</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="Perfil.css">
+    
+  
+</head>
+<body>
+
+   <header class="encabezado">
+    <a href="#" class="logo">
+      <img src="../logo_INGAYA_gris-sin fondo.png" alt="Logo ING AYA">
+      <h2 class="nom_emp">ING AYA</h2>
+    </a>
+    <a href="../PAGINA PRINCIPAL INMUEBLES ING AYA/Index.html" class="volver">VOLVER A INICIO</a>
+  </header>
+  <br>
+  <br>
+
+  <div class="toggle-btn" id="toggle-btn">
+  <i class="fas fa-bars"></i>
+</div>
+
+<div class="sidebar" id="sidebar">
+  <ul>
+    <li><a href="#" onclick="mostrarFavoritos()"><i class="fas fa-star"></i> Historial de inmuebles favoritos</a></li>
+    <li><a href="#"><i class="fas fa-user-edit"></i> Actualizar datos</a></li>
+    <li><a href="../PAGINA PRINCIPAL INMUEBLES ING AYA/Index.html"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+    <li><a href="../AGENDAMIENTO DE CITAS/citas.html"><i class="fas fa-book"></i>Agendar cita</a></li>
+  </ul>
+</div>
+
+
+ 
+
+  <section class="perfil-fondo">
+    <div class="perfil-container">
+
+      <div class="perfil-usuario">
+        <img src="https://miro.medium.com/v2/resize:fit:511/1*uRt6S2FWwUU7OITUlCOPEw.png" alt="Foto de perfil" class="foto-perfil">
+        <h3>Gustavo Adrian Cerati</h3>
+      </div>
+
+      <table class="tabla-inmuebles" id="tabla-favoritos">
+        <thead>
+          <tr>
+            <th>Ubicación y puntuación</th>
+            <th>Características</th>
+            <th>Visualización del inmueble</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bogotá - Suba<br>⭐️⭐️⭐️⭐️</td>
+            <td>Casa 3 pisos, 5 alcobas, jardín, 3 baños</td>
+            <td><img src="https://i.ytimg.com/vi/ZvMZq4sTy4I/maxresdefault.jpg" alt="Inmueble" class="miniatura"></td>
+          </tr>
+          <tr>
+            <td>Medellín - Poblado<br>⭐️⭐️⭐️⭐️⭐️</td>
+            <td>Apartamento moderno, 2 baños, 2 alcobas</td>
+            <td><img src="https://cdn.pixabay.com/video/2021/10/14/92009-636709315_tiny.jpg" alt="Inmueble" class="miniatura"></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </section>
+
+  <footer>
+    <img src="logo_INGAYA_gris-sin fondo.png" alt="Logo">
+    <p>Todos los derechos<br>reservados</p>
+  </footer>
+
+ <script src="Perfil.js"></script>
+
+</body>
+</html>

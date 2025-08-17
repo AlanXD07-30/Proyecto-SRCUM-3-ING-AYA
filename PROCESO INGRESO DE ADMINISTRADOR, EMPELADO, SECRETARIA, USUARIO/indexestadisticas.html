@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Ing Aya</title>
+  <link rel="stylesheet" href="visualizacion estadisticas.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="logo">
+      <i class="fas fa-building"></i>
+      <span>Ing Aya</span>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li class="active"><i class="fas fa-home"></i><span>Inicio</span></li>
+        <li><i class="fas fa-chart-pie"></i><span>Estadísticas</span></li>
+        <li><i class="fas fa-tools"></i><span>Configuración</span></li>
+        <li><i class="fas fa-user-circle"></i><span>Perfil</span></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="main-header">
+      <h1>Panel de Control - Ing Aya</h1>
+      <div class="user-section">
+        <div class="search-box">
+          <input type="text" placeholder="Buscar...">
+          <i class="fas fa-search"></i>
+        </div>
+        <div class="user-info">
+          <img src="https://via.placeholder.com/40" alt="Usuario">
+          <span>Admin</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="overview">
+      <div class="card">
+        <div class="icon"><i class="fas fa-home"></i></div>
+        <div>
+          <h3>85</h3>
+          <p>Inmuebles Publicados</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="icon"><i class="fas fa-user-plus"></i></div>
+        <div>
+          <h3>27</h3>
+          <p>Clientes Nuevos</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="icon"><i class="fas fa-search"></i></div>
+        <div>
+          <h3>102</h3>
+          <p>Consultas Realizadas</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="charts">
+      <div class="chart-box">
+        <h2>Publicaciones Mensuales</h2>
+        <canvas id="salesChart"></canvas>
+      </div>
+      <div class="chart-box">
+        <h2>Tipos de Usuarios</h2>
+        <canvas id="usersChart"></canvas>
+      </div>
+      <div class="chart-box full">
+        <h2>Tendencias de Visitas</h2>
+        <canvas id="trendsChart"></canvas>
+      </div>
+    </section>
+  </div>
+
+  <script src="java estadisticas.js"></script>
+</body>
+</html>

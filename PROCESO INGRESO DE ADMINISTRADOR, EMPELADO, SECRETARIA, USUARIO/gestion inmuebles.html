@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Inmuebles - Ing Aya</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+                url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg') no-repeat center center / cover;
+      margin: 0;
+      padding: 40px;
+      color: #00204a;
+    }
+
+    h1 {
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .nuevo {
+      margin-bottom: 20px;
+    }
+
+    .nuevo button {
+      background-color: #005792;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .nuevo button:hover {
+      background-color: #003c66;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #005792;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    .acciones button {
+      background-color: #008891;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      margin: 2px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .acciones button:hover {
+      background-color: #006d6d;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🏠 Gestión de Inmuebles</h1>
+
+  <div class="nuevo">
+    <button onclick="alert('Formulario para registrar nuevo inmueble')">➕ Nuevo Inmueble</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Ubicación</th>
+        <th>Área</th>
+        <th>Precio</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>101</td>
+        <td>Kennedy, Bogotá</td>
+        <td>135 m²</td>
+        <td>$280.000.000</td>
+        <td>Disponible</td>
+        <td class="acciones">
+          <button>✏️ Editar</button>
+          <button>🗑️ Eliminar</button>
+        </td>
+      </tr>
+      <tr>
+        <td>102</td>
+        <td>Suba, Bogotá</td>
+        <td>150 m²</td>
+        <td>$320.000.000</td>
+        <td>En negociación</td>
+        <td class="acciones">
+          <button>✏️ Editar</button>
+          <button>🗑️ Eliminar</button>
+        </td>
+      </tr>
+      <tr>
+        <td>103</td>
+        <td>Zona Norte, Bogotá</td>
+        <td>180 m²</td>
+        <td>$950.000.000</td>
+        <td>Vendido</td>
+        <td class="acciones">
+          <button>✏️ Editar</button>
+          <button>🗑️ Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

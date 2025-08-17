@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Usuarios - Ing Aya</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      padding: 40px;
+      margin: 0;
+      color: #00204a;
+    }
+
+    h1 {
+      color: #005792;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #005792;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    .acciones button {
+      background-color: #008891;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      margin: 2px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .acciones button:hover {
+      background-color: #006d6d;
+    }
+
+    .nuevo {
+      margin-bottom: 20px;
+    }
+
+    .nuevo button {
+      background-color: #005792;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .nuevo button:hover {
+      background-color: #003c66;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>👤 Gestión de Usuarios</h1>
+
+  <div class="nuevo">
+    <button onclick="alert('Formulario para agregar nuevo usuario')">➕ Nuevo Usuario</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Rol</th>
+        <th>Correo</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>001</td>
+        <td>Juan Pérez</td>
+        <td>Administrador</td>
+        <td>juan@ingaya.com</td>
+        <td class="acciones">
+          <button>✏️ Editar</button>
+          <button>🗑️ Eliminar</button>
+        </td>
+      </tr>
+      <tr>
+        <td>002</td>
+        <td>Lucía Gómez</td>
+        <td>Empleado</td>
+        <td>lucia@ingaya.com</td>
+        <td class="acciones">
+          <button>✏️ Editar</button>
+          <button>🗑️ Eliminar</button>
+        </td>
+      </tr>
+      <tr>
+        <td>003</td>
+        <td>Ana Rivas</td>
+        <td>Secretaria</td>
+        <td>ana@ingaya.com</td>
+        <td class="acciones">
+          <button>✏️ Editar</button>
+          <button>🗑️ Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

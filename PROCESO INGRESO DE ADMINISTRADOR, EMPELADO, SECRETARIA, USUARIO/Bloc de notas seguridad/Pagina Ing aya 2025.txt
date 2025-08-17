@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ing Aya</title>
+  <link rel="stylesheet" href="ingaya.css" />
+  <link rel="stylesheet" href="estilos.css" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: #000000 !important;
+      background-color: #fff;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #d2d2d2;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 1rem;
+      transition: width 0.3s;
+      overflow: hidden;
+      z-index: 100;
+    }
+
+    .sidebar.collapsed {
+      width: 60px;
+    }
+
+    SIDEBAR COLAPSE
+
+    .sidebar.collapsed .text {
+      display: none;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 20px;
+      color: #000000;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu-item:hover {
+      background-color: #000000;
+      color: white;
+    }
+
+    .menu-item .icon {
+      margin-right: 10px;
+    }
+
+    .main-content {
+      margin-left: 260px;
+      padding: 1rem;
+      flex-grow: 1;
+    }
+
+    /* Botón de toggle fijo */
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      left: 270px; 
+      background: #333;
+      color: white;
+      border: none;
+      font-size: 24px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    header {
+      background-color: #a8a3a3;
+      color: #000000;
+      padding: 30px;
+      text-align: center;
+    }
+
+    header img.logo {
+      max-width: 150px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    .lema {
+      font-style: italic;
+      font-size: 16px;
+      margin-top: 5px;
+      color: #000000;
+    }
+
+    section {
+      color: #000000 !important;
+    }
+
+    footer {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ccc;
+      text-align: center;
+      color: #000000;
+    }
+  </style>
+</head>
+<body>
+  <!-- Botón SIEMPRE visible -->
+  <button id="toggleBtn" class="toggle-btn" aria-label="Expandir/Contraer menú">☰</button>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2 class="logo">Ing Aya</h2>
+      </div>
+      <nav class="menu">
+  <a href="#" class="menu-item"><span class="icon">🏠</span><span class="text">Inicio</span></a>
+  <a href="#mision" class="menu-item"><span class="icon">🎯</span><span class="text">Misión</span></a>
+  <a href="#vision" class="menu-item"><span class="icon">🌟</span><span class="text">Visión</span></a>
+  <a href="#quienes-somos" class="menu-item"><span class="icon">👬</span><span class="text">¿Quiénes somos?</span></a>
+  <a href="venta inmuebles.html" class="menu-item"><span class="icon">🏙️</span><span class="text">Inmuebles</span></a>
+  <a href="citas.html"class="menu-item"><span class="icon">📅</span><span class="text">Citas</span></a>
+  <a href="login.html" class="menu-item"><span class="icon">🔐</span><span class="text">Ingresar</span></a>
+ 
+</nav>
+
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+      <header>
+        <img src="logo_INGAYA_gris-sin fondo.png" alt="Logo de la empresa" class="logo" />
+        <h1 style="color: #000000;">Ing Aya</h1>
+        <p class="lema">“Inmuebles y fincaraiz para un buen futuro”</p>
+      </header>
+
+      <section id="mision">
+        <h2>Misión</h2>
+        <p>Brindar un servicio de alta calidad a quienes deseen comprar o vender su vivienda, garantizando atención personalizada y satisfacción en cada etapa del proceso.</p>
+      </section>
+
+      <section id="vision">
+        <h2>Visión</h2>
+        <p>Destacarse en el sector inmobiliario a nivel nacional, consolidándose como referencia por su innovación, compromiso y excelencia en el servicio.</p>
+      </section>
+
+      <section id="quienes-somos">
+        <h2>¿Quiénes somos?</h2>
+        <p>Empresa inmobiliaria comprometida con transformar los sueños de nuestros clientes en realidad, a través de un servicio financiero de excelencia y atención personalizada.</p>
+      </section>
+
+      <section id="inmuebles">
+        <h2>Inmuebles en venta</h2>
+
+        <div class="tarjeta-inmueble">
+          <h3>🏠 Kennedy, Bogotá</h3>
+          <p>Casa de tres pisos con área construida de 135 m². Cuenta con cuatro alcobas amplias, dos baños, sala-comedor, cocina independiente y patio posterior. Ideal para familias, con espacios bien distribuidos y excelente iluminación natural.</p>
+          <p><strong>Precio:</strong> $280.000.000 COP</p>
+          <button><a href="inmueble 1 consultar.html">Agendar cita</a>
+        </div></button>
+
+        <div class="tarjeta-inmueble">
+          <h3>🏠 Suba, Bogotá</h3>
+          <p>Casa de 3 pisos, 5 alcobas, 3 baños, balcón, parqueadero. Área: 150m²</p>
+          <p><strong>Precio:</strong> $320.000.000 COP</p>
+          <button><a href="inmuebele 2 consultar.html">Agendar cita</a>
+        </div></button>
+
+        <div class="tarjeta-inmueble">
+          <h3>🏠 Zona norte, Bogotá</h3>
+          <p>Casa de lujo, 3 alcobas, 4 baños, terraza privada. Área: 180m²</p>
+          <p><strong>Precio:</strong> $950.000.000 COP</p>
+           <button><a href="inmueble 1 consultar.html">Agendar cita</a>
+        </div></button>
+        </div>
+      </section>
+
+      <footer>
+        <p>&copy; 2025 Ing Aya - Todos los derechos reservados</p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Script funcional -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.getElementById('toggleBtn');
+      const sidebar = document.getElementById('sidebar');
+
+      toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('collapsed');
+      });
+    });
+  </script>
+</body>
+</html>

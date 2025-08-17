@@ -1,0 +1,182 @@
+/* Fondo general */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-image: url('mansion.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Encabezado */
+header {
+  background-color: #002fff;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+header .logo {
+  height: 150px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+header .lema {
+  font-style: italic;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+nav a {
+  color: black;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Secciones principales */
+main {
+  padding: 40px 20px;
+}
+
+section {
+  background-color: rgba(225, 225, 225, 0.85);
+  border: 1px solid #615e5e;
+  padding: 30px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Tarjetas de inmuebles */
+.tarjeta-inmueble {
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid #000000;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.tarjeta-inmueble h3 {
+  margin-top: 0;
+  color: #002fff;
+}
+
+/* Botón general */
+button {
+  background-color: #002fff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration-line: none;
+}
+
+button:hover {
+  background-color: #000000;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #002fff;
+  color: #ffffff;
+  margin-top: 40px;
+  border-radius: 10px 10px 0 0;
+}
+
+/* SIDEBAR completo actualizado */
+.sidebar {
+  width: 250px;
+  background-color: #002fff;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  transition: width 0.3s;
+  overflow: hidden;
+  z-index: 100;
+  font-size: 18px;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar.collapsed .text {
+  display: none;
+}
+
+.sidebar .logo {
+  font-size: 26px;
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  text-decoration: none;
+  color: white;
+  border-radius: 6px;
+  transition: background 0.3s;
+  font-size: 18px;
+}
+
+.menu-item .icon {
+  margin-right: 12px;
+  font-size: 22px;
+}
+
+.menu-item:hover {
+  background-color: #000000;
+}
+
+/* Botón de menú (☰) */
+.toggle-btn {
+  position: fixed;
+  top: 20px;
+  left: 270px;
+  background-color: #002fff;
+  color: white;
+  border: none;
+  font-size: 26px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 999;
+  transition: background-color 0.3s;
+}
+
+.toggle-btn:hover {
+  background-color: #000000;
+}
+
+/* Secciones tipo info-card */
+.info-card {
+  display: flex;
+  align-items: flex-start;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.icono-seccion {
+  font-size: 30px;
+  margin-right: 20px;
+  color: #002fff;
+}
+
+.info-card h2 {
+  margin: 0;
+  color: #002fff;
+}
