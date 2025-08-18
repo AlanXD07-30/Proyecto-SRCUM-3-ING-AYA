@@ -3,27 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ing Ayaaaasssss</title>
+    <title>Ing Aya</title>
     <link rel="stylesheet" href="Index.css">
+    <link rel="icon" href="../logo_INGAYA_gris-sin fondo.png">
     <script src="../ERROR 404/404.JS"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
      
-
-  
     <header>
-
-        
-        <a href="#" class="logo-head">
+        <a href="../logo_INGAYA_gris-sin fondo.png" class="logo-head">
             <img src="../logo_INGAYA_gris-sin fondo.png" alt="logo de la empresa">
             <h2 class="nom_emp">ING AYA</h2>
         </a>
         <nav>
        
-            <a href="../ERROR 404/404.html" class="nav-link">SOBRE NOSOTROS</a>
-            <a href="../SECCIÓN DE INMUEBLES/inmuebles.html" class="nav-link">INMUEBLES</a>
-            <a onclick="MostrarError()"  href="#" class="nav-link">CONTACTANOS</a>
+            <a href="../SOBRE NOSOTROS/sobrenosotros.html" class="nav-link" onclick="confirmarSobreNosotros(event)">SOBRE NOSOTROS</a>
+            <a href="../SECCIÓN DE INMUEBLES/inmuebles.html" class="nav-link" onclick="confirmarInmuebles(event)">INMUEBLES</a>
+            <a href="../CONTACTANOS/contactanos.html" class="nav-link" onclick="confirmarNosotros(event)">CONTACTANOS</a>
             <a href="../PROCESO INGRESO DE ADMINISTRADOR, EMPELADO, SECRETARIA, USUARIO/login.html" class="nav-link-1">INGRESAR</a>
             <a href="../REGISTRO USUARIO/registro.html" class="nav-link-2">REGISTRARSE</a>
         </nav>
@@ -187,6 +185,95 @@
     </div>
 </footer>
 
+
+<script>
+    function alertaInmueble(event) { 
+    const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: "btn btn-success",
+    cancelButton: "btn btn-danger"
+  },
+  buttonsStyling: false
+});
+swalWithBootstrapButtons.fire({
+  title: "Quieres volver a atras?",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonText: "Si",
+  cancelButtonText: "No",
+  reverseButtons: true
+}).then((result) => {
+  if (result.isConfirmed) {
+    swalWithBootstrapButtons.fire({
+      title: "Deleted!",
+      text: "Your file has been deleted.",
+      icon: "success"
+    });
+  } 
+});
+}
+</script>
+
+
+<script>
+  function confirmarSobreNosotros(event) {
+    event.preventDefault(); 
+    Swal.fire({
+  title: "Quieres ver mas Sobre Nosotros?",
+  text: "Puedes ver mas sobre nosotros!",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "Confirmar"
+})
+.then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "../SOBRE NOSOTROS/sobrenosotros.html";
+      }
+    });
+  }
+</script>
+
+<script>
+  function confirmarInmuebles(event) {
+    event.preventDefault(); 
+    Swal.fire({
+  title: "Quieres ver nuestros Inmuebles?",
+  text: "Puedes ver nuestros Inmuebles!",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "Confirmar"
+})
+.then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "../SECCIÓN DE INMUEBLES/inmuebles.html";
+      }
+    });
+  }
+</script>
+
+<script>
+  function confirmarNosotros(event) {
+    event.preventDefault(); 
+    Swal.fire({
+  title: "Quieres ver como Contactarnos?",
+  text: "Puedes ver como contactarnos!",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "Confirmar"
+})
+.then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "../CONTACTANOS/contactanos.html";
+      }
+    });
+  }
+</script>
 
 
 

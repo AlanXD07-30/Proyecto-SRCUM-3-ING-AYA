@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inmuebles - ING AYA</title>
   <link rel="stylesheet" href="inmuebles.css">
+  <link rel="icon" href="../logo_INGAYA_gris-sin fondo.png">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -15,9 +17,9 @@
     </a>
     <nav>
       
-      <a href="../REGISTRO USUARIO/" class="boton-1">REGISTRARSE</a>
-      <a href="../INICIO DE SESIÓN/login.html" class="boton-2">INGRESAR</a>
-      <a href="../PAGINA PRINCIPAL INMUEBLES ING AYA/Index.html" class="volver">VOLVER A INICIO</a>
+      <a href="../REGISTRO USUARIO/registro.html" class="boton-1">REGISTRARSE</a>
+      <a href="../PROCESO INGRESO DE ADMINISTRADOR, EMPELADO, SECRETARIA, USUARIO/login.html" class="boton-2">INGRESAR</a>
+      <a href="../PAGINA PRINCIPAL INMUEBLES ING AYA/Index.html" class="volver" onclick="confirmarAccion(event)">VOLVER A INICIO</a>
 
     </nav>
   </header>
@@ -54,6 +56,176 @@
         <span class="precio">Precio: $280.000.000 COP</span>
       </div>
 
+      <div class="card-inmueble">
+        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bHV4dXJ5JTIwaG91c2V8ZW58MHx8MHx8fDA%3D" alt="Inmueble Kennedy">
+        <div class="estrella" onclick="agregarFavorito(this)"></div>
+        <h3>🏠 Inmueble en venta – Kennedy, Bogotá</h3>
+        <p>
+          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
+        </p>
+        <span class="precio">Precio: $280.000.000 COP</span>
+      </div>
+
+      <div class="card-inmueble">
+        <img src="https://arquitecturaideal.com/wp-content/uploads/2015/07/casas-lujosas.jpg" alt="Inmueble Kennedy">
+        <div class="estrella" onclick="agregarFavorito(this)"></div>
+        <h3>🏠 Inmueble en venta – Kennedy, Bogotá</h3>
+        <p>
+          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
+        </p>
+        <span class="precio">Precio: $280.000.000 COP</span>
+      </div>
+
+      <div class="card-inmueble">
+        <img src="https://p4.wallpaperbetter.com/wallpaper/591/884/850/house-modern-mansions-architecture-wallpaper-preview.jpg" alt="Inmueble Kennedy">
+        <div class="estrella" onclick="agregarFavorito(this)"></div>
+        <h3>🏠 Inmueble en venta – Kennedy, Bogotá</h3>
+        <p>
+          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
+        </p>
+        <span class="precio">Precio: $280.000.000 COP</span>
+      </div>
+
+      <div class="card-inmueble">
+        <img src="https://wallpapercave.com/wp/wp2406713.jpg" alt="Inmueble Kennedy">
+        <div class="estrella" onclick="agregarFavorito(this)"></div>
+        <h3>🏠 Inmueble en venta – Kennedy, Bogotá</h3>
+        <p>
+          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
+        </p>
+        <span class="precio">Precio: $280.000.000 COP</span>
+      </div>
+
+      <div class="card-inmueble">
+        <img src="https://s1.1zoom.me/big0/365/389443-svetik.jpg" alt="Inmueble Kennedy">
+        <div class="estrella" onclick="agregarFavorito(this)"></div>
+        <h3>🏠 Inmueble en venta – Kennedy, Bogotá</h3>
+        <p>
+          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
+        </p>
+        <span class="precio">Precio: $280.000.000 COP</span>
+      </div>
+
+      <div class="card-inmueble">
+        <img src="https://c4.wallpaperflare.com/wallpaper/76/280/48/architecture-building-design-house-wallpaper-preview.jpg" alt="Inmueble Kennedy">
+        <div class="estrella" onclick="agregarFavorito(this)"></div>
+        <h3>🏠 Inmueble en venta – Kennedy, Bogotá</h3>
+        <p>
+          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
+        </p>
+        <span class="precio">Precio: $280.000.000 COP</span>
+      </div>
+
+      <div class="card-inmueble">
+        <img src="https://e1.pxfuel.com/desktop-wallpaper/35/678/desktop-wallpaper-home-philippines-home-house-property-building-facade-simple-house.jpg" alt="Inmueble Kennedy">
+        <div class="estrella" onclick="agregarFavorito(this)"></div>
+        <h3>🏠 Inmueble en venta – Kennedy, Bogotá</h3>
+        <p>
+          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
+        </p>
+        <span class="precio">Precio: $280.000.000 COP</span>
+      </div>
+
+      <div class="card-inmueble">
+        <img src="https://e0.pxfuel.com/wallpapers/292/1011/desktop-wallpaper-houses.jpg" alt="Inmueble Kennedy">
+        <div class="estrella" onclick="agregarFavorito(this)"></div>
+        <h3>🏠 Inmueble en venta – Kennedy, Bogotá</h3>
+        <p>
+          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
+        </p>
+        <span class="precio">Precio: $280.000.000 COP</span>
+      </div>
+
+      <div class="card-inmueble">
+        <img src="https://images6.alphacoders.com/670/670809.jpg" alt="Inmueble Kennedy">
+        <div class="estrella" onclick="agregarFavorito(this)"></div>
+        <h3>🏠 Inmueble en venta – Kennedy, Bogotá</h3>
+        <p>
+          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
+        </p>
+        <span class="precio">Precio: $280.000.000 COP</span>
+      </div>
+
+      <div class="card-inmueble">
+        <img src="https://wallpapers.com/images/hd/mansion-pictures-4y4krwtxs1xsrz2n.jpg" alt="Inmueble Kennedy">
+        <div class="estrella" onclick="agregarFavorito(this)"></div>
+        <h3>🏠 Inmueble en venta – Kennedy, Bogotá</h3>
+        <p>
+          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
+        </p>
+        <span class="precio">Precio: $280.000.000 COP</span>
+      </div>
+
+      <div class="card-inmueble">
+        <img src="https://republicainmobiliaria.com/wp-content/uploads/2021/12/descarga-8.jpeg" alt="Inmueble Kennedy">
+        <div class="estrella" onclick="agregarFavorito(this)"></div>
+        <h3>🏠 Inmueble en venta – Kennedy, Bogotá</h3>
+        <p>
+          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
+        </p>
+        <span class="precio">Precio: $280.000.000 COP</span>
+      </div>
+
+      <div class="card-inmueble">
+        <img src="https://media.revistavanityfair.es/photos/60e85a3676b409bfd6cb9441/master/w_1600%2Cc_limit/13165.jpg" alt="Inmueble Kennedy">
+        <div class="estrella" onclick="agregarFavorito(this)"></div>
+        <h3>🏠 Inmueble en venta – Kennedy, Bogotá</h3>
+        <p>
+          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
+        </p>
+        <span class="precio">Precio: $280.000.000 COP</span>
+      </div>
+
+      <div class="card-inmueble">
+        <img src="https://canalhogar.com/wp-content/uploads/2023/01/fachadas_de_casas_modernas_bonitas_con_forma_de_cubo_1.jpg" alt="Inmueble Kennedy">
+        <div class="estrella" onclick="agregarFavorito(this)"></div>
+        <h3>🏠 Inmueble en venta – Kennedy, Bogotá</h3>
+        <p>
+          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
+        </p>
+        <span class="precio">Precio: $280.000.000 COP</span>
+      </div>
+
+      <div class="card-inmueble">
+        <img src="https://estag.fimagenes.com/imagenesred/2587715_2.jpg?1" alt="Inmueble Kennedy">
+        <div class="estrella" onclick="agregarFavorito(this)"></div>
+        <h3>🏠 Inmueble en venta – Kennedy, Bogotá</h3>
+        <p>
+          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
+        </p>
+        <span class="precio">Precio: $280.000.000 COP</span>
+      </div>
+
+      <div class="card-inmueble">
+        <img src="https://hips.hearstapps.com/hmg-prod/images/amoroso-residence-photos-16-1621084958.jpg" alt="Inmueble Kennedy">
+        <div class="estrella" onclick="agregarFavorito(this)"></div>
+        <h3>🏠 Inmueble en venta – Kennedy, Bogotá</h3>
+        <p>
+          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
+        </p>
+        <span class="precio">Precio: $280.000.000 COP</span>
+      </div>
+
+      <div class="card-inmueble">
+        <img src="https://i.pinimg.com/736x/18/77/5e/18775e36273f1bf9cedaad474717bf10.jpg" alt="Inmueble Kennedy">
+        <div class="estrella" onclick="agregarFavorito(this)"></div>
+        <h3>🏠 Inmueble en venta – Kennedy, Bogotá</h3>
+        <p>
+          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
+        </p>
+        <span class="precio">Precio: $280.000.000 COP</span>
+      </div>
+
+      <div class="card-inmueble">
+        <img src="https://static9.depositphotos.com/1041088/1184/i/450/depositphotos_11842757-stock-photo-large-american-beautiful-house-with.jpg" alt="Inmueble Kennedy">
+        <div class="estrella" onclick="agregarFavorito(this)"></div>
+        <h3>🏠 Inmueble en venta – Kennedy, Bogotá</h3>
+        <p>
+          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
+        </p>
+        <span class="precio">Precio: $280.000.000 COP</span>
+      </div>
+
       <!-- Inmueble 2 -->
       <div class="card-inmueble">
         <img src="https://plus.unsplash.com/premium_photo-1661915661139-5b6a4e4a6fcc?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2FzYSUyMG1vZGVybmF8ZW58MHx8MHx8fDA%3D" alt="Inmueble Suba">
@@ -77,8 +249,6 @@
       </div>
     </div>
 
-    <p>HOLAAAA</p>
-
     <div class="mensaje-info" id="mensaje-favorito">
       Se necesita iniciar sesión para poder agregar inmuebles a favoritos en el historial de lista de deseos del usuario.
     </div>
@@ -96,6 +266,26 @@
     } else {
       elem.classList.toggle('activo');
     }
+  }
+</script>
+
+<script>
+  function confirmarAccion(event) {
+    event.preventDefault(); 
+    Swal.fire({
+  title: "Quieres volver al menu?",
+  text: "Puedes seguir viendo inmuebles!",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "Confirmar"
+})
+.then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "../PAGINA PRINCIPAL INMUEBLES ING AYA/Index.html";
+      }
+    });
   }
 </script>
 
