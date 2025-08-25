@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Citas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='citas.css') }}">
+</head>
+<body>
+<div class="topbar">
+    <a href="/" class="brand">Citas</a>
+    <div class="spacer"></div>
+    <form class="search" method="get">
+        <input type="text" name="q" value="{{ q }}" placeholder="Buscar...">
+        <button type="submit">Buscar</button>
+    </form>
+    <a href="{{ url_for('citas_new_form') }}" class="btn primary">Crear Cita</a>
+</div>
+
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash">
+          {% for category, message in messages %}
+            <div class="alert {{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Lista de Citas</h2>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Cliente</th>
+                    <th>Inmueble</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cita in citas %}
+                <tr>
+                    <td>{{ cita.id }}</td>
+                    <td>{{ cita.cliente_nombre }}</td>
+                    <td>{{ cita.inmueble_ubicacion }}</td>
+                    <td>{{ cita.fecha }}</td>
+                    <td>{{ cita.hora }}</td>
+                    <td>{{ cita.estado }}</td>
+                    <td class="actions">
+                        <a href="{{ url_for('citas_edit_form', cita_id=cita.id) }}" class="btn">Editar</a>
+                        <form action="{{ url_for('citas_delete', cita_id=cita.id) }}" method="post" style="display:inline">
+                            <button type="submit" class="btn danger">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="7">No hay citas registradas.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

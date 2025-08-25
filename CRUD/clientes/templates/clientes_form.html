@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% if action == "create" %}
+  {% set page_title = "Agregar cliente" %}
+  {% set post_url = url_for('clientes_create') %}
+{% else %}
+  {% set page_title = "Editar cliente" %}
+  {% set post_url = url_for('clientes_edit', cliente_id=cliente.id) %}
+{% endif %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    <h2>{{ page_title }}</h2>
+    <a class="btn" href="{{ url_for('clientes_list') }}">Volver</a>
+  </div>
+
+  <form action="{{ post_url }}" method="post" class="form">
+    <div class="grid">
+      <label>
+        <span>Nombre *</span>
+        <input type="text" name="nombre" required value="{{ cliente.nombre if cliente else '' }}">
+      </label>
+
+      <label>
+        <span>Email *</span>
+        <input type="email" name="email" required value="{{ cliente.email if cliente else '' }}">
+      </label>
+
+      <label>
+        <span>Teléfono</span>
+        <input type="text" name="telefono" value="{{ cliente.telefono if cliente else '' }}">
+      </label>
+
+      <label class="full">
+        <span>Dirección</span>
+        <textarea name="direccion" rows="3">{{ cliente.direccion if cliente else '' }}</textarea>
+      </label>
+    </div>
+
+    <div class="form-actions">
+      <button class="btn primary" type="submit">Guardar</button>
+      <a class="btn" href="{{ url_for('clientes_list') }}">Cancelar</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

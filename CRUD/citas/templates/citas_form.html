@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if action == 'create' %}Nueva Cita{% else %}Editar Cita{% endif %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='citas.css') }}">
+</head>
+<body>
+<div class="topbar">
+    <a href="/" class="brand">CRUD</a>
+    <div class="spacer"></div>
+    <a href="{{ url_for('citas_list') }}" class="btn">Volver</a>
+</div>
+
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash">
+          {% for category, message in messages %}
+            <div class="alert {{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <div class="card">
+        <div class="card-header">
+            <h2>{% if action == 'create' %}Nueva Cita{% else %}Editar Cita{% endif %}</h2>
+        </div>
+        <form class="form" method="post">
+            <div class="grid">
+                <label>
+                    <span>Cliente</span>
+                    <select name="cliente" required>
+                        <option value="">Seleccione Cliente</option>
+                        {% for c in clientes %}
+                        <option value="{{ c.id }}" {% if cita and cita.cliente == c.id %}selected{% endif %}>{{ c.nombre }}</option>
+                        {% endfor %}
+                    </select>
+                </label>
+                <label>
+                    <span>Inmueble</span>
+                    <select name="inmueble" required>
+                        <option value="">Seleccione Inmueble</option>
+                        {% for i in inmuebles %}
+                        <option value="{{ i.id }}" {% if cita and cita.inmueble == i.id %}selected{% endif %}>{{ i.ubicacion }}</option>
+                        {% endfor %}
+                    </select>
+                </label>
+                <label>
+                    <span>Fecha</span>
+                    <input type="date" name="fecha" value="{{ cita.fecha if cita else '' }}" required>
+                </label>
+                <label>
+                    <span>Hora</span>
+                    <input type="time" name="hora" value="{{ cita.hora if cita else '' }}" required>
+                </label>
+                <label class="full">
+                    <span>Estado</span>
+                    <input type="text" name="estado" value="{{ cita.estado if cita else '' }}" required>
+                </label>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn primary">{% if action == 'create' %}Crear{% else %}Actualizar{% endif %}</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

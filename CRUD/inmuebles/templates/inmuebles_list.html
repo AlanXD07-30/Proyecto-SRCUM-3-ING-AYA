@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Inmuebles</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='inmuebles.css') }}">
+</head>
+<body>
+  
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h2>Inmuebles</h2>
+      <a class="btn primary" href="{{ url_for('inmuebles_new_form') }}">Agregar</a>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash">
+          {% for category, message in messages %}
+            <div class="alert {{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th><th>Ubicación</th><th>Área</th><th>Precio</th><th>Estado</th><th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for inmueble in inmuebles %}
+        <tr>
+          <td>{{ inmueble.id }}</td>
+          <td>{{ inmueble.ubicacion }}</td>
+          <td>{{ inmueble.area }}</td>
+          <td>{{ inmueble.precio }}</td>
+          <td>{{ inmueble.estado }}</td>
+          <td class="actions">
+            <a href="{{ url_for('inmuebles_edit_form', inmueble_id=inmueble.id) }}" class="btn">Editar</a>
+            <form method="post" action="{{ url_for('inmuebles_delete', inmueble_id=inmueble.id) }}" style="display:inline">
+              <button type="submit" class="btn danger">Eliminar</button>
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>

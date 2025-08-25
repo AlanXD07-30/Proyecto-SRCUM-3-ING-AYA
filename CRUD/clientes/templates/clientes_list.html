@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Clientes{% endblock %}
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    <h2>Clientes</h2>
+    <a class="btn primary" href="{{ url_for('clientes_new_form') }}">+ Agregar</a>
+  </div>
+
+  {% if clientes %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Teléfono</th>
+          <th>Dirección</th>
+          <th>Creado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for c in clientes %}
+        <tr>
+          <td>{{ c.id }}</td>
+          <td>{{ c.nombre }}</td>
+          <td>{{ c.email }}</td>
+          <td>{{ c.telefono or '-' }}</td>
+          <td>{{ c.direccion or '-' }}</td>
+          <td>{{ c.created_at.strftime('%Y-%m-%d %H:%M') if c.created_at else '' }}</td>
+          <td class="actions">
+            <a class="btn" href="{{ url_for('clientes_edit_form', cliente_id=c.id) }}">Editar</a>
+            <form action="{{ url_for('clientes_delete', cliente_id=c.id) }}" method="post" onsubmit="return confirm('¿Seguro que deseas eliminar este cliente?');">
+              <button class="btn danger" type="submit">Borrar</button>
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No hay clientes. ¡Crea el primero!</p>
+  {% endif %}
+</div>
+{% endblock %}
