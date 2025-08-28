@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="inmuebles.css">
   <link rel="icon" href="../logo_INGAYA_gris-sin fondo.png">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
 </head>
 <body>
 
@@ -29,27 +30,28 @@
 
     <div class="filtros">
 
-      <select id="Ciudad">
-        <option>Bogotá</option>
-        <option>Medellín</option>
-        <option>Cali</option>
-        <option>Barranquilla</option>
-        <option>Cartagena</option>
-        <option>Bucaramanga</option>
-        <option>Santa Marta</option> 
+      <select id="ciudad">
+        <option value="todos">Todas</option>
+        <option value="Bogotá">Bogotá</option>
+        <option value="Medellín">Medellín</option>
+        <option value="Cali">Cali</option>
+        <option value="Barranquilla">Barranquilla</option>
+        <option value="Cartagena">Cartagena</option>
+        <option value="Bucaramanga">Bucaramanga</option>
+        <option value="Santa Marta">Santa Marta</option> 
       </select>
 
-      <select id="Tipo">
-        <option>Apartamento</option>
-        <option>Casa</option>
-        <option>Finca</option>
-        <option>Casa Quinta</option>
+      <select id="tipo">
+        <option value="Apartamento">Apartamento</option>
+        <option value="casa">Casa</option>
+        <option value="Finca">Finca</option>
+        <option value="Casa Quinta">Casa Quinta</option>
       </select>
     </div>
 
     <div class="grid-inmuebles">
       <!-- Inmueble 1 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
         <img src="https://img.freepik.com/foto-gratis/casa-aislada-campo_1303-23773.jpg?semt=ais_items_boosted&w=740" alt="Inmueble Kennedy">
         <div class="estrella" onclick="agregarFavorito(this)"></div>
         <h3>Inmueble en venta – Kennedy, Bogotá</h3>
@@ -60,7 +62,7 @@
       </div>
 
       <!-- Inmueble 2 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
         <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bHV4dXJ5JTIwaG91c2V8ZW58MHx8MHx8fDA%3D" alt="Inmueble Kennedy">
         <div class="estrella" onclick="agregarFavorito(this)"></div>
         <h3>Inmueble en venta – Engativa - Bogotá</h3>
@@ -71,7 +73,7 @@
       </div>
 
       <!-- Inmueble 3 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
         <img src="https://arquitecturaideal.com/wp-content/uploads/2015/07/casas-lujosas.jpg" alt="Inmueble Kennedy">
         <div class="estrella" onclick="agregarFavorito(this)"></div>
         <h3>Inmueble en venta – Lourdes - Bogotá</h3>
@@ -82,7 +84,7 @@
       </div>
 
       <!-- Inmueble 4 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Apartamento">
         <img src="https://p4.wallpaperbetter.com/wallpaper/591/884/850/house-modern-mansions-architecture-wallpaper-preview.jpg" alt="Inmueble Kennedy">
         <div class="estrella" onclick="agregarFavorito(this)"></div>
         <h3>Inmueble en venta – Usme - Bogotá</h3>
@@ -93,7 +95,7 @@
       </div>
 
       <!-- Inmueble 5 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Apartamento">
         <img src="https://wallpapercave.com/wp/wp2406713.jpg" alt="Inmueble Kennedy">
         <div class="estrella" onclick="agregarFavorito(this)"></div>
         <h3>Inmueble en venta – Soacha - Bogotá</h3>
@@ -104,7 +106,7 @@
       </div>
 
       <!-- Inmueble 6 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
         <img src="https://s1.1zoom.me/big0/365/389443-svetik.jpg" alt="Inmueble Kennedy">
         <div class="estrella" onclick="agregarFavorito(this)"></div>
         <h3>Inmueble en venta – Lourdes - Bogotá</h3>
@@ -115,7 +117,7 @@
       </div>
 
       <!-- Inmueble 7 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Apartamento">
         <img src="https://c4.wallpaperflare.com/wallpaper/76/280/48/architecture-building-design-house-wallpaper-preview.jpg" alt="Inmueble Kennedy">
         <div class="estrella" onclick="agregarFavorito(this)"></div>
         <h3>Inmueble en venta – Kennedy, Bogotá</h3>
@@ -126,7 +128,7 @@
       </div>
 
       <!-- Inmueble 8 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Apartamento">
         <img src="https://e1.pxfuel.com/desktop-wallpaper/35/678/desktop-wallpaper-home-philippines-home-house-property-building-facade-simple-house.jpg" alt="Inmueble Kennedy">
         <div class="estrella" onclick="agregarFavorito(this)"></div>
         <h3>Inmueble en venta – Ciudad Bolivar, Bogotá</h3>
@@ -137,7 +139,7 @@
       </div>
 
       <!-- Inmueble 9 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
         <img src="https://e0.pxfuel.com/wallpapers/292/1011/desktop-wallpaper-houses.jpg" alt="Inmueble Kennedy">
         <div class="estrella" onclick="agregarFavorito(this)"></div>
         <h3>Inmueble en venta – Suba - Bogotá</h3>
@@ -148,7 +150,7 @@
       </div>
 
       <!-- Inmueble 10 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Apartamento">
         <img src="https://images6.alphacoders.com/670/670809.jpg" alt="Inmueble Kennedy">
         <div class="estrella" onclick="agregarFavorito(this)"></div>
         <h3>Inmueble en venta – Lourdes - Bogotá</h3>
@@ -158,7 +160,7 @@
         <span class="precio">Precio: $350.000.000 COP</span>
       </div>
 <!-- Inmueble 11 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Apartamento">
         <img src="https://wallpapers.com/images/hd/mansion-pictures-4y4krwtxs1xsrz2n.jpg" alt="Inmueble Kennedy">
         <div class="estrella" onclick="agregarFavorito(this)"></div>
         <h3>Inmueble en venta – Kennedy, Bogotá</h3>
@@ -169,7 +171,7 @@
       </div>
 
       <!-- Inmueble 12 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Apartamento">
         <img src="https://republicainmobiliaria.com/wp-content/uploads/2021/12/descarga-8.jpeg" alt="Inmueble Kennedy">
         <div class="estrella" onclick="agregarFavorito(this)"></div>
         <h3>Inmueble en venta – Kennedy, Bogotá</h3>
@@ -180,7 +182,7 @@
       </div>
 
       <!-- Inmueble 13 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
         <img src="https://media.revistavanityfair.es/photos/60e85a3676b409bfd6cb9441/master/w_1600%2Cc_limit/13165.jpg" alt="Inmueble Kennedy">
         <div class="estrella" onclick="agregarFavorito(this)"></div>
         <h3>Inmueble en venta – Kennedy, Bogotá</h3>
@@ -191,7 +193,7 @@
       </div>
 
       <!-- Inmueble 14 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Apartamento">
         <img src="https://canalhogar.com/wp-content/uploads/2023/01/fachadas_de_casas_modernas_bonitas_con_forma_de_cubo_1.jpg" alt="Inmueble Kennedy">
         <div class="estrella" onclick="agregarFavorito(this)"></div>
         <h3>Inmueble en venta – Kennedy, Bogotá</h3>
@@ -202,7 +204,7 @@
       </div>
 
       <!-- Inmueble 15 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
         <img src="https://estag.fimagenes.com/imagenesred/2587715_2.jpg?1" alt="Inmueble Kennedy">
         <div class="estrella" onclick="agregarFavorito(this)"></div>
         <h3>Inmueble en venta – Kennedy, Bogotá</h3>
@@ -213,7 +215,7 @@
       </div>
 
       <!-- Inmueble 16 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
         <img src="https://hips.hearstapps.com/hmg-prod/images/amoroso-residence-photos-16-1621084958.jpg" alt="Inmueble Kennedy">
         <div class="estrella" onclick="agregarFavorito(this)"></div>
         <h3>Inmueble en venta – Kennedy, Bogotá</h3>
@@ -224,7 +226,7 @@
       </div>
 
       <!-- Inmueble 17 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
         <img src="https://i.pinimg.com/736x/18/77/5e/18775e36273f1bf9cedaad474717bf10.jpg" alt="Inmueble Kennedy">
         <div class="estrella" onclick="agregarFavorito(this)"></div>
         <h3>Inmueble en venta – Kennedy, Bogotá</h3>
@@ -235,7 +237,7 @@
       </div>
 
       <!-- Inmueble 18 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
         <img src="https://static9.depositphotos.com/1041088/1184/i/450/depositphotos_11842757-stock-photo-large-american-beautiful-house-with.jpg" alt="Inmueble Kennedy">
         <div class="estrella" onclick="agregarFavorito(this)"></div>
         <h3>Inmueble en venta – Kennedy, Bogotá</h3>
@@ -246,7 +248,7 @@
       </div>
 
       <!-- Inmueble 19 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Apartamento">
         <img src="https://plus.unsplash.com/premium_photo-1661915661139-5b6a4e4a6fcc?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2FzYSUyMG1vZGVybmF8ZW58MHx8MHx8fDA%3D" alt="Inmueble Suba">
         <div class="estrella" onclick="agregarFavorito(this)"></div>
         <h3>Inmueble en venta – Suba, Bogotá</h3>
@@ -257,7 +259,7 @@
       </div>
 
       <!-- Inmueble 20 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Apartamento">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNQrCl--jzaN2LW0IFypUo7-qeiKMHmK_kRA&s" alt="Inmueble Engativá">
         <div class="estrella" onclick="agregarFavorito(this)"></div>
         <h3>Inmueble en venta – Engativá, Bogotá</h3>
@@ -268,7 +270,7 @@
       </div>
 
       <!-- Inmueble 21 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
       <img src="https://wallpapers.com/images/hd/modern-luxury-house-with-cozy-ambiance-cgrgt4xchi0zq7ki.jpg" alt="Inmueble Engativa">
       <div class="estrella" onclick="agregarFavorito(this)"></div>
       <h3>Inmueble En Venta - Norte, Bogota</h3>
@@ -279,7 +281,7 @@
      </div>
 
      <!-- Inmueble 22 -->
-     <div class="card-inmueble">
+     <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
         <img src="https://i.pinimg.com/736x/cc/73/8c/cc738cae38d0ee917631a371de80443a.jpg" alt="Inmueble-Engativa">
         <div class="estrella" onclick="agregarFavorito(this)"></div>
         <h3>Inmueble en venta - Engativa - Bogota</h3>
@@ -290,7 +292,7 @@
       </div>
 
       <!-- Inmueble 23 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
         <img src="https://wallpapers.com/images/hd/beautiful-house-pictures-qqq7dsaabmv7yunr.jpg" alt="Inmueble-Engativa">
         <div class="estrella" onclick="agregarfavorito(this)"></div>
         <h3>Inmueble en venta -Kenedy - Bogota </h3>
@@ -301,7 +303,7 @@
       </div>
       
       <!-- Inmueble 24 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
         <img src="https://plus.unsplash.com/premium_photo-1661883982941-50af7720a6ff?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aGVybW9zYSUyMGNhc2F8ZW58MHx8MHx8fDA%3D" alt="Inmueble-Engativa">
         <div class="estrella" onclick="agregarFavorito"></div>
         <h3>Inmueble en venta - Lourdes - Bogota</h3>
@@ -312,7 +314,7 @@
       </div>
 
       <!-- Inmueble 25 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
         <img src="https://i.pinimg.com/736x/03/2c/bb/032cbb8932e823ffa455b4b4a5361a56.jpg" alt="Inmueble-Engativa">
         <div class="estrealla" onclick="agregarFavorito(this)"></div>
         <h3>Inmueble en venta - Lourdes - Bogota</h3>
@@ -323,7 +325,7 @@
       </div>
 
       <!-- Inmueble 26 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Apartamento">
           <img src="https://wallpapers.com/images/hd/one-storey-modern-beautiful-house-1t8w178a17wy2yhe.jpg" alt="Inmueble-Engativa">
             <div class="estrella" onclick="agregarFavoito(this)"></div>
         <h3>Inmueble en venta Ciudad Bolivar - Bogota</h3>
@@ -334,7 +336,7 @@
       </div>
 
       <!-- Inmueble 27 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Casa Quinta">
         <img src="https://wallpapers.com/images/hd/nice-house-pictures-xihxwolabdxjhahm.jpg" alt="Inmueble-Engativa">
         <div class="estrella" onclick="agregarFavorito()"></div>
       <h3>Inmueble en venta Lourdes - Bogota</h3>
@@ -345,7 +347,7 @@
       </div>
 
       <!-- Inmueble 28 -->
-      <div class="card-inmueble">
+      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Casa Quinta">
         <img src="https://wallpapers.com/images/featured/imagenes-de-bonitas-casas-wqz9yzg8zomm7elt.jpg" alt="Inmueble-Engativa">
       <div class="estrella" onclick="agregarFavorito()"></div>
         <h3>Inmueble en venta Lourdes - Bogota</h3>
@@ -356,7 +358,7 @@
       </div>
 
       <!-- Inmueble 29 -->
-    <div class="card-inmueble">
+    <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
       <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGx1eHVyeSUyMGhvdXNlfGVufDB8fDB8fHww" alt="Inmueble-Engativa">
       <div class="estrella" onclick="agregarFavorito()"></div>
         <h3>Inmueble en venta Carmen - Melgar</h3>
@@ -478,6 +480,38 @@
         </div>
     </footer>
 
+
+
+<script>
+  const ciudadSelect = document.getElementById("ciudad");
+const tipoSelect = document.getElementById("tipo");
+const inmuebles = document.querySelectorAll(".card-inmueble");
+
+function filtrar() {
+  const ciudad = ciudadSelect.value;
+  const tipo = tipoSelect.value;
+
+  inmuebles.forEach(inmueble => {
+    const ciudadInmueble = inmueble.getAttribute("data-ciudad");
+    const tipoInmueble = inmueble.getAttribute("data-tipo");
+
+    // Verifica coincidencia
+    const coincideCiudad = ciudad === "todos" || ciudad === ciudadInmueble;
+    const coincideTipo = tipo === "todos" || tipo === tipoInmueble;
+
+    if (coincideCiudad && coincideTipo) {
+      inmueble.style.display = "block";
+    } else {
+      inmueble.style.display = "none";
+    }
+  });
+}
+
+ciudadSelect.addEventListener("change", filtrar);
+tipoSelect.addEventListener("change", filtrar);
+
+</script>
+  
 <script>
   // Simula si el usuario está logueado o no
   const usuarioLogueado = false;
