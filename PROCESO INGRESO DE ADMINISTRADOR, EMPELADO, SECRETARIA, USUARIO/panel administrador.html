@@ -6,60 +6,129 @@
   <style>
     body {
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      background-color: #000000;
+      background-color: #000;
       margin: 0;
-      padding: 40px;
-      color: #000000;
+      padding: 0;
+      color: #fff;
+      display: flex;
+      height: 100vh;
     }
 
-    h1 {
-      color: #ffffff;
-      margin-bottom: 20px;
-    }
-
-    .rol {
-      background-color: #454545;
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background-color: #111;
       padding: 20px;
-      border-left: 6px solid #7a7a7a;
-      border-radius: 6px;
-      margin-bottom: 30px;
-      color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
     }
 
-    .botones {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .boton {
-      background-color: #454545;
+    .sidebar a {
+      background-color: #333;
       color: white;
-      padding: 15px;
+      padding: 12px;
       border-radius: 8px;
-      text-align: center;
       text-decoration: none;
       font-weight: bold;
       transition: background-color 0.3s ease;
     }
 
-    .boton:hover {
+    .sidebar a:hover {
       background-color: #2a3896;
+    }
+
+    /* Área principal */
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Perfil arriba a la derecha */
+        .perfil {
+      position: absolute;
+      top: 30px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+  .avatar {
+    width: 60px;
+    height: 80px;
+    border-radius: 50%;  
+    border: 0px solid #444;
+    object-fit: cover;  
+  }
+
+  .main .principal{
+    width:  300px;
+    
+    
+    filter: blur(0px);
+    
+    
+    
+  }
+
+    /* Imagen central */
+    .main img {
+
+      width:100px;
+      margin-bottom: 10px;
+      opacity: 0.8;
+    }
+
+    /* Mensaje de bienvenida */
+    #mensaje {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #ffffff;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
     }
   </style>
 </head>
 <body>
-  <h1>Bienvenido, Administrador</h1>
-  <div class="rol">
-    <p>Tienes acceso total para gestionar todo el sistema.</p>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="http://192.168.0.5:5001/inmuebles">🙍‍♂️ Gestión de Usuarios</a>
+    <a href="http://192.168.0.5:5000/clientes">🏠 Gestión de Inmuebles</a>
+    <a href="http://127.0.0.1:5002/citas">📅 Gestión de Citas</a>
+    <a href="gestion reportes.html">📊 Ver Reportes</a>
+    <a href="configuracion.html">⚙️ Configuración</a>
   </div>
 
-  <div class="botones">
-    <a href="http://192.168.0.5:5001/inmuebles" class="boton">🙍‍♂️ Gestión de Usuarios</a>
-    <a href="http://192.168.0.5:5000/clientes" class="boton">🏠 Gestión de Inmuebles</a>
-    <a href="http://127.0.0.1:5002/citas" class="boton">📅 Gestión de Citas</a>
-    <a href="gestion reportes.html" class="boton">📊 Ver Reportes</a>
-    <a href="configuracion.html" class="boton">⚙️ Configuración</a>
+  <!-- Contenido principal -->
+  <div class="main">
+    <!-- Perfil -->
+    <div class="perfil">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/009/636/683/small_2x/admin-3d-illustration-icon-png.png" alt="Perfil administrador" class="avatar" > 
+      <span>Admin</span>
+    </div>
+
+    <!-- Imagen central -->
+    <img src="pngfind.com-edificios-png-5877822.png" alt="Engranaje con sombrero" class="principal">
+    <p>ING AYA</p>
+
+    <!-- Mensaje animado -->
+    <div id="mensaje">¡Bienvenido Administrador!</div>
   </div>
+
+  <script>
+    // Animación de mensaje al entrar
+    window.onload = function() {
+      const mensaje = document.getElementById("mensaje");
+      setTimeout(() => {
+        mensaje.style.opacity = 1;
+      }, 500);
+    }
+  </script>
 </body>
 </html>
