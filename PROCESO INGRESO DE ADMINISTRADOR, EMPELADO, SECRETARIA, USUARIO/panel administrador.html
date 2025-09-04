@@ -12,6 +12,39 @@
       color: #fff;
       display: flex;
       height: 100vh;
+      overflow: hidden; /* Para que las ondas no hagan scroll */
+    }
+
+    /* Fondo con ondas */
+        .waves {
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 50% 50%, rgba(0, 180, 255, 0.12), transparent 70%);
+      animation: moveWaves 50s linear infinite; /* Más lento = menos frames */
+      z-index: -1;
+    }
+
+    .waves::before,
+    .waves::after {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 30%, rgba(0, 255, 200, 0.12), transparent 70%);
+      animation: moveWaves 25s linear infinite reverse;
+    }
+
+    .waves::after {
+      background: radial-gradient(circle at 70% 70%, rgba(255, 0, 200, 0.12), transparent 70%);
+      animation-duration: 35s;
+    }
+
+    @keyframes moveWaves {
+    from { transform: rotate(0deg) scale(1); }
+    to { transform: rotate(360deg) scale(1.1); }
     }
 
     /* Sidebar */
@@ -22,6 +55,7 @@
       display: flex;
       flex-direction: column;
       gap: 15px;
+      z-index: 1;
     }
 
     .sidebar a {
@@ -47,10 +81,11 @@
       justify-content: center;
       text-align: center;
       position: relative;
+      z-index: 1;
     }
 
     /* Perfil arriba a la derecha */
-        .perfil {
+    .perfil {
       position: absolute;
       top: 30px;
       right: 20px;
@@ -59,27 +94,21 @@
       gap: 10px;
     }
 
-  .avatar {
-    width: 60px;
-    height: 80px;
-    border-radius: 50%;  
-    border: 0px solid #444;
-    object-fit: cover;  
-  }
+    .avatar {
+      width: 60px;
+      height: 80px;
+      border-radius: 50%;  
+      border: 0px solid #444;
+      object-fit: cover;  
+    }
 
-  .main .principal{
-    width:  300px;
-    
-    
-    filter: blur(0px);
-    
-    
-    
-  }
+    .main .principal{
+      width:  300px;
+      filter: blur(0px);
+    }
 
     /* Imagen central */
     .main img {
-
       width:100px;
       margin-bottom: 10px;
       opacity: 0.8;
@@ -96,6 +125,9 @@
   </style>
 </head>
 <body>
+  <!-- Fondo de ondas -->
+  <div class="waves"></div>
+
   <!-- Sidebar -->
   <div class="sidebar">
     <a href="http://192.168.0.5:5001/inmuebles">🙍‍♂️ Gestión de Usuarios</a>
@@ -109,12 +141,11 @@
   <div class="main">
     <!-- Perfil -->
     <div class="perfil">
-        <img src="https://static.vecteezy.com/system/resources/thumbnails/009/636/683/small_2x/admin-3d-illustration-icon-png.png" alt="Perfil administrador" class="avatar" > 
       <span>Admin</span>
     </div>
 
     <!-- Imagen central -->
-    <img src="pngfind.com-edificios-png-5877822.png" alt="Engranaje con sombrero" class="principal">
+    <img src="https://png.pngtree.com/png-vector/20221124/ourmid/pngtree-recruitment-job-for-social-media-admin-png-image_6478542.png" alt="Engranaje con sombrero" class="principal">
     <p>ING AYA</p>
 
     <!-- Mensaje animado -->
