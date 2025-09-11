@@ -82,3 +82,13 @@ input, textarea{
 .alert.success{border-color:rgba(85,214,158,.4)}
 .alert.error{border-color:rgba(255,107,107,.5)}
 .footer{opacity:.7; text-align:center; padding:2rem 1rem}
+
+
+select {
+    background: var(--muted);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: .7rem;
+    padding: .65rem .75rem;
+    width: 100%;
+}

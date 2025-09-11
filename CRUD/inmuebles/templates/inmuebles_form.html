@@ -25,7 +25,14 @@
       <label>Ubicación <input type="text" name="ubicacion" value="{{ inmueble.ubicacion if inmueble else '' }}"></label>
       <label>Área <input type="number" step="0.01" name="area" value="{{ inmueble.area if inmueble else '' }}"></label>
       <label>Precio <input type="number" step="0.01" name="precio" value="{{ inmueble.precio if inmueble else '' }}"></label>
-      <label>Estado <input type="text" name="estado" value="{{ inmueble.estado if inmueble else '' }}"></label>
+      <label>Estado<select type="text" name="estado" value="{{ inmueble.estado if inmueble else '' }}">
+                    <option value="disponible">Disponible</option>
+                    <option value="Arrendado">Arrendado</option>
+                    <option value="Proceso">Proceso</option>
+                    <option value="Mantenimiento">Mantenimiento</option>
+                    <option value="Envargo">Envargo</option>
+                    <option value="Construccion">Construccion</option>
+                </select></label>
       <div class="form-actions full">
         <button type="submit" class="btn primary">{% if action=='create' %}Crear{% else %}Actualizar{% endif %}</button>
       </div>
