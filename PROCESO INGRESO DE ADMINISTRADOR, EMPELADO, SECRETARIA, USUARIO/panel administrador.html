@@ -125,14 +125,14 @@
 
     .label {
   background-color: transparent;
-  border: 2px solid rgb(91, 91, 240);
+  border: 2px solid rgb(221, 69, 48);
   display: flex;
   align-items: center;
   border-radius: 50px;
-  width: 160px;
+  width: 235px;
   cursor: pointer;
   transition: all 0.4s ease;
-  padding: 5px;
+  padding: 2px;
   position: relative;
 }
 
@@ -158,12 +158,12 @@
 }
 
 .label .title {
-  font-size: 23px;
+  font-size: 20px;
   color: #fff;
   transition: all 0.4s ease;
   position: absolute;
   right: 8px;
-  bottom: -10px;
+  bottom: -5px;
   text-align: center;
 }
 
@@ -176,7 +176,7 @@
   height: 45px;
   width: 45px;
   border-radius: 50%;
-  background-color: rgb(91, 91, 240);
+  background-color: rgba(114, 106, 106, 0.603);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -215,7 +215,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  background-color: #3333a8;
+  background-color: #868686;
   width: 100%;
   height: 0;
   transition: all 0.4s ease;
@@ -260,10 +260,32 @@
   animation: showInstalledMessage 0.4s ease 3.5s forwards;
 }
 
+.spinner{
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #fff; 
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 0.8s linear infinite;
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading .icon {
+      display: none !important;
+    }
+
+    .loading .spinner {
+      display: block !important;
+    }
+
   </style>
 </head>
 <body>
-  <!-- Fondo de ondas -->
   <div class="waves"></div>
 
   <!-- Sidebar -->
@@ -274,31 +296,33 @@
     <a href="gestion reportes.html">📊 Ver Reportes</a>
     <a href="configuracion.html">⚙️ Configuración</a>
 
-    <label class="label">
-    <input type="checkbox" class="input" />
-    <span class="circle"
-      ><svg
-        class="icon"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="1.5"
-          d="M12 19V5m0 14-4-4m4 4 4-4"
-        ></path>
-      </svg>
-      <div class="square"></div>
-    </span>
-    <p class="title">Download</p>
-    <p class="title">Open</p>
-  </label>
-
-  
+    <!-- Botón Imprimir Reportes -->
+    <label class="label" id="btnReporte">
+      <input type="checkbox" class="input" />
+      <span class="circle">
+        <!-- Icono normal -->
+        <svg
+          class="icon"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M12 19V5m0 14-4-4m4 4 4-4"
+          ></path>
+        </svg>
+        <!-- Spinner -->
+        <div class="spinner"></div>
+        <div class="square"></div>
+      </span>
+      <p class="title">Imprimir Reportes</p>
+      <p class="title">Open</p>
+    </label>
   </div>
 
   <!-- Contenido principal -->
@@ -316,7 +340,6 @@
     <div id="mensaje">¡Bienvenido Administrador!</div>
   </div>
 
-  
   <script>
     // Animación de mensaje al entrar
     window.onload = function() {
@@ -325,6 +348,38 @@
         mensaje.style.opacity = 1;
       }, 500);
     }
+
+    // Función para descargar la imagen
+    function descargarReporte() {
+      const imgUrl = "INFO.png"; // ruta de la imagen
+      const link = document.createElement("a");
+      link.href = imgUrl;
+      link.download = "Reporte_Anual.png"; 
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    // Manejo del botón con animación
+    const btnReporte = document.getElementById("btnReporte");
+    const inputCheck = btnReporte.querySelector(".input");
+
+    btnReporte.addEventListener("click", () => {
+      // Activar animación de carga
+      btnReporte.classList.add("loading");
+      inputCheck.checked = true;
+
+      // Descargar imagen después de un momento
+      setTimeout(() => {
+        descargarReporte();
+      }, 800);
+
+      // Restaurar estado original
+      setTimeout(() => {
+        btnReporte.classList.remove("loading");
+        inputCheck.checked = false;
+      }, 2500);
+    });
   </script>
 </body>
 </html>
