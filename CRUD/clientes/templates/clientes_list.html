@@ -2,45 +2,94 @@
 {% block title %}Clientes{% endblock %}
 {% block content %}
 <div class="card">
-  <div class="card-header">
-    <h2>Clientes</h2>
-    <a class="btn primary" href="{{ url_for('clientes_new_form') }}">+ Agregar</a>
-  </div>
+    <div class="card-header">
+        <h2>Clientes</h2>
+        <a class="btn primary" href="{{ url_for('clientes_new_form') }}">+ Agregar</a>
+    </div>
 
-  {% if clientes %}
-    <table class="table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Nombre</th>
-          <th>Email</th>
-          <th>Teléfono</th>
-          <th>Dirección</th>
-          <th>Creado</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-      {% for c in clientes %}
-        <tr>
-          <td>{{ c.id }}</td>
-          <td>{{ c.nombre }}</td>
-          <td>{{ c.email }}</td>
-          <td>{{ c.telefono or '-' }}</td>
-          <td>{{ c.direccion or '-' }}</td>
-          <td>{{ c.created_at.strftime('%Y-%m-%d %H:%M') if c.created_at else '' }}</td>
-          <td class="actions">
-            <a class="btn" href="{{ url_for('clientes_edit_form', cliente_id=c.id) }}">Editar</a>
-            <form action="{{ url_for('clientes_delete', cliente_id=c.id) }}" method="post" onsubmit="return confirm('¿Seguro que deseas eliminar este cliente?');">
-              <button class="btn danger" type="submit">Borrar</button>
-            </form>
-          </td>
-        </tr>
-      {% endfor %}
-      </tbody>
-    </table>
-  {% else %}
-    <p>No hay clientes. ¡Crea el primero!</p>
-  {% endif %}
+    <form id="filtro-clientes" action="{{ url_for('clientes_list') }}" method="get" class="form">
+        <div class="grid">
+            <label>
+                <span>Nombre</span>
+                <input type="text" name="nombre" value="{{ request.args.get('nombre', '') }}">
+            </label>
+            <label>
+                <span>Email</span>
+                <input type="email" name="email" value="{{ request.args.get('email', '') }}">
+            </label>
+            <label>
+                <span>Teléfono</span>
+                <input type="text" name="telefono" value="{{ request.args.get('telefono', '') }}">
+            </label>
+            <label>
+                <span>Dirección</span>
+                <input type="text" name="direccion" value="{{ request.args.get('direccion', '') }}">
+            </label>
+        </div>
+        <div class="form-actions">
+            <button class="btn primary" type="submit">Buscar</button>
+            <a class="btn" href="{{ url_for('clientes_list') }}">Limpiar Filtros</a>
+            <button type="button" class="btn secondary" id="btn-reporte">Descargar PDF</button>
+        </div>
+    </form>
+
+    <script>
+        document.getElementById('btn-reporte').addEventListener('click', function(event) {
+            event.preventDefault();
+            const nombre = document.querySelector('input[name="nombre"]').value;
+            const email = document.querySelector('input[name="email"]').value;
+            const telefono = document.querySelector('input[name="telefono"]').value;
+            const direccion = document.querySelector('input[name="direccion"]').value;
+
+            let url = "/clientes/reporte?";
+            if (nombre) url += `nombre=${encodeURIComponent(nombre)}&`;
+            if (email) url += `email=${encodeURIComponent(email)}&`;
+            if (telefono) url += `telefono=${encodeURIComponent(telefono)}&`;
+            if (direccion) url += `direccion=${encodeURIComponent(direccion)}&`;
+
+            // Eliminar el último '&' si existe para que la URL sea válida
+            url = url.endsWith('&') ? url.slice(0, -1) : url;
+
+            window.open(url, '_blank');
+        });
+    </script>
+
+    {% if clientes %}
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Dirección</th>
+                    <th>Creado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in clientes %}
+                <tr>
+                    <td>{{ c.id }}</td>
+                    <td>{{ c.nombre }}</td>
+                    <td>{{ c.email }}</td>
+                    <td>{{ c.telefono or '-' }}</td>
+                    <td>{{ c.direccion or '-' }}</td>
+                    <td>{{ c.created_at.strftime('%Y-%m-%d %H:%M') if c.created_at else '' }}</td>
+                    <td class="actions">
+                        <a class="btn" href="{{ url_for('clientes_edit_form', cliente_id=c.id) }}">Editar</a>
+                        <form action="{{ url_for('clientes_delete', cliente_id=c.id) }}" method="post" onsubmit="return confirm('¿Seguro que deseas eliminar este cliente?');">
+                            <button class="btn danger" type="submit">Borrar</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <p>No hay clientes.</p>
+    {% endif %}
 </div>
 {% endblock %}

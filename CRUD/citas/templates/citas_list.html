@@ -9,10 +9,6 @@
 <div class="topbar">
     <a href="/" class="brand">Citas</a>
     <div class="spacer"></div>
-    <form class="search" method="get">
-        <input type="text" name="q" value="{{ q }}" placeholder="Buscar...">
-        <button type="submit">Buscar</button>
-    </form>
     <a href="{{ url_for('citas_new_form') }}" class="btn primary">Crear Cita</a>
 </div>
 
@@ -31,6 +27,54 @@
         <div class="card-header">
             <h2>Lista de Citas</h2>
         </div>
+
+        <form id="filtro-citas" action="{{ url_for('citas_list') }}" method="get" class="form-horizontal">
+            <div class="grid">
+                <label>
+                    <span>Cliente</span>
+                    <input type="text" name="cliente_nombre" value="{{ request.args.get('cliente_nombre', '') }}">
+                </label>
+                <label>
+                    <span>Inmueble</span>
+                    <input type="text" name="inmueble_ubicacion" value="{{ request.args.get('inmueble_ubicacion', '') }}">
+                </label>
+                <label>
+                    <span>Fecha</span>
+                    <input type="date" name="fecha" value="{{ request.args.get('fecha', '') }}">
+                </label>
+                <label>
+                    <span>Estado</span>
+                    <input type="text" name="estado" value="{{ request.args.get('estado', '') }}">
+                </label>
+            </div>
+            <div class="form-actions">
+                <button class="btn primary" type="submit">Buscar</button>
+                <a class="btn" href="{{ url_for('citas_list') }}">Limpiar Filtros</a>
+                <button type="button" class="btn secondary" id="btn-reporte">Descargar PDF</button>
+            </div>
+        </form>
+
+        <script>
+            function generarReporte() {
+                const cliente = document.querySelector('input[name="cliente_nombre"]').value;
+                const inmueble = document.querySelector('input[name="inmueble_ubicacion"]').value;
+                const fecha = document.querySelector('input[name="fecha"]').value;
+                const estado = document.querySelector('input[name="estado"]').value;
+
+                let url = "/citas/reporte?";
+                if (cliente) url += `cliente_nombre=${encodeURIComponent(cliente)}&`;
+                if (inmueble) url += `inmueble_ubicacion=${encodeURIComponent(inmueble)}&`;
+                if (fecha) url += `fecha=${encodeURIComponent(fecha)}&`;
+                if (estado) url += `estado=${encodeURIComponent(estado)}&`;
+                
+                url = url.endsWith('&') ? url.slice(0, -1) : url;
+
+                window.open(url, '_blank');
+            }
+
+            document.getElementById('btn-reporte').addEventListener('click', generarReporte);
+        </script>
+        
         <table class="table">
             <thead>
                 <tr>

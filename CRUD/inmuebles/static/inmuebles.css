@@ -48,7 +48,7 @@ body{
   display:flex; align-items:center; justify-content:space-between;
   padding:1rem 1.25rem; border-bottom:1px solid var(--border)
 }
-.card-header h2{margin:0; font-size:1.25rem}
+.card-header h2{margin:0; font-size:1.25rem ; margin-left: -49rem; margin-top: -1rem;}
 
 .table{width:100%; border-collapse:collapse; margin-top:1rem;}
 .table th,.table td{padding:.75rem 1rem; border-top:1px solid var(--border)}

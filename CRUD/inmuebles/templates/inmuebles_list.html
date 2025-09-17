@@ -6,48 +6,100 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='inmuebles.css') }}">
 </head>
 <body>
-  
-<div class="container">
-  <div class="card">
-    <div class="card-header">
-      <h2>Inmuebles</h2>
-      <a class="btn primary" href="{{ url_for('inmuebles_new_form') }}">Agregar</a>
-    </div>
+ <div class="topbar">
+    <a href="/" class="brand">Inmuebles</a>
+    <div class="spacer"></div>
+    <a href="{{ url_for('inmuebles_new_form') }}" class="btn primary">Agregar</a>
+</div>
 
-    {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        <div class="flash">
-          {% for category, message in messages %}
-            <div class="alert {{ category }}">{{ message }}</div>
-          {% endfor %}
-        </div>
-      {% endif %}
-    {% endwith %}
-    <table class="table">
-      <thead>
-        <tr>
-          <th>ID</th><th>Ubicación</th><th>Área</th><th>Precio</th><th>Estado</th><th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-      {% for inmueble in inmuebles %}
-        <tr>
-          <td>{{ inmueble.id }}</td>
-          <td>{{ inmueble.ubicacion }}</td>
-          <td>{{ inmueble.area }}</td>
-          <td>{{ inmueble.precio }}</td>
-          <td>{{ inmueble.estado }}</td>
-          <td class="actions">
-            <a href="{{ url_for('inmuebles_edit_form', inmueble_id=inmueble.id) }}" class="btn">Editar</a>
-            <form method="post" action="{{ url_for('inmuebles_delete', inmueble_id=inmueble.id) }}" style="display:inline">
-              <button type="submit" class="btn danger">Eliminar</button>
-            </form>
-          </td>
-        </tr>
-      {% endfor %}
-      </tbody>
-    </table>
-  </div>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h2>Lista de Inmuebles</h2>
+      
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash">
+          {% for category, message in messages %}
+            <div class="alert {{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <form id="filtro-inmuebles" action="{{ url_for('inmuebles_list') }}" method="get" class="form-horizontal">
+      <div class="grid">
+        <label>
+          <span>Ubicación</span>
+          <input type="text" name="ubicacion" value="{{ request.args.get('ubicacion', '') }}">
+        </label>
+        <label>
+          <span>Área</span>
+          <input type="number" name="area" value="{{ request.args.get('area', '') }}">
+        </label>
+        <label>
+          <span>Precio</span>
+          <input type="number" name="precio" value="{{ request.args.get('precio', '') }}">
+        </label>
+        <label>
+          <span>Estado</span>
+          <input type="text" name="estado" value="{{ request.args.get('estado', '') }}">
+        </label>
+      </div>
+      <div class="form-actions">
+        <button class="btn primary" type="submit">Buscar</button>
+        <a class="btn" href="{{ url_for('inmuebles_list') }}">Limpiar Filtros</a>
+        <button type="button" class="btn secondary" id="btn-reporte">Descargar PDF</button>
+      </div>
+    </form>
+    
+    <script>
+      function generarReporte() {
+        const ubicacion = document.querySelector('input[name="ubicacion"]').value;
+        const area = document.querySelector('input[name="area"]').value;
+        const precio = document.querySelector('input[name="precio"]').value;
+        const estado = document.querySelector('input[name="estado"]').value;
+
+        let url = "/inmuebles/reporte?";
+        if (ubicacion) url += `ubicacion=${encodeURIComponent(ubicacion)}&`;
+        if (area) url += `area=${encodeURIComponent(area)}&`;
+        if (precio) url += `precio=${encodeURIComponent(precio)}&`;
+        if (estado) url += `estado=${encodeURIComponent(estado)}&`;
+        
+        url = url.endsWith('&') ? url.slice(0, -1) : url;
+        window.open(url, '_blank');
+      }
+
+      document.getElementById('btn-reporte').addEventListener('click', generarReporte);
+    </script>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th><th>Ubicación</th><th>Área</th><th>Precio</th><th>Estado</th><th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for inmueble in inmuebles %}
+        <tr>
+          <td>{{ inmueble.id }}</td>
+          <td>{{ inmueble.ubicacion }}</td>
+          <td>{{ inmueble.area }}</td>
+          <td>{{ inmueble.precio }}</td>
+          <td>{{ inmueble.estado }}</td>
+          <td class="actions">
+            <a href="{{ url_for('inmuebles_edit_form', inmueble_id=inmueble.id) }}" class="btn">Editar</a>
+            <form method="post" action="{{ url_for('inmuebles_delete', inmueble_id=inmueble.id) }}" style="display:inline">
+              <button type="submit" class="btn danger">Eliminar</button>
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
 </div>
 </body>
 </html>
