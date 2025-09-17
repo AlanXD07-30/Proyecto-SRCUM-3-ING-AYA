@@ -293,8 +293,8 @@
     <a href="http://127.0.0.1:5000"> Gestión de Usuarios</a>
     <a href="http://127.0.0.1:5001"> Gestión de Inmuebles</a>
     <a href="http://127.0.0.1:5002"> Gestión de Citas</a>
-    <a href="gestion reportes.html"> Ver Reportes</a>
-    <a href="configuracion.html"> Configuración</a>
+    <a href="../gestion reportes.html"> Ver Reportes</a>
+    <a href="../configuracion.html"> Configuración</a>
 
     <!-- Botón Imprimir Reportes -->
     <label class="label" id="btnReporte">
@@ -351,7 +351,7 @@
 
     // Función para descargar la imagen
     function descargarReporte() {
-      const imgUrl = "INFO.png"; // ruta de la imagen
+      const imgUrl = "../INFO.png"; // ruta de la imagen
       const link = document.createElement("a");
       link.href = imgUrl;
       link.download = "Reporte_Anual.png"; 
