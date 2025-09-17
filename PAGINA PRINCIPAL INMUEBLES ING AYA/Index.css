@@ -212,12 +212,12 @@ nav a:hover{
     justify-content: center;
     background-color: #000;
     color: #fff;
-    padding: 60px 40px;
-    gap: 40px;
+    padding: 60px 50px;
+    gap: 50px;
 }
 
 .suenos img {
-    width: 390px;
+    width: 450px;
     margin: 30px;
     border-radius: 16px;
     box-shadow: 0 0 20px rgba(255,255,255,0.1);
