@@ -7,6 +7,7 @@
   <link rel="icon" href="../logo_INGAYA_gris-sin fondo.png">
   <link rel="stylesheet" href="registro.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="Acciones.js"></script>
 </head>
 <body>
   <header class="encabezado">
@@ -21,7 +22,8 @@
     <div class="form-container">
       <h2>REGISTRATE</h2>
       <form>
-        <input type="text" placeholder="Nombre de completo" required />
+        <input type="text" placeholder="Nombres" required />
+          <input type="text" placeholder="Apellidos" required />
         <input type="password" placeholder="Crear contraseña" required />
         <input type="email" placeholder="Correo electrónico" required />
         <input type="number" placeholder="Numero de telefono" required />
@@ -35,53 +37,5 @@
     <img src="../logo_INGAYA_gris-sin fondo.png" alt="Logo">
     <p>Todos los derechos reservados</p>
   </footer>
-
-
-<script>
-  function mostrarAlerta(event){
-    event.preventDefault(); 
-Swal.fire({
-  title: "Cargando tus datos",
-  html: "Prosesando <b></b> millisegundos.",
-  timer: 2000,
-  timerProgressBar: true,
-  didOpen: () => {
-    Swal.showLoading();
-    const timer = Swal.getPopup().querySelector("b");
-    timerInterval = setInterval(() => {
-      timer.textContent = `${Swal.getTimerLeft()}`;
-    }, 100);
-  },
-  willClose: () => {
-    clearInterval(timerInterval);
-  }
-}).then((result) => {
-  /* Read more about handling dismissals below */
-  if (result.dismiss === Swal.DismissReason.timer) {
-    console.log("I was closed by the timer");
-  }
-
-  }).then(() => {
-    // Borra los campos del formulario original
-    event.target.form.reset();
-    Swal.fire({
-      title: "Datos cargados correctamente",
-      text: "Gracias :)",
-      width: 600,
-      padding: "3em",
-      color: "#716add",
-      background: "#fff url(/images/trees.png)",
-      backdrop: `
-        rgba(0,0,123,0.4)
-        url("/images/nyan-cat.gif")
-        left top
-        no-repeat
-      `
-    })
-});
-
-  }
-</script>
-
 </body>
 </html>

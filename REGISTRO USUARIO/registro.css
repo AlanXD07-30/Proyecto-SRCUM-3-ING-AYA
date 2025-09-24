@@ -147,3 +147,11 @@ footer img {
     font-size: 10px;
   }
 }
+
+
+  .swal-popup {
+    border-radius: 8px !important;
+    padding: 12px 20px !important;
+    font-size: 0.95rem !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+  }
