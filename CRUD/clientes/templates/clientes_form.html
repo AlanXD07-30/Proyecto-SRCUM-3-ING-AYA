@@ -19,18 +19,18 @@
   <form action="{{ post_url }}" method="post" class="form">
     <div class="grid">
       <label>
-        <span>Nombre *</span>
+        <span>Nombre </span>
         <input type="text" name="nombre" required value="{{ cliente.nombre if cliente else '' }}">
       </label>
 
       <label>
-        <span>Email *</span>
+        <span>Email </span>
         <input type="email" name="email" required value="{{ cliente.email if cliente else '' }}">
       </label>
 
       <label>
-        <span>Teléfono</span>
-        <input type="text" name="telefono" value="{{ cliente.telefono if cliente else '' }}">
+  <span>Teléfono </span>
+  <input type="text" name="telefono" required pattern="^[1-9][0-9]{9}$" maxlength="10" minlength="10" title="El teléfono debe tener 10 dígitos y no empezar con 0" value="{{ cliente.telefono if cliente else '' }}">
       </label>
 
       <label class="full">

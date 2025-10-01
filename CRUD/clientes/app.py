@@ -36,24 +36,24 @@ def clientes_list():
     
     with get_conn() as conn:
         with conn.cursor() as cur:
-            query = "SELECT * FROM cliente WHERE 1=1"
+            criterios = []
             params = []
-            
             if nombre:
-                query += " AND nombre ILIKE %s"
+                criterios.append("nombre ILIKE %s")
                 params.append(f"%{nombre}%")
             if email:
-                query += " AND email ILIKE %s"
+                criterios.append("email ILIKE %s")
                 params.append(f"%{email}%")
             if telefono:
-                query += " AND telefono ILIKE %s"
+                criterios.append("telefono ILIKE %s")
                 params.append(f"%{telefono}%")
             if direccion:
-                query += " AND direccion ILIKE %s"
+                criterios.append("direccion ILIKE %s")
                 params.append(f"%{direccion}%")
-            
-            query += " ORDER BY id DESC"
-            
+            if criterios:
+                query = "SELECT * FROM cliente WHERE (" + " OR ".join(criterios) + ") ORDER BY id DESC"
+            else:
+                query = "SELECT * FROM cliente ORDER BY id DESC"
             cur.execute(query, params)
             clientes = cur.fetchall()
             
@@ -154,24 +154,24 @@ def clientes_reporte():
 
     with get_conn() as conn:
         with conn.cursor() as cur:
-            query = "SELECT id, nombre, email, telefono, direccion FROM cliente WHERE 1=1"
+            criterios = []
             params = []
-            
             if nombre:
-                query += " AND nombre ILIKE %s"
+                criterios.append("nombre ILIKE %s")
                 params.append(f"%{nombre}%")
             if email:
-                query += " AND email ILIKE %s"
+                criterios.append("email ILIKE %s")
                 params.append(f"%{email}%")
             if telefono:
-                query += " AND telefono ILIKE %s"
+                criterios.append("telefono ILIKE %s")
                 params.append(f"%{telefono}%")
             if direccion:
-                query += " AND direccion ILIKE %s"
+                criterios.append("direccion ILIKE %s")
                 params.append(f"%{direccion}%")
-            
-            query += " ORDER BY id DESC"
-            
+            if criterios:
+                query = "SELECT id, nombre, email, telefono, direccion FROM cliente WHERE (" + " OR ".join(criterios) + ") ORDER BY id DESC"
+            else:
+                query = "SELECT id, nombre, email, telefono, direccion FROM cliente ORDER BY id DESC"
             cur.execute(query, params)
             clientes = cur.fetchall()
 

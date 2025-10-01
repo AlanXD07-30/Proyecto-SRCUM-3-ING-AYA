@@ -23,8 +23,8 @@
     {% endwith %}
     <form method="post" class="form grid">
       <label>Ubicación <input type="text" name="ubicacion" value="{{ inmueble.ubicacion if inmueble else '' }}"></label>
-      <label>Área <input type="number" step="0.01" name="area" value="{{ inmueble.area if inmueble else '' }}"></label>
-      <label>Precio <input type="number" step="0.01" name="precio" value="{{ inmueble.precio if inmueble else '' }}"></label>
+  <label>Área <input type="number" step="0.01" name="area" min="0.01" required title="El área debe ser mayor a 0" value="{{ inmueble.area if inmueble else '' }}"></label>
+  <label>Precio <input type="number" step="0.01" name="precio" min="0.01" required title="El precio debe ser mayor a 0" value="{{ inmueble.precio if inmueble else '' }}"></label>
       <label>Estado<select type="text" name="estado" value="{{ inmueble.estado if inmueble else '' }}">
                     <option value="disponible">Disponible</option>
                     <option value="Arrendado">Arrendado</option>
