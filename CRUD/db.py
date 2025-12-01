@@ -11,6 +11,6 @@ def get_conn():
         port=os.getenv("DB_PORT", "5432"),
         dbname=os.getenv("DB_NAME", "crud"),  # 👈 nombre actualizado
         user=os.getenv("DB_USER", "postgres"),
-        password=123456789,
+        password=2426022023,
         row_factory=dict_row,
     )
