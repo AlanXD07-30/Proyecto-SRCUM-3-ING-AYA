@@ -54,7 +54,7 @@ swalWithBootstrapButtons.fire({
   text: "Puedes ver nuestros Inmuebles!",
   icon: "warning",
   showCancelButton: true,
-  confirmButtonColor: "#3085d6",
+  confirmButtonColor: "#3b82f6",
   cancelButtonColor: "#d33",
   confirmButtonText: "Confirmar"
 })
