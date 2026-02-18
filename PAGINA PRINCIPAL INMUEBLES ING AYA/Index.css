@@ -3,17 +3,28 @@
     box-sizing: border-box;
 }
 
+:root {
+    --bg-dark: #0f172a;      
+    --bg-card: #1e293b;      
+    --accent: #3b82f6;        
+    --text-primary: #f8fafc;   
+    --text-secondary: #94a3b8; 
+    --white: #ffffff;
+}
+
 body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: #000;
-    color: #fff;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
 }
 
 header {
-    background: linear-gradient(to bottom, #eee, #ccc);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 3px solid var(--accent);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -83,10 +94,11 @@ nav a:hover{
 }
 
 .container-2 h2 {
+    color: var(--white);
     font-size: 45px;
     font-weight: bold;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px #444;
+    text-shadow: none;
 }
 
 .container-2 p {
@@ -101,18 +113,24 @@ nav a:hover{
     box-shadow: 0 0 20px rgba(255,255,255,0.1);
 }
 
+.container-2 p, .suenos p, .beneficio p {
+    color: var(--text-secondary); 
+}
 
 .información button, .información a {
     display: inline-block;
     margin-top: 20px;
-    background-color: white;
-    color: black;
+    background-color: var(--accent);
+    color: white;
     padding: 15px 25px;
     border: none;
     font-weight: bold;
     border-radius: 10px;
     box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
     text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
 }
 
 .container-3 h2 {
