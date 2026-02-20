@@ -1,43 +1,46 @@
-html{
-  height: 100%;
+*{
+    box-sizing: border-box;
 }
 
 :root {
-            --color-primary: #000;
-            --color-secondary: #fff;
-            --color-light-grey: #eee;
-            --color-dark-grey: #ccc;
-            --color-mid-grey: #333;
-            --color-border: #999;
-            --color-accent-1: #f5f5f5;
-            --color-accent-2: #1da1f2; /* Color para redes sociales */
-        }
+    --bg-dark: #0a0f1a;        /* El azul petróleo profundo */
+    --bg-card: #161e2d;        /* Un tono más claro para las tarjetas */
+    --accent: #3b82f6;         /* Azul brillante para botones */
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --glass: rgba(255, 255, 255, 0.85);
+}
 
 body {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            background-color: var(--color-primary);
-            color: var(--color-secondary);
-            overflow-x: hidden;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .encabezado {
-    background: linear-gradient(to bottom, var(--color-light-grey), var(--color-dark-grey));
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom, #eee, #ccc);
+    backdrop-filter: blur(10px);
+    border-bottom: 3px solid var(--accent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 5%;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
+
+.encabezado h2 { color: #000; margin: 0; }
+.volver { color: #000 !important; font-weight: bold; text-decoration: none; }
 
 .volver{
   font-weight: bold;
     color: black;
-    font-size: large;
+    font-size: small;
     text-decoration: none;
-    border: 1px solid #aaa;
-    padding: 6px 14px;
     border-radius: 8px;
-    background-color: #fff;
 }
 
 .logo {
@@ -51,7 +54,8 @@ body {
 }
 
 .logo img {
-  height: 70px;
+    height: 70px;
+   
 }
 
 .nom_emp {
@@ -60,25 +64,29 @@ body {
 }
 
 .boton-1{
-  background-color: #f5f5f5;
-    border: 1px solid #999;
-    font-size: large;
+  background-color: #333;
+  color: white;
+    border: 1px solid #000;
+    font-size: small;
 }
 
 .boton-2{
-  background-color: #333;
-    color: white;
-    border: 1px solid #000;
-    font-size: large;
+  background-color: #f5f5f5;
+    color: rgb(0, 0, 0);
+    border: 1px solid #999;
+    font-size: small;
+    
 }
 
+
+
 nav a {
-    margin-left: 22px;
+     margin-left: 5px;
     text-decoration: none;
     color: black;
     font-weight: bold;
-    
-    padding: 6px 12px;
+    font-size: 14px;
+    padding: 8px 12px;
     border-radius: 8px;
 
 }
@@ -93,90 +101,94 @@ nav a:hover{
 }
 
 .filtros {
-  margin: 20px 0;
+    background: linear-gradient(to right, #111827, #1e293b);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px auto;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 .filtros select {
-  padding: 10px;
-  border-radius: 5px;
-  margin: 0 10px;
+    background: #0a0f1a;
+    color: white;
+    border: 1px solid var(--accent);
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 .grid-inmuebles {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
+    display: flex;
+    flex-direction: column; /* Una debajo de otra como pediste */
+    gap: 40px;
+    padding: 40px 10%; /* Espacio a los lados para que no toquen el borde de la pantalla */
 }
 
 .card-inmueble {
-  background-color: #111;
-  border-radius: 15px;
-  padding: 20px;
-  width: 300px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.05);
-  position: relative;
-  transition: transform 0.3s;
+    display: flex; /* Imagen a la izquierda, info a la derecha */
+    background-color: var(--bg-card);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+    min-height: 300px;
 }
 
 .card-inmueble:hover {
-  transform: scale(1.02);
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
 }
 
+/* La imagen ocupa una parte fija de la tarjeta grande */
 .card-inmueble img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 10px;
+    width: 40%; 
+    object-fit: cover;
 }
 
-.card-inmueble h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
+.info-inmueble {
+    padding: 30px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.card-inmueble p {
-  font-size: 14px;
-  color: #ccc;
-  margin-bottom: 10px;
+/* Estilo para los datos de la maqueta de Paint */
+.detalles-tecnicos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
 }
 
-.card-inmueble .precio {
-  color: #0f0;
-  font-weight: bold;
+.detalles-tecnicos span {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
 }
 
-.estrella {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  font-size: 22px;
-  cursor: pointer;
-  color: white;
+.precio {
+    color: #10b981;
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 
-.estrella::before {
-  content: "☆";
-}
-
-.estrella.activo::before {
-  content: "★";
-  color: gold;
-}
-
-.mensaje-info {
-  background: red;
-  color: white;
-  padding: 12px 20px;
-  margin-top: 40px;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 10px;
-  font-weight: bold;
-  display: none;
+/* Botón de ver más */
+.btn-ver {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 main{
@@ -279,16 +291,13 @@ footer {
         }
 
 
-@media (max-width: 768px) {
-  .grid-inmuebles {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card-inmueble {
-    width: 90%;
-  }
-
+@media (max-width: 850px) {
+    .card-inmueble {
+        flex-direction: column;
+    }
+    .card-inmueble img, .info-inmueble {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -314,3 +323,16 @@ footer {
                 flex-wrap: wrap;
             }
         }
+
+
+        /*Efectos Adicionales*/
+        @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

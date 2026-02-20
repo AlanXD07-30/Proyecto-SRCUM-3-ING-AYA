@@ -18,8 +18,8 @@
     </a>
     <nav>
       
-      <a href="../REGISTRO USUARIO/registro.html" class="boton-1">REGISTRARSE</a>
       <a href="../PROCESO INGRESO DE ADMINISTRADOR, EMPELADO, SECRETARIA, USUARIO/login.html" class="boton-2">INGRESAR</a>
+      <a href="../REGISTRO USUARIO/registro.html" class="boton-1">REGISTRARSE</a>
       <a href="../PAGINA PRINCIPAL INMUEBLES ING AYA/Index.html" class="volver" onclick="confirmarAccion(event)">VOLVER A INICIO</a>
 
     </nav>
@@ -32,18 +32,18 @@
 
       <select id="ciudad">
         <option value="todos">Todas</option>
-        <option value="Bogotá">Bogotá</option>
-        <option value="Medellín">Medellín</option>
-        <option value="Cali">Cali</option>
-        <option value="Barranquilla">Barranquilla</option>
-        <option value="Cartagena">Cartagena</option>
+        <option value="bogota">Bogotá</option>
+        <option value="medellin">Medellín</option>
+        <option value="cali">Cali</option>
+        <option value="barranquilla">Barranquilla</option>
+        <option value="cartagena">Cartagena</option>
         <option value="Bucaramanga">Bucaramanga</option>
         <option value="Santa Marta">Santa Marta</option> 
       </select>
 
       <select id="tipo">
         <option value="todos">Todos los tipos</option>
-        <option value="Apartamento">Apartamento</option>
+        <option value="apartamento">Apartamento</option>
         <option value="casa">Casa</option>
         <option value="Finca">Finca</option>
         <option value="Casa Quinta">Casa Quinta</option>
@@ -56,499 +56,84 @@
 
     <div class="grid-inmuebles">
       <!-- Inmueble 1 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
-        <img src="https://img.freepik.com/foto-gratis/casa-aislada-campo_1303-23773.jpg?semt=ais_items_boosted&w=740" alt="Inmueble Kennedy">
-        <div class="estrella" onclick="agregarFavorito(this)"></div>
-        <h3>Inmueble en venta – Kennedy, Bogotá</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio: $280.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 2 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
-        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bHV4dXJ5JTIwaG91c2V8ZW58MHx8MHx8fDA%3D" alt="Inmueble Kennedy">
-        <div class="estrella" onclick="agregarFavorito(this)"></div>
-        <h3>Inmueble en venta – Engativa - Bogotá</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Engativa. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio: $380.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 3 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
-        <img src="https://arquitecturaideal.com/wp-content/uploads/2015/07/casas-lujosas.jpg" alt="Inmueble Kennedy">
-        <div class="estrella" onclick="agregarFavorito(this)"></div>
-        <h3>Inmueble en venta – Lourdes - Bogotá</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Lourdes. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio: $180.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 4 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Apartamento">
-        <img src="https://p4.wallpaperbetter.com/wallpaper/591/884/850/house-modern-mansions-architecture-wallpaper-preview.jpg" alt="Inmueble Kennedy">
-        <div class="estrella" onclick="agregarFavorito(this)"></div>
-        <h3>Inmueble en venta – Usme - Bogotá</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Usme 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio: $370.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 5 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Apartamento">
-        <img src="https://wallpapercave.com/wp/wp2406713.jpg" alt="Inmueble Kennedy">
-        <div class="estrella" onclick="agregarFavorito(this)"></div>
-        <h3>Inmueble en venta – Soacha - Bogotá</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Soacha. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio: $660.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 6 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
-        <img src="https://s1.1zoom.me/big0/365/389443-svetik.jpg" alt="Inmueble Kennedy">
-        <div class="estrella" onclick="agregarFavorito(this)"></div>
-        <h3>Inmueble en venta – Lourdes - Bogotá</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Lourdes. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio: $250.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 7 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Apartamento">
-        <img src="https://c4.wallpaperflare.com/wallpaper/76/280/48/architecture-building-design-house-wallpaper-preview.jpg" alt="Inmueble Kennedy">
-        <div class="estrella" onclick="agregarFavorito(this)"></div>
-        <h3>Inmueble en venta – Kennedy, Bogotá</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio: $170.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 8 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Apartamento">
-        <img src="https://e1.pxfuel.com/desktop-wallpaper/35/678/desktop-wallpaper-home-philippines-home-house-property-building-facade-simple-house.jpg" alt="Inmueble Kennedy">
-        <div class="estrella" onclick="agregarFavorito(this)"></div>
-        <h3>Inmueble en venta – Ciudad Bolivar, Bogotá</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Ciudad Bolivar. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio: $340.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 9 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
-        <img src="https://e0.pxfuel.com/wallpapers/292/1011/desktop-wallpaper-houses.jpg" alt="Inmueble Kennedy">
-        <div class="estrella" onclick="agregarFavorito(this)"></div>
-        <h3>Inmueble en venta – Suba - Bogotá</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Suba. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio: $580.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 10 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Apartamento">
-        <img src="https://images6.alphacoders.com/670/670809.jpg" alt="Inmueble Kennedy">
-        <div class="estrella" onclick="agregarFavorito(this)"></div>
-        <h3>Inmueble en venta – Lourdes - Bogotá</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Lourdes. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio: $350.000.000 COP</span>
-      </div>
-<!-- Inmueble 11 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Apartamento">
-        <img src="https://wallpapers.com/images/hd/mansion-pictures-4y4krwtxs1xsrz2n.jpg" alt="Inmueble Kennedy">
-        <div class="estrella" onclick="agregarFavorito(this)"></div>
-        <h3>Inmueble en venta – Kennedy, Bogotá</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio: $280.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 12 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Apartamento">
-        <img src="https://republicainmobiliaria.com/wp-content/uploads/2021/12/descarga-8.jpeg" alt="Inmueble Kennedy">
-        <div class="estrella" onclick="agregarFavorito(this)"></div>
-        <h3>Inmueble en venta – Kennedy, Bogotá</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio: $280.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 13 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
-        <img src="https://media.revistavanityfair.es/photos/60e85a3676b409bfd6cb9441/master/w_1600%2Cc_limit/13165.jpg" alt="Inmueble Kennedy">
-        <div class="estrella" onclick="agregarFavorito(this)"></div>
-        <h3>Inmueble en venta – Kennedy, Bogotá</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio: $280.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 14 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Apartamento">
-        <img src="https://canalhogar.com/wp-content/uploads/2023/01/fachadas_de_casas_modernas_bonitas_con_forma_de_cubo_1.jpg" alt="Inmueble Kennedy">
-        <div class="estrella" onclick="agregarFavorito(this)"></div>
-        <h3>Inmueble en venta – Kennedy, Bogotá</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio: $280.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 15 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
-        <img src="https://estag.fimagenes.com/imagenesred/2587715_2.jpg?1" alt="Inmueble Kennedy">
-        <div class="estrella" onclick="agregarFavorito(this)"></div>
-        <h3>Inmueble en venta – Kennedy, Bogotá</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio: $280.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 16 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
-        <img src="https://hips.hearstapps.com/hmg-prod/images/amoroso-residence-photos-16-1621084958.jpg" alt="Inmueble Kennedy">
-        <div class="estrella" onclick="agregarFavorito(this)"></div>
-        <h3>Inmueble en venta – Kennedy, Bogotá</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio: $280.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 17 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
-        <img src="https://i.pinimg.com/736x/18/77/5e/18775e36273f1bf9cedaad474717bf10.jpg" alt="Inmueble Kennedy">
-        <div class="estrella" onclick="agregarFavorito(this)"></div>
-        <h3>Inmueble en venta – Kennedy, Bogotá</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio: $280.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 18 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
-        <img src="https://static9.depositphotos.com/1041088/1184/i/450/depositphotos_11842757-stock-photo-large-american-beautiful-house-with.jpg" alt="Inmueble Kennedy">
-        <div class="estrella" onclick="agregarFavorito(this)"></div>
-        <h3>Inmueble en venta – Kennedy, Bogotá</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio: $280.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 19 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Apartamento">
-        <img src="https://plus.unsplash.com/premium_photo-1661915661139-5b6a4e4a6fcc?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2FzYSUyMG1vZGVybmF8ZW58MHx8MHx8fDA%3D" alt="Inmueble Suba">
-        <div class="estrella" onclick="agregarFavorito(this)"></div>
-        <h3>Inmueble en venta – Suba, Bogotá</h3>
-        <p>
-          Casa de 3 pisos con 5 alcobas, 3 baños, cocina integral, parqueadero y jardín. Perfecta para familias numerosas o inversión en arriendo.
-        </p>
-        <span class="precio">Precio: $320.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 20 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Apartamento">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNQrCl--jzaN2LW0IFypUo7-qeiKMHmK_kRA&s" alt="Inmueble Engativá">
-        <div class="estrella" onclick="agregarFavorito(this)"></div>
-        <h3>Inmueble en venta – Engativá, Bogotá</h3>
-        <p>
-          Apartamento de 2 alcobas, 1 baño, sala-comedor, balcón y cocina americana. Ideal para parejas jóvenes. 60 metros cuadrados.
-        </p>
-        <span class="precio">Precio: $180.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 21 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
-      <img src="https://wallpapers.com/images/hd/modern-luxury-house-with-cozy-ambiance-cgrgt4xchi0zq7ki.jpg" alt="Inmueble Engativa">
-      <div class="estrella" onclick="agregarFavorito(this)"></div>
-      <h3>Inmueble En Venta - Norte, Bogota</h3>
-      <p>
-        Apartamento de 2 alcobas, 1 baño, sala-comedor, balcón y cocina americana. Ideal para parejas jóvenes. 60 metros cuadrados.
-      </p>
-      <span class="precio">Precio $130.000.000 COP</span>
-     </div>
-
-     <!-- Inmueble 22 -->
-     <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
-        <img src="https://i.pinimg.com/736x/cc/73/8c/cc738cae38d0ee917631a371de80443a.jpg" alt="Inmueble-Engativa">
-        <div class="estrella" onclick="agregarFavorito(this)"></div>
-        <h3>Inmueble en venta - Engativa - Bogota</h3>
-        <p>
-          Apartamento de 2 alcobas, 1 baño, sala-comedor, balcón y cocina americana. Ideal para parejas jóvenes. 60 metros cuadrados.
-        </p>
-        <span class="precio">Precio 263.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 23 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
-        <img src="https://wallpapers.com/images/hd/beautiful-house-pictures-qqq7dsaabmv7yunr.jpg" alt="Inmueble-Engativa">
-        <div class="estrella" onclick="agregarfavorito(this)"></div>
-        <h3>Inmueble en venta -Kenedy - Bogota </h3>
-        <p>
-          Inmueble de 2 alcobas, 1 baño, sala-comedor, balcón y cocina americana. Ideal para parejas jóvenes. 60 metros cuadrados.
-        </p>
-        <span class="precio">Precio 532.000.000 COP</span>
-      </div>
-      
-      <!-- Inmueble 24 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
-        <img src="https://plus.unsplash.com/premium_photo-1661883982941-50af7720a6ff?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aGVybW9zYSUyMGNhc2F8ZW58MHx8MHx8fDA%3D" alt="Inmueble-Engativa">
-        <div class="estrella" onclick="agregarFavorito"></div>
-        <h3>Inmueble en venta - Lourdes - Bogota</h3>
-        <p>
-           Inmueble de 2 alcobas, 1 baño, sala-comedor, balcón y cocina americana. Ideal para parejas jóvenes. 60 metros cuadrados.
-        </p>
-        <span class="precio">Precio 300.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 25 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
-        <img src="https://i.pinimg.com/736x/03/2c/bb/032cbb8932e823ffa455b4b4a5361a56.jpg" alt="Inmueble-Engativa">
-        <div class="estrealla" onclick="agregarFavorito(this)"></div>
-        <h3>Inmueble en venta - Lourdes - Bogota</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio 300.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 26 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Apartamento">
-          <img src="https://wallpapers.com/images/hd/one-storey-modern-beautiful-house-1t8w178a17wy2yhe.jpg" alt="Inmueble-Engativa">
-            <div class="estrella" onclick="agregarFavoito(this)"></div>
-        <h3>Inmueble en venta Ciudad Bolivar - Bogota</h3>
-          <p>
-            Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-          </p>
-        <span class="precio">Precio 150.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 27 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Casa Quinta">
-        <img src="https://wallpapers.com/images/hd/nice-house-pictures-xihxwolabdxjhahm.jpg" alt="Inmueble-Engativa">
-        <div class="estrella" onclick="agregarFavorito()"></div>
-      <h3>Inmueble en venta Lourdes - Bogota</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio 300.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 28 -->
-      <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="Casa Quinta">
-        <img src="https://wallpapers.com/images/featured/imagenes-de-bonitas-casas-wqz9yzg8zomm7elt.jpg" alt="Inmueble-Engativa">
-      <div class="estrella" onclick="agregarFavorito()"></div>
-        <h3>Inmueble en venta Lourdes - Bogota</h3>
-          <p>
-            Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-          </p>
-            <span class="precio">Precio 250.000.000 COP</span>
-      </div>
-
-      <!-- Inmueble 29 -->
-    <div class="card-inmueble" data-ciudad="Bogotá" data-tipo="casa">
-      <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGx1eHVyeSUyMGhvdXNlfGVufDB8fDB8fHww" alt="Inmueble-Engativa">
-      <div class="estrella" onclick="agregarFavorito()"></div>
-        <h3>Inmueble en venta Carmen - Melgar</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio ">Precio 550.000.000 COP</span>
-    </div>
-
-    <!-- Inmueble 30 -->
-    <div class="card-inmueble">
-      <img src="https://wallpapers.com/images/hd/nice-house-pictures-lke1rb53j342n3bn.jpg" alt="Inmueble-Engativa">
-       <div class="estrella" onclick="agregarFavorito()"></div> 
-      <h3>Inmueble en venta Carmen - Melgar</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Kennedy. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-      <span class="precio">Precio 350.000.000 COP</span>
-    </div>
-
-    <!-- Inmueble 31 -->
-    <div class="card-inmueble">
-      <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGx1eHVyeSUyMGhvdXNlfGVufDB8fDB8fHww" alt="Inmueble-Engativa">
-       <div class="estrella" onclick="agregarFavorito()"></div>
-      <h3>Inmueble en venta Apicala - Melgar</h3>
-       <p>
-        Inmueble de 3 pisos ubicado en Melgar. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-      </p>
-      <span class="precio">Precio 300.000.000 COP</span>
-    </div>
-
-    <!-- Inmueble 32 -->
-    <div class="card-inmueble">
-      <img src="https://static.vecteezy.com/system/resources/thumbnails/053/286/167/small_2x/modern-duplex-house-with-sleek-details-highlighted-in-high-resolution-imagery-photo.jpg" alt="Inmueble-Engativa">
-        <div class="estrella" onclick="agregarFavorito()"></div>
-      <h3>Inmueble en venta Carmen - Melgar</h3>
-      <p>
-        Inmueble de 3 pisos ubicado en Melgar. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-      </p>
-      <span class="precio">Precio 300.000.000 COP</span>
-    </div>
-
-    <!-- Inmueble 33 -->
-    <div class="card-inmueble">
-      <img src="https://images.unsplash.com/photo-1531971589569-0d9370cbe1e5?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bHV4dXJ5JTIwaG91c2V8ZW58MHx8MHx8fDA%3D" alt="Inmueble-Engativa">
-      <div class="estrella" onclick="agregarFavorito()"></div>
-        <h3>Inmueble en Venta Suba - Facatativa</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Melgar. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio 350.000.000 COP</span>
-    </div>
-
-    <!-- Inmueble 34 -->
-    <div class="card-inmueble">
-      <img src="https://wallpapers.com/images/hd/beautiful-house-pictures-b22eqknx641wpq3o.jpg" alt="Inmueble-Engativa">
-      <div class="estrella" onclick="agregarFavorito()"></div>
-        <h3>Inmueble en Venta Suba - Facatativa</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Melgar. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio 350.000.000 COP</span>
-    </div>
+    <div class="card-inmueble" data-ciudad="medellin" data-tipo="apartamento">
+    <img src="https://cdn.cwmedellin.com/upload/1612804872-casa-de-varios-niveles-en-venta-altos-del-poblado-medellin_(1).jpg" alt="Propiedad">
     
-    <!-- Inmueble 35 -->
-    <div class="card-inmueble">
-      <img src="https://www.gratistodo.com/wp-content/uploads/2017/02/Casas-2.jpg" alt="Inmueble-Engativa">
-      <div class="estrella" onclick="agregarFavorito()"></div>
-        <h3>Inmueble en Venta Suba - Facatativa</h3>
-        <p>
-          Inmueble de 3 pisos ubicado en Melgar. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-        </p>
-        <span class="precio">Precio 350.000.000 COP</span>
-    </div>
-    
-    <!-- Inmueble 36 -->
-    <div class="card-inmueble">
-      <img src="https://static.vecteezy.com/system/resources/thumbnails/022/902/556/small/ai-generative-3d-modern-luxury-real-estate-house-for-sale-and-rent-concept-photo.jpg" alt="inmueble.Engativa">
-    <div class="estrella" onclick=""></div>
-      <h3>Inmueble en venta Carmen - Melgar</h3>
-      <p>
-        Inmueble de 3 pisos ubicado en Melgar. 4 alcobas, 2 baños, cocina semi-integral, sala comedor, lavadero y patio. Ideal para familias grandes o arriendo por pisos.
-      </p>
-      <span class="precio">Precio 310.000.000 COP</span>
-    </div>
-  
-  </div>
-
-    
-
-    
-  </section>
-
-  <footer>
-        <div class="footer-top">
-            <div class="social">
-                <p>Síguenos en redes sociales:</p>
-                <span>&#x1F4F1;</span>
-                <span>&#x1F4A1;</span>
-                <span>&#x1F4E7;</span>
-            </div>
-            <div class="contacto">
-                <p>Suscríbete para recibir noticias</p>
-                <form>
-                    <input type="email" placeholder="Correo electrónico" required>
-                    <button type="submit">Suscribir</button>
-                </form>
-            </div>
+    <div class="info-inmueble">
+        <div class="encabezado-card">
+            <span class="etiqueta-venta">EN VENTA</span>
+            <h3>Apartamento de Lujo</h3>
         </div>
-        <div class="footer-bottom">
-            <nav>
-                <a href="#">Privacidad</a>
-                <a href="#">Términos</a>
-                <a href="#">Contacto</a>
-            </nav>
-            <p>&copy; 2024 ING AYA. Todos los derechos reservados.</p>
+        
+        <p class="ubicacion">📍 Poblado, Medellín</p>
+        
+        <div class="detalles-tecnicos">
+            <span><strong>📏 Tamaño:</strong> 120 m²</span>
+            <span><strong>🛏️ Hab:</strong> 3</span>
+            <span><strong>🚿 Baños:</strong> 2</span>
+            <span><strong>🚗 Parqueo:</strong> 1</span>
         </div>
-    </footer>
 
-
-
-<script>
-  const ciudadSelect = document.getElementById("ciudad");
-const tipoSelect = document.getElementById("tipo");
-const inmuebles = document.querySelectorAll(".card-inmueble");
-
-function filtrar() {
-  const ciudad = ciudadSelect.value;
-  const tipo = tipoSelect.value;
-
-  inmuebles.forEach(inmueble => {
-    const ciudadInmueble = inmueble.getAttribute("data-ciudad");
-    const tipoInmueble = inmueble.getAttribute("data-tipo");
-
-    // Verifica coincidencia
-    const coincideCiudad = ciudad === "todos" || ciudad === ciudadInmueble;
-    const coincideTipo = tipo === "todos" || tipo === tipoInmueble;
-
-    if (coincideCiudad && coincideTipo) {
-      inmueble.style.display = "block";
-    } else {
-      inmueble.style.display = "none";
-    }
-  });
-}
-
-ciudadSelect.addEventListener("change", filtrar);
-tipoSelect.addEventListener("change", filtrar);
-
-</script>
-  
-<script>
-  // Simula si el usuario está logueado o no
-  const usuarioLogueado = false;
-
-  function agregarFavorito(elem) {
-    if (!usuarioLogueado) {
-      const mensaje = document.getElementById('mensaje-favorito');
-      mensaje.style.display = 'block';
-      setTimeout(() => mensaje.style.display = 'none', 4000);
-    } else {
-      elem.classList.toggle('activo');
-    }
-  }
-</script>
+        <p class="descripcion">Excelente ubicación con vista a la ciudad y acabados modernos...</p>
+        
+        <div class="footer-card">
+            <span class="precio">$ 450.000.000</span>
+            <button class="btn-ver" onclick="verDetalles()">Ver más detalles</button>
+        </div>
+    </div>
+</div>
 
 <script>
-  function confirmarAccion(event) {
-    event.preventDefault(); 
-    Swal.fire({
-  title: "Quieres volver al menu?",
-  text: "Puedes seguir viendo inmuebles!",
-  icon: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#3085d6",
-  cancelButtonColor: "#d33",
-  confirmButtonText: "Confirmar"
-})
-.then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = "../PAGINA PRINCIPAL INMUEBLES ING AYA/Index.html";
+    document.addEventListener("DOMContentLoaded", () => {
+      const ciudadSelect = document.getElementById("ciudad");
+      const tipoSelect = document.getElementById("tipo");
+      const inmuebles = document.querySelectorAll(".card-inmueble");
+
+      function filtrar() {
+        const ciudadVal = ciudadSelect.value.toLowerCase();
+        const tipoVal = tipoSelect.value.toLowerCase();
+
+        inmuebles.forEach((inmueble) => {
+          const ciudadInmueble = inmueble.getAttribute("data-ciudad").toLowerCase();
+          const tipoInmueble = inmueble.getAttribute("data-tipo").toLowerCase();
+
+          const coincideCiudad = ciudadVal === "todos" || ciudadVal === ciudadInmueble;
+          const coincideTipo = tipoVal === "todos" || tipoVal === tipoInmueble;
+
+          if (coincideCiudad && coincideTipo) {
+            inmueble.style.display = "flex"; // Mantiene el diseño horizontal
+            inmueble.style.opacity = "1";
+          } else {
+            inmueble.style.display = "none";
+          }
+        });
       }
-    });
-  }
-</script>
 
+      ciudadSelect.addEventListener("change", filtrar);
+      tipoSelect.addEventListener("change", filtrar);
+    });
+
+    // Función para el botón de volver (SweetAlert)
+    function confirmarAccion(event) {
+      event.preventDefault();
+      const url = event.currentTarget.getAttribute("href");
+      Swal.fire({
+        title: "¿Quieres volver al inicio?",
+        text: "Podrás regresar a ver inmuebles cuando quieras.",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "#3b82f6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sí, volver",
+        cancelButtonText: "No, quedarme"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = url;
+        }
+      });
+    }
+  </script>
+
+   
 </body>
 </html>
