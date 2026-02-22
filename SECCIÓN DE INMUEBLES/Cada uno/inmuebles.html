@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inmuebles - ING AYA</title>
+  <link rel="stylesheet" href="inmuebles.css">
+  <link rel="icon" href="../logo_INGAYA_gris-sin fondo.png">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+</head>
+<body>
+
+  <header class="encabezado">
+    <a href="#" class="logo">
+      <img src="../logo_INGAYA_gris-sin fondo.png" alt="Logo ING AYA">
+      <h2 class="nom_emp">ING AYA</h2>
+    </a>
+    <nav>
+      
+      <a href="../PROCESO INGRESO DE ADMINISTRADOR, EMPELADO, SECRETARIA, USUARIO/login.html" class="boton-2">INGRESAR</a>
+      <a href="../REGISTRO USUARIO/registro.html" class="boton-1">REGISTRARSE</a>
+      <a href="../PAGINA PRINCIPAL INMUEBLES ING AYA/Index.html" class="volver" onclick="confirmarAccion(event)">VOLVER A INICIO</a>
+
+    </nav>
+  </header>
+
+  <section class="contenedor-inmuebles">
+    <h2>INMUEBLES</h2>
+
+    <div class="filtros">
+
+      <select id="ciudad">
+        <option value="todos">Todas</option>
+        <option value="bogota">Bogotá</option>
+        <option value="medellin">Medellín</option>
+        <option value="cali">Cali</option>
+        <option value="barranquilla">Barranquilla</option>
+        <option value="cartagena">Cartagena</option>
+        <option value="Bucaramanga">Bucaramanga</option>
+        <option value="Santa Marta">Santa Marta</option> 
+      </select>
+
+      <select id="tipo">
+        <option value="todos">Todos los tipos</option>
+        <option value="apartamento">Apartamento</option>
+        <option value="casa">Casa</option>
+        <option value="Finca">Finca</option>
+        <option value="Casa Quinta">Casa Quinta</option>
+      </select>
+    </div>
+
+    <div class="mensaje-info" id="mensaje-favorito">
+      Se necesita iniciar sesión para poder agregar inmuebles a favoritos en el historial de lista de deseos del usuario.
+    </div>
+
+    <div class="grid-inmuebles">
+      <!-- Inmueble 1 -->
+    <div class="card-inmueble" data-ciudad="medellin" data-tipo="apartamento">
+    <img src="https://cdn.cwmedellin.com/upload/1612804872-casa-de-varios-niveles-en-venta-altos-del-poblado-medellin_(1).jpg" alt="Propiedad">
+    
+    <div class="info-inmueble">
+        <div class="encabezado-card">
+            <span class="etiqueta-venta">EN VENTA</span>
+            <h3>Apartamento de Lujo</h3>
+        </div>
+        
+        <p class="ubicacion">📍 Poblado, Medellín</p>
+        
+        <div class="detalles-tecnicos">
+            <span><strong>📏 Tamaño:</strong> 120 m²</span>
+            <span><strong>🛏️ Hab:</strong> 3</span>
+            <span><strong>🚿 Baños:</strong> 2</span>
+            <span><strong>🚗 Parqueo:</strong> 1</span>
+        </div>
+
+        <p class="descripcion">Excelente ubicación con vista a la ciudad y acabados modernos...</p>
+        
+        <div class="footer-card">
+            <span class="precio">$ 450.000.000</span>
+            <button class="btn-ver" onclick="verDetalles()">Ver más detalles</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const ciudadSelect = document.getElementById("ciudad");
+      const tipoSelect = document.getElementById("tipo");
+      const inmuebles = document.querySelectorAll(".card-inmueble");
+
+      function filtrar() {
+        const ciudadVal = ciudadSelect.value.toLowerCase();
+        const tipoVal = tipoSelect.value.toLowerCase();
+
+        inmuebles.forEach((inmueble) => {
+          const ciudadInmueble = inmueble.getAttribute("data-ciudad").toLowerCase();
+          const tipoInmueble = inmueble.getAttribute("data-tipo").toLowerCase();
+
+          const coincideCiudad = ciudadVal === "todos" || ciudadVal === ciudadInmueble;
+          const coincideTipo = tipoVal === "todos" || tipoVal === tipoInmueble;
+
+          if (coincideCiudad && coincideTipo) {
+            inmueble.style.display = "flex"; // Mantiene el diseño horizontal
+            inmueble.style.opacity = "1";
+          } else {
+            inmueble.style.display = "none";
+          }
+        });
+      }
+
+      ciudadSelect.addEventListener("change", filtrar);
+      tipoSelect.addEventListener("change", filtrar);
+    });
+
+    // Función para el botón de volver (SweetAlert)
+    function confirmarAccion(event) {
+      event.preventDefault();
+      const url = event.currentTarget.getAttribute("href");
+      Swal.fire({
+        title: "¿Quieres volver al inicio?",
+        text: "Podrás regresar a ver inmuebles cuando quieras.",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "#3b82f6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sí, volver",
+        cancelButtonText: "No, quedarme"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = url;
+        }
+      });
+    }
+  </script>
+
+   
+</body>
+</html>

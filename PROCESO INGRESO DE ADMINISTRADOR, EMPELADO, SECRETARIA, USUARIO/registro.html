@@ -17,19 +17,20 @@
   </header>
 
  <main class="login-container">
-    <form class="form-login" action="http://192.168.0.4:5000/login_usuario" method="POST">
-  <h2>INICIO DE SESIÓN</h2>
-  
-  <input type="email" name="email" placeholder="Correo electrónico" required />
-  <input type="password" name="password" placeholder="Contraseña" required />
-  
-  <button type="submit">INICIAR SESIÓN</button>
-  
-  <div class="registro">
-    <br>
-    <p>¿No tienes cuenta? <a href="registro.html">Regístrate</a></p>
-  </div>
-</form>
+    <form class="form-login" action="http://192.168.0.4:5000/registro_externo" method="POST">
+      <h2>INICIO DE SESIÓN</h2>
+      <input type="text" name="nombre" id="usuario" placeholder="Nombre" required />
+      <input type="email" name="email" id="email" placeholder="Email" required />
+      <input type="text" name="telefono" id="telefono" placeholder="Telefono" required />
+      <input type="text" name="direccion" id="contraseña" placeholder="Direccion" required />
+      <input type="password" name="password" placeholder="Contraseña" required />
+      <button class="btn primary" type="submit">Guardar</button>
+      <div class="registro">
+        <br>
+      <p>¿Ya tienes cuenta? <a href="login.html">Inicia Sesion</a></p>
+      <p>¿Has Olvidado tu contraseña? <a href="../RECUPERAR CONTRASEÑA/Rec.html">Recuperala</a></p>
+      </div>
+    </form>
   </main>
 
 
