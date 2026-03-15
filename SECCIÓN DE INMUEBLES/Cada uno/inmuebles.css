@@ -336,3 +336,71 @@ footer {
         transform: translateY(0);
     }
 }
+
+/* ===== MEJORAS VISUALES INMUEBLES ===== */
+
+body{
+background: linear-gradient(180deg,#0f172a,#1e293b);
+}
+
+.contenedor-inmuebles h2{
+font-size:32px;
+margin-bottom:20px;
+}
+
+.card-inmueble{
+background:#1e293b;
+box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+.card-inmueble img{
+transition:transform .4s;
+}
+
+.card-inmueble:hover img{
+transform:scale(1.05);
+}
+
+.detalles-tecnicos{
+background:#243247;
+}
+
+.descripcion{
+color:#cbd5f5;
+line-height:1.5;
+margin-bottom:15px;
+}
+
+.footer-card{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.btn-ver{
+padding:12px;
+font-size:15px;
+transition:.3s;
+}
+
+.btn-ver:hover{
+background:#2563eb;
+transform:translateY(-2px);
+box-shadow:0 8px 20px rgba(59,130,246,.4);
+}
+
+.etiqueta-venta{
+background:#22c55e;
+color:white;
+padding:4px 10px;
+border-radius:6px;
+font-size:12px;
+font-weight:bold;
+margin-right:10px;
+}
+
+.ubicacion{
+color:#94a3b8;
+margin-top:5px;
+}
+

@@ -1,347 +1,270 @@
-html{
-  height: 100%;
+
+/* ===============================
+   INMUEBLES.CSS (VERSIÓN MEJORADA)
+   ===============================*/
+
+*{
+  box-sizing: border-box;
 }
 
 :root {
-            --color-primary: #0a0f1a;
-            --color-secondary: #fff;
-            --color-light-grey: #eee;
-            --color-dark-grey: #ccc;
-            --color-mid-grey: #333;
-            --color-border: #999;
-            --color-accent-1: #f5f5f5;
-            --color-accent-2: #1da1f2; /* Color para redes sociales */
-
-
-            
-        }
-
-body {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            background-color: var(--color-primary);
-            color: var(--color-secondary);
-            overflow-x: hidden;
+    --bg-dark: #0f172a;      
+    --bg-card: #1e293b;      
+    --accent: #3b82f6;        
+    --text-primary: #f8fafc;   
+    --text-secondary: #94a3b8; 
+    --white: #ffffff;
 }
 
+body {
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+    font-family:'Segoe UI', Roboto, sans-serif;
+    background-color:var(--bg-dark);
+    color:var(--text-primary);
+}
+
+/* ================= HEADER ================= */
+
 .encabezado {
-    background: linear-gradient(to bottom, var(--color-light-grey), var(--color-dark-grey));
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background:#ffffff;
+    border-bottom:3px solid var(--accent);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 5%;
+    flex-wrap:wrap;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
 }
 
 .volver{
-  font-weight: bold;
-    color: black;
-    font-size: large;
-    text-decoration: none;
-    border: 1px solid #aaa;
-    padding: 6px 14px;
-    border-radius: 8px;
-    background-color: #fff;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: black;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.logo img {
-  height: 70px;
-}
-
-.nom_emp {
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.boton-1{
-  background-color: #f5f5f5;
-    border: 1px solid #999;
-    font-size: large;
-}
-
-.boton-2{
-  background-color: #333;
-    color: white;
-    border: 1px solid #000;
-    font-size: large;
-}
-
-nav a {
-    margin-left: 22px;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    
-    padding: 6px 12px;
-    border-radius: 8px;
-
-}
-
-nav a:hover{
-  color: red;
-}
-
-.contenedor-inmuebles {
-  padding: 60px 40px;
-  text-align: center;
-}
-
-.filtros {
-  margin: 20px 0;
-}
-
-.filtros select {
-  padding: 10px;
-  border-radius: 5px;
-  margin: 0 10px;
-}
-
-.grid-inmuebles {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
-}
-
-.card-inmueble {
-  background-color: #111;
-  border-radius: 15px;
-  padding: 20px;
-  width: 300px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.05);
-  position: relative;
-  transition: transform 0.3s;
-}
-
-.card-inmueble:hover {
-  transform: scale(1.02);
-}
-
-.card-inmueble img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 10px;
-}
-
-.card-inmueble h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-.card-inmueble p {
-  font-size: 14px;
-  color: #ccc;
-  margin-bottom: 10px;
-}
-
-.card-inmueble .precio {
-  color: #0f0;
-  font-weight: bold;
-}
-
-.estrella {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  font-size: 22px;
-  cursor: pointer;
-  color: white;
-}
-
-.estrella::before {
-  content: "☆";
-}
-
-.estrella.activo::before {
-  content: "★";
-  color: gold;
-}
-
-.mensaje-info {
-  background: red;
-  color: white;
-  padding: 12px 20px;
-  margin-top: 40px;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 10px;
-  font-weight: bold;
-  display: none;
-}
-
-main{
-  flex-grow: 1;
-}
-
-footer {
-            background-color: var(--color-accent-1);
-            color: var(--color-mid-grey);
-            padding: 10px;
-            margin-top: auto;
-            text-align: center;
-        }
-
-        .footer-top {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto 30px;
-            align-items: center;
-        }
-
-        .footer-top .social p, .footer-top .contacto p {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        
-        .footer-top .social span {
-            font-size: 24px;
-            margin: 0 8px;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-
-        .footer-top .social span:hover {
-            transform: scale(1.2);
-        }
-
-        .footer-top .contacto form {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .footer-top input {
-            padding: 12px;
-            border: 1px solid var(--color-border);
-            border-radius: 8px;
-            min-width: 220px;
-            flex: 1;
-        }
-
-        .footer-top button {
-            background-color: var(--color-mid-grey);
-            color: var(--color-secondary);
-            border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .footer-top button:hover {
-            background-color: #444;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            border-top: 1px solid var(--color-border);
-            padding-top: 20px;
-        }
-
-        .footer-bottom nav {
-            margin-bottom: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .footer-bottom a {
-            margin: 0 12px;
-            text-decoration: none;
-            color: var(--color-mid-grey);
-            font-size: 14px;
-            transition: color 0.3s ease;
-        }
-
-        .footer-bottom a:hover {
-            color: var(--color-primary);
-        }
-
-        .footer-bottom p {
-            margin: 5px 0;
-            font-size: 13px;
-        }
-
-        .footer-bottom small {
-            color: #888;
-            font-size: 12px;
-        }
-
-
-@media (max-width: 768px) {
-  .grid-inmuebles {
-    flex-direction: column;
+    display: flex;
     align-items: center;
-  }
+    flex-wrap: wrap; 
+    justify-content: flex-end;
+    gap: 10px;
+}
 
-  .card-inmueble {
-    width: 90%;
-  }
+
+
+.logo{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+    color:black;
+}
+
+.logo img{
+    height:70px;
+    margin-right:10px;
+}
+
+.nom_emp{
+    font-size:25px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+    gap:10px;
+}
+
+nav a{
+    margin-left:5px;
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+    font-size:14px;
+    padding:8px 12px;
+    border-radius:8px;
+    position:relative;
+}
+
+/* línea animada */
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-3px;
+    width:0%;
+    height:2px;
+    background:#3b82f6;
+    transition:.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* ================= CONTENIDO ================= */
+
+.contenedor-inmuebles{
+    padding:60px 40px;
+    text-align:center;
+}
+
+/* filtros */
+
+.filtros{
+    margin:20px 0;
+}
+
+.filtros select{
+    padding:10px 15px;
+    border-radius:8px;
+    margin:0 10px;
+    border:none;
+    background:#1e293b;
+    color:white;
+}
+
+/* grid */
+
+.grid-inmuebles{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:40px;
+    margin-top:40px;
+}
+
+/* ================= TARJETAS ================= */
+
+.card-inmueble{
+    background-color:#111;
+    border-radius:15px;
+    padding:20px;
+    width:100%;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    position:relative;
+    transition:all .35s ease;
+    cursor:pointer;
+}
+
+.card-inmueble:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.6);
+}
+
+.card-inmueble img{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:10px;
+    transition:transform .4s;
+}
+
+.card-inmueble:hover img{
+    transform:scale(1.05);
+}
+
+.card-inmueble h3{
+    font-size:16px;
+    margin-bottom:10px;
+}
+
+.card-inmueble p{
+    font-size:14px;
+    color:#ccc;
+    margin-bottom:10px;
+}
+
+/* precio */
+
+.card-inmueble .precio{
+    color:#22c55e;
+    font-weight:bold;
+    font-size:18px;
+}
+
+/* estrella favoritos */
+
+.estrella{
+    position:absolute;
+    top:15px;
+    right:15px;
+    font-size:22px;
+    cursor:pointer;
+    color:white;
+    transition:.2s;
+}
+
+.estrella:hover{
+    transform:scale(1.2);
+}
+
+.estrella::before{
+    content:"☆";
+}
+
+.estrella.activo::before{
+    content:"★";
+    color:gold;
+}
+
+/* mensaje */
+
+.mensaje-info{
+    background:red;
+    color:white;
+    padding:12px 20px;
+    margin-top:40px;
+    width:fit-content;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius:10px;
+    font-weight:bold;
+    display:none;
+}
+
+/* ================= BOTONES ================= */
+
+.btn-moderno{
+    display:inline-block;
+    padding:14px 28px;
+    font-size:15px;
+    font-family:'Segoe UI',sans-serif;
+    color:#fff;
+    background:linear-gradient(135deg,#3b82f6,#2563eb);
+    border:none;
+    border-radius:30px;
+    text-decoration:none;
+    letter-spacing:1px;
+    transition:all .3s ease;
+    box-shadow:0 6px 20px rgba(0,0,0,0.4);
+}
+
+.btn-moderno:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.6);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#f5f5f5;
+    color:#333;
+    padding:20px;
+    margin-top:auto;
+    text-align:center;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+.grid-inmuebles{
+    grid-template-columns:1fr;
+}
+
+.card-inmueble{
+    width:90%;
+    margin:auto;
+}
 
 }
 
-@media screen and (max-width: 1000px) {
-            
-            .footer-top {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-
-            .footer-top form {
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-            }
-
-            .footer-top input,
-            .footer-top button {
-                width: 90%;
-            }
-
-            .footer-bottom nav {
-                flex-wrap: wrap;
-            }
-        }
-
-
-        .btn-moderno {
-    display: inline-block;
-    padding: 14px 28px;
-    font-size: 16px;
-    font-family: 'Segoe UI', sans-serif;
-    color: #fff;
-    background: linear-gradient(135deg, #111, #2b2b2b);
-    border: 1px solid #444;
-    border-radius: 30px;
-    text-decoration: none;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-}
-
-.btn-moderno:hover {
-    background: linear-gradient(135deg, #1f1f1f, #000);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-    border-color: #777;
-}
-
-.btn-moderno:active {
-    transform: translateY(1px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-}

@@ -12,15 +12,15 @@
 <body>
 
   <header class="encabezado">
-    <a href="#" class="logo">
-      <img src="../logo_INGAYA_gris-sin fondo.png" alt="Logo ING AYA">
-      <h2 class="nom_emp">ING AYA</h2>
+    <a href="" class="logo">
+      <img src="../../logo_INGAYA_gris-sin fondo.png" alt="Logo ING AYA">
+      <h2 class="nom_emp">Ing Aya</h2>
     </a>
     <nav>
       
       <a href="../PROCESO INGRESO DE ADMINISTRADOR, EMPELADO, SECRETARIA, USUARIO/login.html" class="boton-2">INGRESAR</a>
       <a href="../REGISTRO USUARIO/registro.html" class="boton-1">REGISTRARSE</a>
-      <a href="../PAGINA PRINCIPAL INMUEBLES ING AYA/Index.html" class="volver" onclick="confirmarAccion(event)">VOLVER A INICIO</a>
+      <a href="../inmuebles.html" class="volver" onclick="confirmarAccion(event)">VOLVER</a>
 
     </nav>
   </header>
@@ -69,12 +69,24 @@
         
         <div class="detalles-tecnicos">
             <span><strong>📏 Tamaño:</strong> 120 m²</span>
+            <span><strong>🛏 Habitaciones:</strong> 3</span>
+            <span><strong>🚿 Baños:</strong> 2</span>
+            <span><strong>🚗 Parqueadero:</strong> 1</span>
+            <span><strong>🏢 Estrato:</strong> 6</span>
+            <span><strong>📅 Antigüedad:</strong> 5 años</span>
+            <span><strong>🪟 Balcón:</strong> Sí</span>
+            <span><strong>🏋️ Zonas comunes:</strong> Gimnasio / BBQ</span>
+
+            <span><strong>📏 Tamaño:</strong> 120 m²</span>
             <span><strong>🛏️ Hab:</strong> 3</span>
             <span><strong>🚿 Baños:</strong> 2</span>
             <span><strong>🚗 Parqueo:</strong> 1</span>
         </div>
 
-        <p class="descripcion">Excelente ubicación con vista a la ciudad y acabados modernos...</p>
+        <p class="descripcion">Excelente ubicación con vista panorámica a la ciudad, acabados modernos,
+cocina integral equipada, zona de ropas independiente, iluminación natural
+y acceso a zonas comunes del edificio como gimnasio, seguridad 24h y zona BBQ.
+Ideal para familias o inversión inmobiliaria.</p>
         
         <div class="footer-card">
             <span class="precio">$ 450.000.000</span>
@@ -118,8 +130,8 @@
       event.preventDefault();
       const url = event.currentTarget.getAttribute("href");
       Swal.fire({
-        title: "¿Quieres volver al inicio?",
-        text: "Podrás regresar a ver inmuebles cuando quieras.",
+        title: "¿Quieres volver a la parte \n principal de inmuebles?",
+        text: "Podrás regresar a ver más \n detalles cuando quieras.",
         icon: "question",
         showCancelButton: true,
         confirmButtonColor: "#3b82f6",

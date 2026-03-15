@@ -1,174 +1,368 @@
+/* ================================= */
+/* RESET GENERAL */
+/* ================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+/* ================================= */
+/* BODY Y FONDO */
+/* ================================= */
+
 body, html {
+
     height: 100%;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    font-family: 'Segoe UI', Roboto, sans-serif;
+
     display: flex;
     flex-direction: column;
-        background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-                url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg') no-repeat center center / cover;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg')
+        no-repeat center center / cover;
 
     position: relative;
 }
 
-
 body::before {
+
     content: "";
+
     position: absolute;
-    top: 0; left: 0;
+
+    top: 0;
+    left: 0;
+
     width: 100%;
     height: 100%;
+
     background-color: rgba(0,0,0,0.15);
+
     z-index: -1;
 }
 
-/* PARTE DE ENCABEZADO DEL LOGIN  */
+
+/* ================================= */
+/* HEADER LOGIN */
+/* ================================= */
 
 .header-login {
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     padding: 20px 40px;
+
     background: linear-gradient(to bottom, #eee, #ccc);
+
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
+header a:hover {
+    color: red;
+}
+
+
+/* ================================= */
+/* LOGO */
+/* ================================= */
+
 .logo-head {
+
     display: flex;
     align-items: center;
+
     text-decoration: none;
+
     color: black;
 }
 
 .logo-head img {
+
     height: 70px;
+
     margin-right: 10px;
 }
 
 .nom_emp {
+
     font-size: 25px;
+
     font-weight: bold;
 }
+
+
+/* ================================= */
+/* BOTON VOLVER */
+/* ================================= */
 
 .volver-inicio {
+
     font-weight: bold;
+
     color: black;
-    font-size: large;
+
+    font-size: 14px;
+
     text-decoration: none;
+
     border: 1px solid #aaa;
-    padding: 6px 14px;
+
+    padding: 8px 16px;
+
     border-radius: 8px;
-    background-color: #fff;
-}
- 
-header a:hover{
-    color: red;
+
+    background-color: white;
+
+    transition: .2s;
 }
 
-/* PARTE PRINCIPAL DEL LOGIN FORMULARIO */
+.volver-inicio:hover {
+
+    background: #f5f5f5;
+}
+
+
+/* ================================= */
+/* CONTENEDOR LOGIN */
+/* ================================= */
 
 .login-container {
+
     flex: 1;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     padding: 40px 20px;
 }
 
+
+/* ================================= */
+/* FORMULARIO LOGIN */
+/* ================================= */
+
 .form-login {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(60px);
-    padding: 50px;
-    border-radius: 16px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+
+    background: rgba(22,30,45,.9);
+
+    backdrop-filter: blur(20px);
+
+    padding: 45px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,.4);
+
     text-align: center;
+
     color: white;
+
     max-width: 500px;
+
     width: 100%;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    animation: fadeIn .6s ease;
 }
 
 .form-login h2 {
-    margin-bottom: 20px;
+
+    margin-bottom: 25px;
+
+    font-size: 28px;
 }
 
+
+/* ================================= */
+/* INPUTS */
+/* ================================= */
+
 .form-login input {
+
     width: 100%;
-    padding: 12px;
+
+    padding: 13px;
+
     margin: 10px 0;
+
     border-radius: 8px;
-    border: 1px solid #ccc;
-    background-color: transparent;
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    background: #0f172a;
+
     color: white;
+
     font-size: 14px;
+
+    outline: none;
+
+    transition: .2s;
 }
 
 .form-login input::placeholder {
-    color: #ccc;
+
+    color: #94a3b8;
 }
 
+.form-login input:focus {
+
+    border: 1px solid #3b82f6;
+
+    box-shadow: 0 0 0 2px rgba(59,130,246,.25);
+}
+
+
+/* ================================= */
+/* BOTON LOGIN */
+/* ================================= */
+
 .form-login button {
+
     width: 100%;
-    padding: 12px;
+
+    padding: 14px;
+
     margin-top: 20px;
+
     font-weight: bold;
-    background: linear-gradient(to right, #fff, #ccc);
-    color: black;
+
+    background: #3b82f6;
+
+    color: white;
+
     border: none;
-    border-radius: 12px;
+
+    border-radius: 8px;
+
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(255,255,255,0.2);
-    transition: background 0.3s;
+
+    font-size: 15px;
+
+    transition: .25s;
 }
 
 .form-login button:hover {
-   color: red;
+
+    background: #2563eb;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(59,130,246,.35);
 }
 
-.login-container a{
+
+/* ================================= */
+/* LINK REGISTRO */
+/* ================================= */
+
+.login-container a {
+
     text-decoration: none;
-    color:black;
+
+    color: #3b82f6;
+
+    font-weight: 500;
 }
 
-/* PARTE INFERIOR PIE DE PAGINA LOGIN */
+.login-container a:hover {
+
+    text-decoration: underline;
+}
+
+
+/* ================================= */
+/* FOOTER LOGIN */
+/* ================================= */
+
 .footer-login {
+
     text-align: left;
+
     padding: 10px 30px;
+
     color: white;
+
     font-size: 12px;
+
     display: flex;
+
     align-items: center;
+
     gap: 10px;
 }
 
 .footer-login img {
+
     height: 54px;
 }
 
-/* RESPONSIVE DISPOSITIVOS MOVILES */
+
+/* ================================= */
+/* RESPONSIVE */
+/* ================================= */
+
 @media screen and (max-width: 768px) {
+
     .form-login {
-        padding: 30px 20px;
-        border-radius: 12px;
+
+        padding: 35px 25px;
+
+        border-radius: 14px;
     }
 
     .header-login {
+
         flex-direction: column;
+
         align-items: flex-start;
+
         gap: 10px;
+
         padding: 20px;
     }
 
     .volver-inicio {
+
         align-self: flex-end;
     }
 
     .footer-login {
+
         justify-content: center;
+
         text-align: center;
+
         flex-direction: column;
+    }
+}
+
+
+/* ================================= */
+/* ANIMACION */
+/* ================================= */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
