@@ -1,160 +1,271 @@
-/* Index.css */
+/* BODY, HEADER Y COLORES PRINCIPALES DE LA PAGINA  */
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 :root {
-    --bg-dark: #0f172a;      
-    --bg-card: #1e293b;      
-    --accent: #3b82f6;        
-    --text-primary: #f8fafc;   
-    --text-secondary: #94a3b8; 
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --accent: #3b82f6;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
     --white: #ffffff;
+
+    /* Layout & animation tokens */
+    --section-vertical-padding: 80px;
+    --section-horizontal-padding: 20px;
+    --section-animation-duration: 800ms;
+    --section-animation-easing: cubic-bezier(0.22,1,0.36,1);
+    --card-elevation: 0 10px 25px rgba(0,0,0,0.05);
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    font-family: 'Segoe UI', Roboto, sans-serif;
     background-color: var(--bg-dark);
     color: var(--text-primary);
 }
 
 header {
-    background: linear-gradient(to bottom, #eee, #ccc);
-    backdrop-filter: blur(10px);
-    border-bottom: 3px solid var(--accent);
+    background:#ffffff;
+    border-bottom:3px solid var(--accent);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 5%;
+    flex-wrap:nowrap;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    font-size: medium;
+}
+
+/*IMAGEN Y NOMBRE DE LA EMPRESA*/
+
+
+.Imagen_empresa img {
+    margin-top: 0px;
+    height: 100px;
+    
+    
+    
+}
+
+.inicio-nav{
+    border: 3px solid rgb(105, 105, 110);
+    margin: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.crearcue-nav{
+
+    border: 3px solid rgb(105, 105, 110);
+    margin: 10px;
+    padding: 0px 10px;
+    border-radius: 20px;
+    background-color: rgb(231, 208, 178);
+}
+
+
+/*IMAGEN Y NOMBRE DE LA EMPRESA AQUI TERMINA ------------------------------------------------*/
+
+
+/*NAVEGACIÓN DEL ENCABEZADO---------------------------------------*/
+
+.navegación_encabezado {
+    width: auto;
+    max-width: 100%;
+    margin: 0 0 0 24px;
+    background: #FFF;
+}
+
+.navegación_encabezado > ul{
+    list-style: none;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: nowrap;
     align-items: center;
-    padding: 10px 5%;
-    flex-wrap: wrap;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    gap: 0;
 }
 
-.logo-head {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: black;
-}
-
-.logo-head img {
-    height: 70px;
-    margin-right: 10px;
-}
-
-.nom_emp {
-    font-size: 25px;
-    font-weight: bold;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap; 
-    justify-content: flex-end;
-    gap: 10px;
-}
-
-nav a {
-    margin-left: 5px;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    font-size: 14px;
-    padding: 8px 12px;
-    border-radius: 8px;
-
-}
-
-
-nav a:hover{
-    color: #3b82f6;
-}
-
-
-.nav-link-1 {
-    background-color: #f5f5f5;
-    border: 1px solid #999;
-}
-
-.nav-link-2 {
-    background-color: #333;
-    color: white;
-    border: 1px solid #000;
-}
-
-/* PARTE PRINCIPAL 1 DEL BODY ---------------------------------*/
-
-
-.container-2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 5%;
-    gap: 20px;
-    flex-wrap: wrap;
-    background-color: #000;
-}
-
-.container-2 .información {
-    flex: 1;
-    min-width: 300px;
-    margin-left: 0px;
-}
-
-.container-2 h2 {
-    color: var(--white);
-    font-size: 45px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-shadow: none;
-}
-
-.container-2 p {
-    font-size: 22px;
-    line-height: 1.6;
-}
-
-.container-2 img {
-    flex: 1;
-    width: 970px;
-    margin: 25px;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.1);
-}
-
-.container-2 p, .suenos p, .beneficio p {
-    color: var(--text-secondary); 
-}
-
-.información button, .información a {
+.Menu_principal > li {
+    position: relative;
     display: inline-block;
-    margin-top: 20px;
-    background-color: var(--accent);
-    color: white;
-    padding: 15px 25px;
-    border: none;
-    font-weight: bold;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
 }
 
-.boton:hover {
-    transform: translateY(-3px);
-    background-color: #2563eb;
-    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+.Menu_principal >li > a {
+    display: block;
+    padding: 15px 20px;
+    color: #353535;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+.Menu_principal li  a:hover{
+    color:#CE7D35 ;
+    transition: all 0.3s ease;
+}
+
+/*SUBMENU DE INMUEBLES*/
+
+.Submenu_inmuebles {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333333;
+    width: max-content;
+    min-width: 180px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1000;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.Submenu_inmuebles li {
+    display: block;
+    margin: 0;
+}
+
+.Submenu_inmuebles li + li a {
+    border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.Submenu_inmuebles li a {
+    display: block;
+    width: 100%;
+    padding: 12px 18px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.Menu_principal > li:hover > .Submenu_inmuebles {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+
+/*NAVEGACIÓN DEL ENCABEZADO ACA TERMINA---------------------------------------*/
+
+
+/*SLIDER DE IMAGENES INMUEBLES Y ESLOGANS*/
+
+.Slider-imagenes{
+    width: 100%;
+    height: 700px;
+    margin: 0px auto 0;
+    overflow: hidden;
+}
+
+.Slider-imagenes ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: slide 20s infinite alternate ease-in-out;
+}
+
+.Slider-imagenes li {
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+
+.texto{
+    position: absolute;
+    text-align: left;
+    padding: 0 250px;
+    top: 250px;
+    color: #ffffff;
+    text-shadow: 10px 3px 4px grey;
+}
+
+.texto h2 {
+    font-size: 45px;
+    margin-bottom: 35px;
+    color: azure;
+    
+}
+
+.texto p {
+    font-size: 22px;
+    color: #ddd;
+    max-width: 800px;
+}
+
+.Slider-imagenes img {
+    width: 100%;
+    opacity: 0.6;
+}
+
+@keyframes slide {
+    0% { margin-left: 0;}
+    20% { margin-left: 0%;}
+
+    25% { margin-left: -100%;}
+    45% { margin-left: -100%;}
+
+    50% { margin-left: -200%;}
+    70% { margin-left: -200%;}
+
+    75% { margin-left: -300%;}
+    100% { margin-left: -300%;}
+}
+/*SLIDER DE IMAGENES INMUEBLES Y ESLOGANS  ACA TERMINA */
+
+
+/* PARTE PRINCIPAL 2 DEL BODY ---------------------------------*/
+
+
+
+
 
 .container-3 h2 {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 10px;
+}
+
+/* Inmuebles más vistos: degradado y transparencia (sólo esta sección) */
+.container-3 {
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+    padding: var(--section-vertical-padding) var(--section-horizontal-padding);
+    color: var(--text-primary);
+    background-image: linear-gradient(to bottom right, rgba(10,15,26,0.95)  );
+    background-color: rgba(10,15,26,0.45);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 10px;
+    background-clip: padding-box;
+    margin: 0 auto 24px;
+}
+
+.container-3 .galeria {
+    gap: 18px;
+    align-items: center;
+}
+
+.container-3 .galeria img {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    transition: transform 260ms ease, box-shadow 260ms ease;
+}
+
+.container-3 .galeria img:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.28);
 }
 
 /* A futuro: galería estilo .container-4 */
@@ -213,7 +324,7 @@ nav a:hover{
     background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), #0a0f1a ),
      url('https://c.pxhere.com/photos/c2/4d/building_skyscraper_city_highrise-8087.jpg!d');
     color: #fff;
-    padding: 100px 20px; 
+    padding: var(--section-vertical-padding) var(--section-horizontal-padding);
     gap: 20px; 
     text-align: center;
 }
@@ -258,7 +369,7 @@ nav a:hover{
     justify-content: center;
     background-color: #000;
     color: #fff;
-    padding: 60px 50px;
+    padding: var(--section-vertical-padding) var(--section-horizontal-padding);
     gap: 50px;
 }
 
@@ -288,7 +399,7 @@ nav a:hover{
 .visualizacion {
         background-image: linear-gradient(to bottom, #0a0f1a, rgba(0,0,0,0.5), #0a0f1a),
      url('https://c.pxhere.com/photos/13/54/dubai_landscape_metro_urban_architecture_tourism_sky_travel-591469.jpg!d') ;
-    padding: 120px 20px;
+    padding: var(--section-vertical-padding) var(--section-horizontal-padding);
     background-size: cover;
     overflow: hidden;
   
@@ -367,7 +478,7 @@ nav a:hover{
 .beneficios {
     background-color: #000;
     color: white;
-    padding: 80px 20px;
+    padding: var(--section-vertical-padding) var(--section-horizontal-padding);
     display: flex;
     justify-content: center;
     gap: 60px;
@@ -409,7 +520,7 @@ nav a:hover{
 .testimonios {
     background-color: #f1f5f9;
     color: #1e293b;
-    padding: 80px 20px;
+    padding: var(--section-vertical-padding) var(--section-horizontal-padding);
     text-align: center;
 }
 
@@ -467,7 +578,7 @@ nav a:hover{
 footer {
     background-color: #f5f5f5;
     color: #333;
-    padding: 40px 20px 10px;
+    padding: calc(var(--section-vertical-padding) / 2) var(--section-horizontal-padding) 10px;
     margin-top: auto;
 }
 
@@ -540,9 +651,14 @@ footer {
     font-size: 12px;
 }
 
-/* === Media query para móviles === */
-@media screen and (max-width: 768px) {
-    .cards-testimonio {
+/* DISPOSITIVOS MOVILES --------------------------------------------------------------*/
+
+
+
+
+@media screen and (max-width: 1000px) {
+
+     .cards-testimonio {
         flex-direction: column;
         align-items: center;
     }
@@ -568,16 +684,7 @@ footer {
         flex-wrap: wrap;
         font-size: 13px;
     }
-}
 
-
-
-/* DISPOSITIVOS MOVILES --------------------------------------------------------------*/
-
-
-
-
-@media screen and (max-width: 1000px) {
     header {
         flex-direction: column;
         align-items: flex-start;
@@ -655,14 +762,7 @@ footer {
     }
 
 
-
-
-}
-
-
-
-@media screen and (max-width: 768px) {
-    .contenido-visualizacion {
+      .contenido-visualizacion {
         flex-direction: column;
         text-align: center;
         padding: 20px;
@@ -746,7 +846,24 @@ footer {
         padding: 0 20px;
         line-height: 1.4;
     }
+
+
+    .texto{
+        top: 50px;
+        padding: 0;
+
+    }
+
+   
+
+
+
+
 }
+
+
+
+
 
 /*Arreglos Especiales*/
 
@@ -754,3 +871,69 @@ body, .container-2, .suenos, .beneficios {
     background-color: #0a0f1a !important; /* Un azul muy oscuro y elegante */
     color: #fff;
 }
+/* Section animations and consistent spacing (non-intrusive) */
+.section-animated, .caracteristica, .card, .galeria img {
+    will-change: opacity, transform;
+}
+
+@keyframes fadeUpSection {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Apply a gentle entrance animation on page load (staggered) */
+.caracteristicas,
+.suenos,
+.visualizacion,
+.beneficios,
+.testimonios,
+.container-3 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUpSection var(--section-animation-duration) var(--section-animation-easing) forwards;
+}
+
+.caracteristicas { animation-delay: 0.12s; }
+.suenos { animation-delay: 0.28s; }
+.visualizacion { animation-delay: 0.44s; }
+.beneficios { animation-delay: 0.60s; }
+.testimonios { animation-delay: 0.76s; }
+.container-3 { animation-delay: 0.92s; }
+footer { opacity: 0; animation: fadeUpSection var(--section-animation-duration) var(--section-animation-easing) forwards; animation-delay: 1.08s; }
+
+/* Card & gallery polish */
+.card { box-shadow: var(--card-elevation); transition: transform 220ms ease, box-shadow 220ms ease; }
+.card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.12); }
+
+.galeria img { transition: transform 220ms ease, box-shadow 220ms ease; }
+.galeria img:hover { transform: scale(1.06); box-shadow: 0 12px 30px rgba(0,0,0,0.16); }
+
+/* Respect user's reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .caracteristicas,
+    .suenos,
+    .visualizacion,
+    .beneficios,
+    .testimonios,
+    .container-3,
+    footer,
+    .card,
+    .galeria img {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}
+
+/* Responsive override for section padding */
+@media screen and (max-width: 1000px) {
+    :root {
+        --section-vertical-padding: 40px;
+        --section-horizontal-padding: 16px;
+    }
+}
+
+/* Improve scroll feel slightly (non-intrusive) */
+html { scroll-behavior: smooth; }
+

@@ -12,33 +12,89 @@
 </head>
 
 <body>
-     
+     <!-- ESTA PARTE ES ENCABEZADO, SE REPITE EN TODAS LAS PÁGINAS, SOLO CAMBIA EL COLOR DE LOS LINKS, DEPENDE DE LA PÁGINA EN LA QUE ESTEMOS---------------------------------------------------------->
     <header>
-        <a href="../logo_INGAYA_gris-sin fondo.png" class="logo-head">
-            <img src="../logo_INGAYA_gris-sin fondo.png" alt="logo de la empresa">
-            <h2 class="nom_emp">Ing Aya</h2>
-        </a>
-        <nav>
-       
-            <a href="../SOBRE NOSOTROS/sobrenosotros.html" class="nav-link" onclick="confirmarSobreNosotros(event)">SOBRE NOSOTROS</a>
-            <a href="../SECCIÓN DE INMUEBLES/inmuebles.html" class="nav-link" onclick="confirmarInmuebles(event)">INMUEBLES</a>
-            <a href="../CONTACTANOS/contactanos.html" class="nav-link" onclick="confirmarNosotros(event)">CONTACTANOS</a>
-            <a href="../PROCESO INGRESO DE ADMINISTRADOR, EMPELADO, SECRETARIA, USUARIO/login.html" class="nav-link-1">INGRESAR</a>
-            <a href="../PROCESO INGRESO DE ADMINISTRADOR, EMPELADO, SECRETARIA, USUARIO/registro.html" class="nav-link-2">REGISTRARSE</a>
+        <nav class="Imagen_empresa">
+            <a href="../PAGINA PRINCIPAL INMUEBLES ING AYA/Index.html"><img src="../logo_INGAYA_gris-sin fondo.png" alt="Logo de la empresa"></a>
+        </nav>
+
+        <nav class="navegación_encabezado">
+            <ul class="Menu_principal">
+                <li><a href="../CONTACTANOS/contactanos.html">Contactanos</a></li>
+                <li><a href="../SOBRE NOSOTROS/sobrenosotros.html">Sobre nosotros</a></li>
+                    <li><a href="Index.html">Inmuebles</a>
+                        <ul class="Submenu_inmuebles">
+                            <li><a href="../SECCIÓN DE INMUEBLES/Venta/inmuebles.html">En venta</a></li>
+                            <li><a href="../SECCIÓN DE INMUEBLES/Arriendo/inmuebles.html">En Arriendo</a></li>
+                            <li><a href="../SECCIÓN DE INMUEBLES/Locales/inmuebles.html">Locales comerciales</a></li>
+                        </ul>
+                    </li>
+                <li><a href="#"> Publica tu inmueble </a></li>
+                <li><a href="../PROCESO INGRESO DE ADMINISTRADOR, EMPELADO, SECRETARIA, USUARIO/login.html" class="inicio-nav">Iniciar sesión</a></li>
+                <li><a href="../PROCESO INGRESO DE ADMINISTRADOR, EMPELADO, SECRETARIA, USUARIO/registro.html" class="crearcue-nav">Crear cuenta</a></li>
+
+                
+                
+            </ul>
         </nav>
     </header> 
 
+<!-- ESTA PARTE ES ENCABEZADO, SE REPITE EN TODAS LAS PÁGINAS, SOLO CAMBIA EL COLOR DE LOS LINKS, DEPENDE DE LA PÁGINA EN LA QUE ESTEMOS SE CIERRA EL ENCABEZADO AQUI-------------------------->
+
+
+
+
+
+
     <!-- Sección principal -->
     <section class="container-2">
-        <div class="información">
-            <h2>Consigue tu inmueble, al mejor<br> precio  y la mejor calidad.</h2>
-            <p>Te ofrecemos nuestros inmuebles llamativos,<br>
-                con variedad de modelos de tu preferencia,<br>
-                con la mejor atención de venta.
-            </p>
-            <a href="../SECCIÓN DE INMUEBLES/inmuebles.html" class="boton">¡CONSIGUE EL TUYO!</a>
+        <div class="Slider-imagenes">
+
+            <ul>
+                <li>
+                    <img src="Imagenes/EDIFICIO_1.jpg" alt="Imagen1">
+                        <div class="texto">
+                            <h2>Encuentra el hogar de tus sueños</h2>
+                            <p>
+                            Encuentra el hogar perfecto para ti con nuestra amplia variedad de propiedades.<br>
+                            Explora opciones que se adaptan a tu estilo de vida y da el primer paso hacia tu nuevo comienzo.</p>
+
+                        </div>
+                </li>
+
+                <li>
+                    <img src="Imagenes/EDIFICIO_2.jpg" alt="Imagen2">
+                        <div class="texto">
+                            <h2>Espacios únicos que inspiran</h2>
+                            <p>Descubre espacios únicos diseñados para brindarte comodidad y bienestar.<br>
+                            Desde apartamentos modernos hasta casas familiares, tenemos lo que estás buscando.</p>
+
+                        </div>
+                </li>
+
+                <li>
+                    <img src="Imagenes/EDIFICIO_3.jpg" alt="Imagen3">
+                        <div class="texto">
+                            <h2>Compra fácil y seguro</h2>
+                            <p>Haz realidad tu sueño de tener vivienda propia con un proceso fácil y seguro.<br>
+                            Te acompañamos en cada etapa para que tomes la mejor decisión.</p>
+
+                        </div>
+                </li>
+
+                <li>
+                    <img src="Imagenes/EDIFICIO_4.jpg" alt="Imagen4">
+                        <div class="texto">
+                            <h2>Invierte con confianza</h2>
+                            <p>Invierte con confianza en propiedades de alto valor.<br>
+                            Nuestro equipo te guía para encontrar oportunidades que se ajusten a tus necesidades y presupuesto.</p>
+
+                        </div>
+                </li>
+
+            </ul>
+
         </div>
-        <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg" alt="Imagen de referencia">
     </section>
 
     <!-- Sección de inmuebles destacados -->

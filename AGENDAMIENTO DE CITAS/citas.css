@@ -6,7 +6,7 @@
 
     body, html {
         height: 100%;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
        
     }
 
@@ -25,11 +25,14 @@
   /*   PARTE DE ENCABEZADO AGENDAMIENTO DE CITAS */
     .encabezado {
       width: 100%;
-    background: linear-gradient(to bottom, #eee, #ccc);
+    background: #ffffff;
+    border-bottom: 3px solid #3b82f6;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 10px 5%;
+    flex-wrap: nowrap;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     position: absolute;
     top: 0;
     }

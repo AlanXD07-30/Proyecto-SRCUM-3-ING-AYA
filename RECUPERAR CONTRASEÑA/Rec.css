@@ -6,9 +6,7 @@
 
 body, html {
     height: 100%;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
                 url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg') no-repeat center center / cover;
 
@@ -29,19 +27,25 @@ body::before {
 /* PARTE DE ENCABEZADO DEL LOGIN  */
 
 .header-login {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background: linear-gradient(to bottom, #eee, #ccc);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 10px 5%;
+    background: #ffffff;
+    border-bottom: 3px solid #3b82f6;
+    flex-wrap: nowrap;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 .logo-head {
     display: flex;
     align-items: center;
+    gap: 10px;
     text-decoration: none;
     color: black;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .logo-head img {

@@ -11,24 +11,24 @@
    <header class="header-login">
     <a href="#" class="logo-head">
       <img src="../logo_INGAYA_gris-sin fondo.png" alt="Logo ING AYA">
-      <h2 class="nom_emp">ING AYA</h2>
+      <h2 class="nom_emp"></h2>
     </a>
-    <a href="../PAGINA PRINCIPAL INMUEBLES ING AYA/Index.html" class="volver-inicio">VOLVER A INICIO</a>
+    <a href="../PAGINA PRINCIPAL INMUEBLES ING AYA/Index.html" class="volver-inicio">Volver a inicio</a>
   </header>
 
  <main class="login-container">
     <form class="form-login" action="http://192.168.0.4:5000/registro_externo" method="POST">
-      <h2>Registro de usuario</h2>
+      <h2>Registrate</h2>
       <input type="text" name="nombre" id="usuario" placeholder="Nombre" required />
       <input type="email" name="email" id="email" placeholder="Email" required />
       <input type="text" name="telefono" id="telefono" placeholder="Telefono" required />
-      <input type="text" name="direccion" id="contraseña" placeholder="Direccion" required />
-      <input type="password" name="password" placeholder="Contraseña" required />
+      <input type="text" name="direccion" id="direccion" placeholder="Direccion" required />
+      <input type="password" name="password" placeholder="Contraseña" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="La contraseña debe tener al menos 8 caracteres, incluir una mayúscula, una minúscula y un número." />
       <button class="btn primary" type="submit">Registrarme</button>
       <div class="registro">
         <br>
       <p>¿Ya tienes cuenta? <a href="login.html">Inicia Sesion</a></p>
-      <p>¿Has Olvidado tu contraseña? <a href="../RECUPERAR CONTRASEÑA/Rec.html">Recuperala</a></p>
+      
       </div>
     </form>
   </main>

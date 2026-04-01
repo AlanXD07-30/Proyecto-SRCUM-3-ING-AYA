@@ -11,14 +11,25 @@
 <body>
     <!-- Encabezado y barra de navegación -->
     <header>
-        <a href="#" class="logo-head">
-            <img src="../logo_INGAYA_gris-sin fondo.png" alt="logo de la empresa">
-            <h2 class="nom_emp">ING AYA</h2>
-        </a>
-        <nav>
-            <a href="../PROCESO INGRESO DE ADMINISTRADOR, EMPELADO, SECRETARIA, USUARIO/login.html" class="nav-link-1">INGRESAR</a>
-            <a href="../REGISTRO USUARIO/registro.html" class="nav-link-2">REGISTRARSE</a>
-            <a href="../PAGINA PRINCIPAL INMUEBLES ING AYA/Index.html" class="volver" onclick="confirmarAccion(event)">VOLVER A INICIO</a>
+        <nav class="Imagen_empresa">
+            <a href="../PAGINA PRINCIPAL INMUEBLES ING AYA/Index.html"><img src="../logo_INGAYA_gris-sin fondo.png" alt="Logo de la empresa"></a>
+        </nav>
+
+        <nav class="navegación_encabezado">
+            <ul class="Menu_principal">
+                <li><a href="../SOBRE NOSOTROS/sobrenosotros.html">Sobre nosotros</a></li>
+                <li><a href="../SECCIÓN DE INMUEBLES/inmuebles.html">Inmuebles</a>
+                    <ul class="Submenu_inmuebles">
+                        <li><a href="../SECCIÓN DE INMUEBLES/Venta/inmuebles.html">En venta</a></li>
+                        <li><a href="../SECCIÓN DE INMUEBLES/Arriendo/inmuebles.html">En Arriendo</a></li>
+                        <li><a href="../SECCIÓN DE INMUEBLES/Locales/inmuebles.html">Locales comerciales</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Publica tu inmueble</a></li>
+                <li><a href="../PROCESO INGRESO DE ADMINISTRADOR, EMPELADO, SECRETARIA, USUARIO/login.html" class="nav-link-1">Iniciar sesión</a></li>
+                <li><a href="../PROCESO INGRESO DE ADMINISTRADOR, EMPELADO, SECRETARIA, USUARIO/registro.html" class="nav-link-2">Crear cuenta</a></li>
+                <li><a href="../PAGINA PRINCIPAL INMUEBLES ING AYA/Index.html" class="nav-link-2"> Volver </a></li>
+            </ul>
         </nav>
     </header>
 

@@ -10,7 +10,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    font-family: 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 
@@ -41,19 +41,17 @@ body {
 /* ============================= */
 
 .encabezado {
-    background: linear-gradient(to bottom, #eee, #ccc);
-    backdrop-filter: blur(10px);
-
+    background: #ffffff;
     border-bottom: 3px solid #3b82f6;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 
-    padding: 12px 5%;
+    padding: 10px 5%;
 
-    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 header a:hover {
@@ -68,9 +66,11 @@ header a:hover {
 .logo {
     display: flex;
     align-items: center;
-
+    gap: 10px;
     text-decoration: none;
     color: black;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .logo img {
@@ -78,7 +78,8 @@ header a:hover {
     margin-right: 10px;
 }
 
-.nom_emp {
+.nom_emp,
+.nom-emp {
     font-size: 25px;
     font-weight: bold;
 }

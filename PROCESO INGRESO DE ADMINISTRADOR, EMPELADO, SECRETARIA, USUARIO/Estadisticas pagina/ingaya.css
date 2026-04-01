@@ -1,6 +1,6 @@
 /* Fondo general */
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   margin: 0;
   background-image: url('fondo\ gris\ polvo.jpg');
   background-repeat: no-repeat;
@@ -11,10 +11,14 @@ body {
 
 /* Encabezado */
 header {
-  background-color: #a8a3a3;
-  color: black;
-  padding: 30px;
-  text-align: center;
+  background: #ffffff;
+  border-bottom: 3px solid #3b82f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
+  flex-wrap: nowrap;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 header .logo {

@@ -14,7 +14,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -69,10 +69,14 @@ body {
 }
 
 header {
+  background: #ffffff;
+  border-bottom: 3px solid #3b82f6;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  padding: 10px 5%;
+  flex-wrap: nowrap;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 .header-left h1 {

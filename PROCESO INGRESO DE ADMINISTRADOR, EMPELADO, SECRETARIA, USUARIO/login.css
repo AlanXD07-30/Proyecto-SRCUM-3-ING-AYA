@@ -3,10 +3,15 @@
 /* ================================= */
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
 
 
 /* ================================= */
@@ -14,36 +19,25 @@
 /* ================================= */
 
 body, html {
-
     height: 100%;
-
-    font-family: 'Segoe UI', Roboto, sans-serif;
-
     display: flex;
     flex-direction: column;
-
     background:
         linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
         url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg')
         no-repeat center center / cover;
-
     position: relative;
 }
 
 body::before {
 
     content: "";
-
     position: absolute;
-
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
-
     background-color: rgba(0,0,0,0.15);
-
     z-index: -1;
 }
 
@@ -52,50 +46,47 @@ body::before {
 /* HEADER LOGIN */
 /* ================================= */
 
-.header-login {
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 20px 40px;
-
-    background: linear-gradient(to bottom, #eee, #ccc);
-
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+header{
+    background:#ffffff;
+    border-bottom:3px solid var(--accent);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 5%;
+    flex-wrap:nowrap;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    font-size: medium;
+ 
+    
 }
 
-header a:hover {
-    color: red;
+.header-login a:hover {
+    color:#CE7D35;
 }
-
 
 /* ================================= */
 /* LOGO */
 /* ================================= */
 
 .logo-head {
-
     display: flex;
     align-items: center;
-
+    gap: 10px;
     text-decoration: none;
-
     color: black;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .logo-head img {
-
-    height: 70px;
-
-    margin-right: 10px;
+    margin-top: 0px;
+    height: 100px;
+    
 }
 
 .nom_emp {
-
     font-size: 25px;
-
-    font-weight: bold;
+    
 }
 
 
@@ -104,30 +95,17 @@ header a:hover {
 /* ================================= */
 
 .volver-inicio {
-
-    font-weight: bold;
-
+    border: 3px solid rgb(105, 105, 110);
+    margin: 10px;
+    padding: 15px 20px;
+    border-radius: 20px;
+    background-color: rgb(231, 208, 178);
+    text-decoration: none;
     color: black;
 
-    font-size: 14px;
-
-    text-decoration: none;
-
-    border: 1px solid #aaa;
-
-    padding: 8px 16px;
-
-    border-radius: 8px;
-
-    background-color: white;
-
-    transition: .2s;
 }
 
-.volver-inicio:hover {
 
-    background: #f5f5f5;
-}
 
 
 /* ================================= */
