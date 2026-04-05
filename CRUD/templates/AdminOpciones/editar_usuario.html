@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editar Usuario</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Editar Usuario</h1>
+  </header>
+
+  <main>
+    <section class="gestion">
+      <h2>Editar usuario #{{ usuario.id_usuario }}</h2>
+
+      <div class="card">
+        <form method="POST" action="{{ url_for('editar_usuario', id_usuario=usuario.id_usuario) }}">
+          <div class="form-row">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-control" type="email" id="email" name="email" value="{{ usuario.email }}" required>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="contrasena">Contraseña (dejar vacío para no cambiar)</label>
+            <input class="form-control" type="password" id="contrasena" name="contrasena" placeholder="Nueva contraseña">
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="rol">Rol</label>
+            <select class="form-control" id="rol" name="rol" required>
+              {% for r in roles %}
+                <option value="{{ r }}" {% if r == current_role %}selected{% endif %}>{{ r.title() }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div style="margin-top:12px; display:flex; gap:10px;">
+            <button class="btn" type="submit">Guardar</button>
+            <a class="btn btn-outline" href="{{ url_for('admin_usuarios') }}">Cancelar</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

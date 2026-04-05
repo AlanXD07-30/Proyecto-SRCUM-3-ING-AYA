@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios - Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
+
+    
+    <script>
+        function filtrarPorRol() {
+            const rolSeleccionado = document.getElementById('filtroRol').value.toLowerCase();
+            const filas = document.querySelectorAll('tbody tr');
+            filas.forEach(fila => {
+                const roles = fila.querySelector('td:nth-child(3)').innerText.toLowerCase();
+                if (rolSeleccionado === 'todos' || roles.includes(rolSeleccionado)) {
+                    fila.style.display = '';
+                } else {
+                    fila.style.display = 'none';
+                }
+            });
+        }
+
+        function mostrarFormularioAgregar() {
+            const form = document.getElementById('formAgregarUsuario');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+            // actualizar visibilidad de campos dependientes al mostrar el formulario
+            toggleEmployeeFields();
+        }
+
+        function toggleEmployeeFields() {
+            const role = document.getElementById('rol').value;
+            const employeeRoles = ['EMPLEADO', 'SECRETARIA', 'AGENTE_INMOBILIARIO'];
+            const container = document.getElementById('employeeFields');
+            const requiredEls = container ? container.querySelectorAll('[data-employee-required]') : [];
+            if (employeeRoles.includes(role)) {
+                if (container) container.style.display = 'block';
+                requiredEls.forEach(el => el.required = true);
+            } else {
+                if (container) container.style.display = 'none';
+                requiredEls.forEach(el => el.required = false);
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="Imagen_empresa">
+            <a href="../PAGINA PRINCIPAL INMUEBLES ING AYA/Index.html">
+                <img src="{{ url_for('static', filename='logo_INGAYA_gris-sin fondo.png') }}" alt="Logo de la empresa">
+            </a>
+        </nav>
+
+        <h2 class="title-prin">Gestión de Usuarios</h2>
+
+        <div class="header-right" style="display:flex; align-items:center; gap:16px;">
+           
+            <a class="btn btn-outline" href="http://127.0.0.1:5000/admin" style="text-decoration:none; color:var(--text-dark);">Volver al menú</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="gestion">
+            <h2>Gestión de Usuarios</h2>
+
+            <div class="filtro">
+                <label for="filtroRol">Filtrar por rol:</label>
+                <select id="filtroRol" onchange="filtrarPorRol()">
+                    <option value="todos">Todos</option>
+                    <option value="empleado">Empleado</option>
+                    <option value="secretaria">Secretaria</option>
+                    <option value="cliente">Cliente</option>
+                </select>
+            </div>
+
+            <!-- Botón para mostrar el formulario -->
+            <button class="btn" onclick="mostrarFormularioAgregar()">Agregar Usuario</button>
+
+            <!-- Formulario oculto para agregar usuario -->
+            <div id="formAgregarUsuario" class="card form-card" style="display:none; margin-top:20px;">
+                <h3>Nuevo Usuario</h3>
+                <form method="POST" action="/admin/usuarios/agregar" id="formAddUser">
+                    <div class="form-row">
+                        <label class="form-label" for="email">Email:</label>
+                        <input class="form-control" type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="form-label" for="contrasena">Contraseña:</label>
+                        <input class="form-control" type="password" id="contrasena" name="contrasena" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="form-label" for="rol">Rol:</label>
+                        <select class="form-control" id="rol" name="rol" required onchange="toggleEmployeeFields()">
+                            <option value="">Seleccione rol</option>
+                            <option value="EMPLEADO">Empleado</option>
+                            <option value="SECRETARIA">Secretaria</option>
+                            <option value="AGENTE_INMOBILIARIO">Agente Inmobiliario</option>
+                        </select>
+                    </div>
+
+                    <div id="employeeFields" style="display:none; margin-top:12px;">
+                        <div class="form-grid">
+                            <div>
+                                <label class="form-label" for="nombre_empleado">Nombre completo:</label>
+                                <input class="form-control" type="text" id="nombre_empleado" name="nombre_empleado" data-employee-required>
+                            </div>
+                            <div>
+                                <label class="form-label" for="identificacion_empleado">Identificación:</label>
+                                <input class="form-control" type="text" id="identificacion_empleado" name="identificacion_empleado" data-employee-required>
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+                            <div>
+                                <label class="form-label" for="telefono_empleado">Teléfono:</label>
+                                <input class="form-control" type="text" id="telefono_empleado" name="telefono_empleado">
+                            </div>
+                            <div>
+                                <label class="form-label" for="tipo_empleado">Tipo de empleado (opcional):</label>
+                                <input class="form-control" type="text" id="tipo_empleado" name="tipo_empleado">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:16px; display:flex; gap:12px;">
+                        <button class="btn" type="submit">Guardar Usuario</button>
+                        <button type="button" class="btn btn-outline" onclick="document.getElementById('formAgregarUsuario').style.display='none'">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Email</th>
+                        <th>Roles</th>
+                        <th>Estado</th>
+                        <th>Fecha de Creación</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for usuario in usuarios %}
+                <tr>
+                    <td>{{ usuario.id_usuario }}</td>
+                    <td>{{ usuario.email }}</td>
+                    <td>{{ usuario.roles | default([]) | join(', ') }}</td>
+                    <td>{{ usuario.estado }}</td>
+                    <td>{{ usuario.fecha_creacion }}</td>
+                    <td>
+                        <button class="btn btn-outline" onclick="window.location.href='/admin/usuarios/editar/{{ usuario.id_usuario }}'">Editar</button>
+                        <button class="btn btn-outline" onclick="window.location.href='/admin/usuarios/eliminar/{{ usuario.id_usuario }}'">Eliminar</button>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="6">No hay usuarios registrados</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

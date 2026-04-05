@@ -6,24 +6,33 @@ const mensajeFavorito = document.getElementById("mensaje-favorito");
 
 let inmueblesData = [];
 
+
+fetch("http://localhost:8080/java/inmuebles")
+  .then(res => res.json())
+  .then(data => {
+
+    inmueblesData = data.filter(i => i.tipoOperacion === "VENTA");
+    renderInmuebles(inmueblesData);
+  });
+
 function crearTarjeta(inmueble) {
   const card = document.createElement("article");
   card.className = "card-inmueble";
   card.dataset.ciudad = inmueble.ciudad || "Desconocido";
-  card.dataset.tipo = inmueble.tipo || "Sin tipo";
+  card.dataset.tipo = inmueble.tipoOperacion || "Sin tipo";
 
   card.innerHTML = `
-    <img src="${inmueble.imagen || 'https://via.placeholder.com/800x520?text=Imagen+disponible'}" alt="${inmueble.titulo || 'Inmueble'}">
+    <img src="${inmueble.imagen || 'https://via.placeholder.com/800x520?text=Imagen+disponible'}">
     <div class="card-body">
       <div class="card-meta">
-        <span class="badge">${inmueble.tipo || 'Tipo'}</span>
+        <span class="badge">${inmueble.tipoOperacion || 'Tipo'}</span>
         <span class="precio">${formatearPrecio(inmueble.precio)}</span>
       </div>
-      <h3>${inmueble.titulo || 'Título del inmueble'}</h3>
-      <p>${inmueble.descripcion || 'Descripción breve del inmueble disponible para venta.'}</p>
+      <h3>${inmueble.direccion || 'Inmueble'}</h3>
+      <p>${inmueble.descripcion || 'Propiedad disponible para venta.'}</p>
       <div class="card-meta">
         <span>${inmueble.ciudad || 'Ciudad'}</span>
-        <a href="${inmueble.url || '#'}" class="btn-moderno">Ver detalle</a>
+        <a href="#" class="btn-moderno">Ver detalle</a>
       </div>
     </div>
   `;
@@ -32,6 +41,7 @@ function crearTarjeta(inmueble) {
   favorito.type = "button";
   favorito.className = "estrella";
   favorito.title = "Agregar a favoritos";
+
   favorito.addEventListener("click", (event) => {
     event.stopPropagation();
     toggleFavorito(favorito);
@@ -52,26 +62,28 @@ function renderInmuebles(items) {
 
   if (!items || items.length === 0) {
     emptyState.style.display = "block";
-    emptyState.textContent = "No hay propiedades cargadas. Conecta tu base de datos para ver resultados.";
+    emptyState.textContent = "No hay propiedades en venta.";
     return;
   }
 
   const ciudadSeleccionada = ciudadSelect.value;
-  const tipoSeleccionado = tipoSelect.value;
 
   const filtrados = items.filter((item) => {
-    const coincideCiudad = ciudadSeleccionada === "todos" || item.ciudad === ciudadSeleccionada;
-    const coincideTipo = tipoSeleccionado === "todos" || item.tipo === tipoSeleccionado;
-    return coincideCiudad && coincideTipo;
+    const coincideCiudad =
+      ciudadSeleccionada === "todos" ||
+      item.ciudad === ciudadSeleccionada;
+
+    return coincideCiudad;
   });
 
   if (filtrados.length === 0) {
-    emptyState.textContent = "No hay propiedades que coincidan con los filtros seleccionados.";
+    emptyState.textContent = "No hay propiedades que coincidan.";
     emptyState.style.display = "block";
     return;
   }
 
   emptyState.style.display = "none";
+
   filtrados.forEach((inmueble) => {
     gridInmuebles.appendChild(crearTarjeta(inmueble));
   });
@@ -89,24 +101,8 @@ function toggleFavorito(elemento) {
   }, 2200);
 }
 
-function confirmarAccion(event) {
-  const regresar = confirm("¿Deseas volver a la página de inicio?");
-  if (!regresar) {
-    event.preventDefault();
-  }
-}
-
 ciudadSelect.addEventListener("change", aplicarFiltros);
-tipoSelect.addEventListener("change", aplicarFiltros);
 
 document.addEventListener("DOMContentLoaded", () => {
   renderInmuebles(inmueblesData);
 });
-
-window.INMUEBLES = {
-  setItems(items) {
-    inmueblesData = Array.isArray(items) ? items : [];
-    renderInmuebles(inmueblesData);
-  },
-  applyFilters: aplicarFiltros,
-};

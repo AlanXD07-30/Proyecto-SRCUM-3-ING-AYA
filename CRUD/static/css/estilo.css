@@ -1,0 +1,167 @@
+/* Modern, clean and valid stylesheet for Gestión de Usuarios pages
+   - Light, modern form cards
+   - Keeps all original class/id names used in templates
+   - Designed to be easy to tweak (variables at top)
+*/
+
+/*COSAS ADICIONALES DE LOS INMUEBLES , ESTOS ESTILOS ESTAN COMBINADOS PARA LOS FORMULARIOS Y TABLAS */
+
+/* Estilos para las etiquetas de estado del inmueble */
+.badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.badge-disponible {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.badge-mantenimiento {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.badge-ocupado {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+
+
+/*COSAS ADICIONALES DE LOS INMUEBLES , ESTOS ESTILOS ESTAN COMBINADOS PARA LOS FORMULARIOS Y TABLAS */
+:root {
+  --bg-dark: #071233; /* dark page background */
+  --bg-gradient: linear-gradient(180deg, #071233 0%, #0f172a 100%);
+  --card-bg: #ffffff; /* card background (light) */
+  --accent: #ce8c66; /* primary blue */
+  --accent-2: #ce8c66; /* secondary purple */
+  --text-dark: #071223; /* text on light cards */
+  --text-light: #000000; /* text on dark background */
+  --muted: #94a3b8;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("../edificio.jpg");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--text-primary);
+  color: var(--text-light);
+  -webkit-font-smoothing: antialiased;
+}
+
+header {
+  padding: 10px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8f5f5; /* igual que la cabecera original */
+  border-bottom: 3px solid var(--accent);
+}
+
+.title-prin h2{
+  text-align: center;
+}
+.Imagen_empresa img { 
+  height: 100px; 
+  display: block; 
+}
+
+main { padding: 24px; }
+
+/* Main container */
+.gestion {
+  max-width: 1100px;
+  margin: 20px auto;
+  background: rgba(230, 230, 230, 0.96); /* light card for content */
+  color: var(--text-dark);
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(2,6,20,0.12);
+  border: 1px solid rgba(11,18,32,0.06);
+}
+.gestion h2 { 
+  margin: 0 0 12px 0; 
+  color: var(--text-dark); 
+  font-weight: 700; }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  box-shadow: 0 8px 20px rgba(59,130,246,0.12);
+}
+
+.btn:hover { 
+  transform: translateY(-2px); 
+}
+
+.btn-outline { 
+  background: transparent; 
+  color: var(--text-dark); 
+  border: 1px solid rgba(11,18,32,0.06); 
+  font-size: large;
+}
+
+.btn-danger { 
+  background: linear-gradient(90deg,#d9534f,#b92b2b); 
+}
+
+/* Table */
+table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+thead th { text-align: left; padding: 12px 14px; background: linear-gradient(90deg,var(--accent),var(--accent-2)); color: #fff; font-weight: 700; }
+tbody td { padding: 12px 14px; border-bottom: 1px solid rgba(11,18,32,0.04); color: var(--text-dark); }
+tbody tr:nth-child(even) { background: rgba(11,18,32,0.02); }
+tbody tr:hover { background: rgba(59,130,246,0.04); }
+
+/* Form card / controls */
+.card { background: var(--card-bg); color: var(--text-dark); padding: 18px; border-radius: 12px; border: 1px solid rgba(11,18,32,0.06); box-shadow: 0 10px 30px rgba(2,6,20,0.06); }
+.form-row { margin-bottom: 12px; }
+.form-label { display:block; margin-bottom:6px; font-weight:600; color:var(--text-dark); }
+.form-control { width:100%; padding:10px 12px; border-radius:8px; border:1px solid rgba(11,18,32,0.08); background:#fff; color:var(--text-dark); font-size:0.95rem; }
+.form-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+
+/* Specific ID used in templates (keeps compatibility) */
+#formAgregarUsuario.card { background: var(--card-bg); }
+
+/* Filter */
+.filtro { display:flex; gap:12px; align-items:center; margin:14px 0; }
+.filtro label { color:var(--text-dark); font-weight:600; }
+.filtro select { padding:8px 10px; border-radius:8px; border:1px solid rgba(11,18,32,0.06); background:#fff; color:var(--text-dark); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .gestion { padding: 14px; margin: 12px; }
+  thead th { font-size: 0.88rem; }
+  table { display:block; width:100%; overflow-x:auto; -webkit-overflow-scrolling: touch; }
+}
+
+@media (max-width: 600px) {
+  .filtro { flex-direction: column; align-items: stretch; }
+}
+
+/* Small helpers */
+.muted { color: var(--muted); }
+

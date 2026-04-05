@@ -11,58 +11,80 @@
    <header class="header-login">
     <a href="#" class="logo-head">
       <img src="../logo_INGAYA_gris-sin fondo.png" alt="Logo ING AYA">
-      <h2 class="nom_emp"></h2>
+      <h2 class="nom_emp">ING AYA</h2>
     </a>
     <a href="../PAGINA PRINCIPAL INMUEBLES ING AYA/Index.html" class="volver-inicio">Volver a inicio</a>
   </header>
 
  <main class="login-container">
-    <form class="form-login" action="http://192.168.0.4:5000/registro_externo" method="POST">
-      <h2>Registrate</h2>
-      <input type="text" name="nombre" id="usuario" placeholder="Nombre" required />
-      <input type="email" name="email" id="email" placeholder="Email" required />
-      <input type="text" name="telefono" id="telefono" placeholder="Telefono" required />
-      <input type="text" name="direccion" id="direccion" placeholder="Direccion" required />
-      <input type="password" name="password" placeholder="Contraseña" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="La contraseña debe tener al menos 8 caracteres, incluir una mayúscula, una minúscula y un número." />
+    <form class="form-login" action="http://localhost:8080/registrar" method="POST">
+      <h2>Regístrate como Cliente</h2>
+      
+      <p style="color: gray; font-size: 0.8rem; margin-bottom: 10px;">Información Personal</p>
+      
+      <input type="text" name="nombre" placeholder="Nombre completo" required />
+      
+      <input type="text" name="identificacion" placeholder="Número de identificación (Cédula)" required />
+      
+      <input type="text" name="telefono" placeholder="Teléfono / Celular" />
+      
+      <input type="text" name="direccion" placeholder="Dirección de residencia" />
+      
+      <label style="display: block; text-align: left; margin-left: 10px; font-size: 0.8rem;">Fecha de Nacimiento:</label>
+      <input type="date" name="fecha_nacimiento" />
+
+      <hr style="border: 0.5px solid #eee; margin: 20px 0;">
+
+      <p style="color: gray; font-size: 0.8rem; margin-bottom: 10px;">Datos de Cuenta</p>
+      
+      <input type="email" name="email" id="email" placeholder="Correo electrónico" required />
+      
+      <input type="password" name="contrasena" id="contrasena" placeholder="Crea tu contraseña" required />
+      
       <button class="btn primary" type="submit">Registrarme</button>
+      
       <div class="registro">
         <br>
-      <p>¿Ya tienes cuenta? <a href="login.html">Inicia Sesion</a></p>
-      
+        <p>¿Ya tienes cuenta? <a href="login.html">Inicia Sesión</a></p>
       </div>
     </form>
-  </main>
+ </main>
 
-
-
-  
- <footer class="footer-login">
-    <img src="../logo_INGAYA_gris-sin fondo.png " alt="Logo pequeño">
-    <p>Todos los derechos reservados</p>
-  </footer>
-
-  
-
-</body>
 
 <script>
-    function iniciarSesion() {
-      const usuario = document.getElementById("usuario").value.trim().toLowerCase();
-      const contraseña = document.getElementById("contraseña").value;
+document.querySelector('.form-login').addEventListener('submit', function(e) {
+    e.preventDefault(); // Evita que la página se recargue en blanco
 
-      // Accesos simulados
-      const usuarios = {
-        'admin': { pass: 'Admininmobiliaria123#', rol: 'Panel de Admin/panel administrador.html' },
-        'empleado': { pass: 'Empleadoinmobiliaria123#', rol: 'Panel de empleado/panel empleado.html' },
-        'secretaria': { pass: 'Secretariainmobiliaria123#', rol: 'Panel de Secretaria/panel secretaria.html'},
-        'usuario':{ pass: 'Usuarioinmobiliaria123#',rol: '../INTERFAZ DE PERFIL DE USUARIO/perfil_usuario_sidebar_integrado.html'}
-      };
+    const formData = new FormData(this);
 
-      if (usuarios[usuario] && usuarios[usuario].pass === contraseña) {
-        window.open(usuarios[usuario].rol, '_blank'); // Abre en nueva pestaña
-      } else {
-        alert("Credenciales incorrectas. Intenta nuevamente.");
-      }
-    }
-  </script>
+    fetch('http://localhost:8080/registrar', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text()) // Recibe el texto del controlador
+    .then(mensaje => {
+        // Busca o crea un lugar donde poner el mensaje
+        let contenedorMensaje = document.getElementById('mensaje-servidor');
+        if(!contenedorMensaje){
+            contenedorMensaje = document.createElement('p');
+            contenedorMensaje.id = 'mensaje-servidor';
+            contenedorMensaje.style.textAlign = 'center';
+            contenedorMensaje.style.fontWeight = 'bold';
+            this.appendChild(contenedorMensaje);
+        }
+        
+        contenedorMensaje.innerText = mensaje;
+        
+        // Si fue éxito, lo ponemos en verde, si no en rojo
+        contenedorMensaje.style.color = mensaje.includes("correctamente") ? "green" : "red";
+    });
+});
+</script>
+
+ <footer class="footer-login">
+    <img src="../logo_INGAYA_gris-sin fondo.png " alt="Logo pequeño">
+    <p>Todos los derechos reservados © 2026 ING AYA</p>
+  </footer>
+
+</body>
 </html>

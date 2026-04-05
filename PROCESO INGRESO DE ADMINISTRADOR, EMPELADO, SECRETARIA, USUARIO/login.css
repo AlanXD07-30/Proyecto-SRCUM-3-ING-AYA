@@ -1,23 +1,18 @@
 /* ================================= */
-/* RESET GENERAL */
+/* RESET GENERAL (Tal cual lo tenías) */
 /* ================================= */
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-
-
 /* ================================= */
-/* BODY Y FONDO */
+/* BODY Y FONDO (Original) */
 /* ================================= */
-
 body, html {
     height: 100%;
     display: flex;
@@ -29,26 +24,12 @@ body, html {
     position: relative;
 }
 
-body::before {
-
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.15);
-    z-index: -1;
-}
-
-
 /* ================================= */
-/* HEADER LOGIN */
+/* HEADER LOGIN (SIN TOCAR - ORIGINAL) */
 /* ================================= */
-
 header{
     background:#ffffff;
-    border-bottom:3px solid var(--accent);
+    border-bottom:3px solid #CE7D35; /* Usando el color naranja de tu hover */
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -56,17 +37,7 @@ header{
     flex-wrap:nowrap;
     box-shadow:0 4px 15px rgba(0,0,0,0.08);
     font-size: medium;
- 
-    
 }
-
-.header-login a:hover {
-    color:#CE7D35;
-}
-
-/* ================================= */
-/* LOGO */
-/* ================================= */
 
 .logo-head {
     display: flex;
@@ -79,20 +50,8 @@ header{
 }
 
 .logo-head img {
-    margin-top: 0px;
     height: 100px;
-    
 }
-
-.nom_emp {
-    font-size: 25px;
-    
-}
-
-
-/* ================================= */
-/* BOTON VOLVER */
-/* ================================= */
 
 .volver-inicio {
     border: 3px solid rgb(105, 105, 110);
@@ -102,245 +61,112 @@ header{
     background-color: rgb(231, 208, 178);
     text-decoration: none;
     color: black;
-
 }
-
-
-
 
 /* ================================= */
 /* CONTENEDOR LOGIN */
 /* ================================= */
-
 .login-container {
-
     flex: 1;
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     padding: 40px 20px;
 }
 
-
 /* ================================= */
-/* FORMULARIO LOGIN */
+/* FORMULARIO LOGIN (REPARADO) */
+/* Cambié .form-login por .login-container form para que lo reconozca */
 /* ================================= */
-
-.form-login {
-
+.login-container form {
     background: rgba(22,30,45,.9);
-
     backdrop-filter: blur(20px);
-
     padding: 45px;
-
     border-radius: 18px;
-
     box-shadow: 0 20px 50px rgba(0,0,0,.4);
-
     text-align: center;
-
     color: white;
-
     max-width: 500px;
-
     width: 100%;
-
     border: 1px solid rgba(255,255,255,.08);
-
     animation: fadeIn .6s ease;
 }
 
-.form-login h2 {
-
+.login-container form h2 {
     margin-bottom: 25px;
-
     font-size: 28px;
 }
 
-
-/* ================================= */
-/* INPUTS */
-/* ================================= */
-
-.form-login input {
-
+/* INPUTS DENTRO DEL FORM */
+.login-container form input {
     width: 100%;
-
     padding: 13px;
-
     margin: 10px 0;
-
     border-radius: 8px;
-
     border: 1px solid rgba(255,255,255,.1);
-
     background: #0f172a;
-
     color: white;
-
     font-size: 14px;
-
     outline: none;
-
     transition: .2s;
 }
 
-.form-login input::placeholder {
-
+.login-container form input::placeholder {
     color: #94a3b8;
 }
 
-.form-login input:focus {
-
+.login-container form input:focus {
     border: 1px solid #3b82f6;
-
     box-shadow: 0 0 0 2px rgba(59,130,246,.25);
 }
 
-
-/* ================================= */
-/* BOTON LOGIN */
-/* ================================= */
-
-.form-login button {
-
+/* BOTON DENTRO DEL FORM */
+.login-container form button {
     width: 100%;
-
     padding: 14px;
-
     margin-top: 20px;
-
     font-weight: bold;
-
     background: #3b82f6;
-
     color: white;
-
     border: none;
-
     border-radius: 8px;
-
     cursor: pointer;
-
     font-size: 15px;
-
     transition: .25s;
 }
 
-.form-login button:hover {
-
+.login-container form button:hover {
     background: #2563eb;
-
     transform: translateY(-2px);
-
     box-shadow: 0 8px 20px rgba(59,130,246,.35);
 }
 
-
-/* ================================= */
-/* LINK REGISTRO */
-/* ================================= */
-
+/* LINKS */
 .login-container a {
-
     text-decoration: none;
-
     color: #3b82f6;
-
     font-weight: 500;
 }
 
-.login-container a:hover {
-
-    text-decoration: underline;
-}
-
-
 /* ================================= */
-/* FOOTER LOGIN */
+/* FOOTER LOGIN (Original) */
 /* ================================= */
-
 .footer-login {
-
     text-align: left;
-
     padding: 10px 30px;
-
     color: white;
-
     font-size: 12px;
-
     display: flex;
-
     align-items: center;
-
     gap: 10px;
 }
 
 .footer-login img {
-
     height: 54px;
 }
 
-
-/* ================================= */
-/* RESPONSIVE */
-/* ================================= */
-
-@media screen and (max-width: 768px) {
-
-    .form-login {
-
-        padding: 35px 25px;
-
-        border-radius: 14px;
-    }
-
-    .header-login {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 10px;
-
-        padding: 20px;
-    }
-
-    .volver-inicio {
-
-        align-self: flex-end;
-    }
-
-    .footer-login {
-
-        justify-content: center;
-
-        text-align: center;
-
-        flex-direction: column;
-    }
-}
-
-
-/* ================================= */
-/* ANIMACION */
-/* ================================= */
-
+/* ANIMACION (Original) */
 @keyframes fadeIn {
-
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
 }
